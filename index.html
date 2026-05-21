@@ -929,6 +929,148 @@
     .factory-options { grid-template-columns: 1fr; }
     .pillars { grid-template-columns: 1fr; }
   }
+  /* === NATION DOSSIER CARDS (for §VIII Leaders) === */
+  .nation-card {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.55);
+    margin: 18px 0;
+    box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.18);
+  }
+  .nation-card-header {
+    background: var(--olive-dark);
+    color: var(--paper);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Stardos Stencil', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .nation-card-name { font-size: 16px; font-weight: 700; }
+  .nation-card-region { font-size: 10px; opacity: 0.7; }
+  .nation-card-body { padding: 16px 20px; }
+
+  .leader-block {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted rgba(74, 58, 42, 0.3);
+  }
+  .leader-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .leader-block.unit-trait { border-top: 2px solid var(--blood); padding-top: 12px; margin-top: 6px; background: rgba(139, 26, 26, 0.04); padding-left: 8px; padding-right: 8px; }
+
+  .leader-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blood-deep);
+  }
+  .leader-name .role {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0;
+    color: var(--ink-faded);
+    text-transform: none;
+    margin-left: 8px;
+  }
+  .ability-name {
+    font-family: 'Special Elite', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--olive-dark);
+    margin-top: 2px;
+  }
+  .ability-tag {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--olive-deep);
+    color: var(--paper);
+    padding: 1px 6px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .ability-tag.passive { background: var(--olive-deep); }
+  .ability-tag.active { background: var(--blood); }
+  .ability-tag.hybrid { background: var(--rust); }
+  .ability-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 4px;
+    color: var(--ink-faded);
+  }
+
+  .unit-trait-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    margin-bottom: 2px;
+  }
+
+  .nations-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .nations-2col { grid-template-columns: 1fr; }
+  }
+
+  /* Win-condition tablet */
+  .win-conditions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .win-card {
+    border: 3px double var(--olive-dark);
+    background: rgba(255, 250, 235, 0.5);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 4px 4px 0 rgba(74, 90, 58, 0.2);
+  }
+  .win-card-scope {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .win-card-total {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-faded);
+    margin-bottom: 14px;
+  }
+  .win-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(74, 90, 58, 0.3);
+  }
+  .win-line .num {
+    font-family: 'Stardos Stencil', sans-serif;
+    color: var(--blood);
+    font-weight: 700;
+  }
+  @media (max-width: 768px) {
+    .win-conditions { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -942,7 +1084,7 @@
     <div class="stamp stamp-red stamp-classified">Top Secret</div>
     <div class="stamp stamp-olive stamp-approved">Approved for Issue</div>
     <div class="stamp stamp-archive">Archive No. 1945–IX</div>
-    <div class="stamp stamp-revised">Edition III · Revised</div>
+    <div class="stamp stamp-revised">Edition IV · Streamlined</div>
 
     <div class="cover-classification">★ ★ ★  WAR DEPARTMENT FIELD MANUAL  ★ ★ ★</div>
 
@@ -961,12 +1103,12 @@
     </p>
 
     <div class="cover-tagline">
-      <span>Win the War</span>·<span>Feed the People</span>·<span>Hold the Line</span>·<span>Hold the Coin</span>
+      <span>Seize Territory</span>·<span>Lead Nations</span>·<span>Out-Build the Enemy</span>
     </div>
 
     <div class="cover-meta">
-      OFFICIAL RULEBOOK <strong>·</strong> EDITION III<br>
-      <strong>16</strong> PLAYABLE POWERS &nbsp; · &nbsp; <strong>120</strong> TURNS &nbsp; · &nbsp; AGES <strong>13+</strong>
+      OFFICIAL RULEBOOK <strong>·</strong> EDITION IV<br>
+      <strong>16</strong> PLAYABLE POWERS &nbsp; · &nbsp; <strong>41</strong> TERRITORIES &nbsp; · &nbsp; AGES <strong>13+</strong>
     </div>
   </div>
 
@@ -979,78 +1121,94 @@
     </div>
 
     <ul class="contents-list">
-      <li><a href="#sec-1"><span class="contents-num">§ I</span><span class="contents-name">Theater of Operations — Overview & Objectives</span><span class="contents-page">p. 03</span></a></li>
-      <li><a href="#sec-2"><span class="contents-num">§ II</span><span class="contents-name">The Calendar of War — Turns & Timeline</span><span class="contents-page">p. 04</span></a></li>
-      <li><a href="#sec-3"><span class="contents-num">§ III</span><span class="contents-name">Forces of the World — Nations & Powers</span><span class="contents-page">p. 05</span></a></li>
-      <li><a href="#sec-4"><span class="contents-num">§ IV</span><span class="contents-name">National Dossiers — Starting Statistics</span><span class="contents-page">p. 07</span></a></li>
-      <li><a href="#sec-5"><span class="contents-num">§ V</span><span class="contents-name">Industrial Capacity — Factories, Production & Construction</span><span class="contents-page">p. 08</span></a></li>
-      <li><a href="#sec-6"><span class="contents-num">§ VI</span><span class="contents-name">The Home Front — Population & Happiness</span><span class="contents-page">p. 10</span></a></li>
-      <li><a href="#sec-7"><span class="contents-num">§ VII</span><span class="contents-name">Treasury & The Inflation Track</span><span class="contents-page">p. 11</span></a></li>
-      <li><a href="#sec-8"><span class="contents-num">§ VIII</span><span class="contents-name">Order of Battle — Military Units</span><span class="contents-page">p. 12</span></a></li>
-      <li><a href="#sec-9"><span class="contents-num">§ IX</span><span class="contents-name">Rules of Engagement — Combat & Stacking</span><span class="contents-page">p. 13</span></a></li>
-      <li><a href="#sec-10"><span class="contents-num">§ X</span><span class="contents-name">Leaders, Unique Units & National Ideology</span><span class="contents-page">p. 14</span></a></li>
-      <li><a href="#sec-11"><span class="contents-num">§ XI</span><span class="contents-name">Agendas, Policies & Historical Plans</span><span class="contents-page">p. 16</span></a></li>
-      <li><a href="#sec-12"><span class="contents-num">§ XII</span><span class="contents-name">Chronicle of War — Historical Events</span><span class="contents-page">p. 17</span></a></li>
-      <li><a href="#sec-13"><span class="contents-num">§ XIII</span><span class="contents-name">Campaign Scenarios — Full War & Theatre Modules</span><span class="contents-page">p. 18</span></a></li>
-      <li><a href="#sec-14"><span class="contents-num">§ XIV</span><span class="contents-name">Designer's Field Notes</span><span class="contents-page">p. 20</span></a></li>
+      <li><a href="#sec-1"><span class="contents-num">§ I</span><span class="contents-name">Theater of Operations — Overview & Victory</span><span class="contents-page">p. 03</span></a></li>
+      <li><a href="#sec-2"><span class="contents-num">§ II</span><span class="contents-name">The Calendar of War — Turns & Order of Play</span><span class="contents-page">p. 04</span></a></li>
+      <li><a href="#sec-3"><span class="contents-num">§ III</span><span class="contents-name">Forces of the World — The Sixteen Nations</span><span class="contents-page">p. 05</span></a></li>
+      <li><a href="#sec-4"><span class="contents-num">§ IV</span><span class="contents-name">National Dossiers — Starting Statistics</span><span class="contents-page">p. 06</span></a></li>
+      <li><a href="#sec-5"><span class="contents-num">§ V</span><span class="contents-name">Cities, Factories & Resources</span><span class="contents-page">p. 07</span></a></li>
+      <li><a href="#sec-6"><span class="contents-num">§ VI</span><span class="contents-name">Order of Battle — Military Units</span><span class="contents-page">p. 08</span></a></li>
+      <li><a href="#sec-7"><span class="contents-num">§ VII</span><span class="contents-name">Rules of Engagement — Movement & Combat</span><span class="contents-page">p. 09</span></a></li>
+      <li><a href="#sec-8"><span class="contents-num">§ VIII</span><span class="contents-name">Leaders & Unique Units — National Cards</span><span class="contents-page">p. 10</span></a></li>
+      <li><a href="#sec-9"><span class="contents-num">§ IX</span><span class="contents-name">Agendas, Policies & Historical Plans</span><span class="contents-page">p. 16</span></a></li>
+      <li><a href="#sec-10"><span class="contents-num">§ X</span><span class="contents-name">Chronicle of War — Historical Events</span><span class="contents-page">p. 17</span></a></li>
+      <li><a href="#sec-11"><span class="contents-num">§ XI</span><span class="contents-name">Campaign Scenarios — Full War & Theatre Modules</span><span class="contents-page">p. 18</span></a></li>
+      <li><a href="#sec-12"><span class="contents-num">§ XII</span><span class="contents-name">Designer's Field Notes</span><span class="contents-page">p. 20</span></a></li>
     </ul>
 
     <div class="page-footer"><span>The Cruelest Years</span><span>Index · ii</span></div>
   </div>
 
-  <!-- ============================ SECTION I ============================ -->
+  <!-- ============================ SECTION I — THEATER OF OPERATIONS ============================ -->
   <div class="page" id="sec-1">
     <div class="section-header">
       <div class="section-number">— SECTION I —</div>
       <h2 class="section-title">Theater of Operations</h2>
-      <div class="section-kicker">Overview of the conflict, the period, and the burden of command.</div>
+      <div class="section-kicker">Overview of the conflict, the duties of command, and how a war is won.</div>
     </div>
 
     <p class="lead">
-      The world stands at the edge of its second great catastrophe. Empires falter, ideologies sharpen, and the appetite for land, gold, and glory has not yet been answered. In <strong>The Cruelest Years</strong>, each player assumes the role of a head of state between October 1935 and September 1945 — the decade that broke the modern world. Every turn you must balance the forge, the field, the kitchen table, and the treasury. To lead a nation through these years is to choose, again and again, between what is necessary and what is decent.
+      The world stands at the edge of its second great catastrophe. Empires falter, ideologies sharpen, and the appetite for land, gold, and glory has not yet been answered. In <strong>The Cruelest Years</strong>, each player takes one of sixteen nations to the field of the Second World War. You command its leaders, raise its armies, expand its industry, and steer its fate across a board of forty-one territories. Victory is measured in the soil you hold when the guns fall silent.
     </p>
 
     <p>
-      This is not a game of conquest alone. A commander whose armies sweep the continent but whose people riot in the streets will fall as surely as one outflanked in the field. Victory rewards the leader who learns to govern, not merely to fight.
+      This edition is the <strong>streamlined ruleset</strong>. It is fast to teach, fast to play, and asymmetric by design — every nation has its own leader cards, its own unit trait, and its own strategic shape.
     </p>
 
     <div class="objective">
-      <div class="objective-label">★ THE FOUR DUTIES OF COMMAND ★</div>
+      <div class="objective-label">★ THE DUTIES OF COMMAND ★</div>
       <div class="objective-text">
-        Win the War &nbsp;·&nbsp; Keep the People Happy<br>
-        Keep the People Alive &nbsp;·&nbsp; Hold Inflation in Check
+        Out-build the Enemy &nbsp;·&nbsp; Lead Your Armies<br>
+        Seize Territory &nbsp;·&nbsp; Hold the Line
       </div>
     </div>
 
-    <div class="responsibilities">
-      <div class="resp"><div class="resp-num">I</div><div class="resp-text">Wage War & Hold Territory</div></div>
-      <div class="resp"><div class="resp-num">II</div><div class="resp-text">Provide Daily Necessities</div></div>
-      <div class="resp"><div class="resp-num">III</div><div class="resp-text">Preserve the Population</div></div>
-      <div class="resp"><div class="resp-num">IV</div><div class="resp-text">Manage the Treasury</div></div>
-    </div>
-
-    <h3>The Central Tension</h3>
+    <h3>Victory · Territory Held</h3>
     <p>
-      Imperialism, colonialism, and nationalism have inflamed a generation of grievances over land, capital, and prestige. Every nation in the game holds at least one of these grievances; many hold all three. The game asks: <em>will your statecraft serve the dignity of your people, or be devoured by the appetite that started the war?</em>
+      Victory is measured by the number of <strong>territories</strong> a player or team holds. The thresholds below are evaluated at the agreed end of the campaign (or whenever a power crosses the line). A solo player wins by holding the territories on their own; a team wins by holding the listed total between its allied members.
     </p>
 
+    <div class="win-conditions">
+      <div class="win-card">
+        <div class="win-card-scope">World</div>
+        <div class="win-card-total">41 territories total</div>
+        <div class="win-line"><span>Solo</span><span class="num">21</span></div>
+        <div class="win-line"><span>Team</span><span class="num">28</span></div>
+      </div>
+      <div class="win-card">
+        <div class="win-card-scope">European</div>
+        <div class="win-card-total">21 territories</div>
+        <div class="win-line"><span>Solo</span><span class="num">12</span></div>
+        <div class="win-line"><span>Team</span><span class="num">15</span></div>
+      </div>
+      <div class="win-card">
+        <div class="win-card-scope">Asian</div>
+        <div class="win-card-total">11 territories</div>
+        <div class="win-line"><span>Solo</span><span class="num">6</span></div>
+        <div class="win-line"><span>Team</span><span class="num">8</span></div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <strong>Multi-Theatre Play —</strong> When a game spans more than one theatre, the thresholds for each theatre played are <em>added together</em>. A game covering Europe + Asia requires <strong>18 territories for solo victory</strong> (12 + 6) or <strong>23 for team victory</strong> (15 + 8). This lets the table assemble a campaign of exactly the scale they want to play.
+    </div>
+
     <div class="briefing">
-      <strong>Designer's Intent —</strong> <em>The Cruelest Years</em> is meant to be replayable across many factors so that no two games unfold alike. The mechanisms reward foresight: nearly every action has a second-order consequence in another column of the ledger. A leader who builds factories without feeding cities will be deposed; a leader who feeds cities without arming the frontier will be invaded. The hard part is doing both.
+      <strong>The Central Tension —</strong> Imperialism, colonialism, and nationalism have inflamed a generation of grievances over land, capital, and prestige. Every nation in the game holds at least one of these grievances; many hold all three. The game asks <em>not</em> who is right, but who can hold the ground when the smoke clears.
     </div>
 
     <div class="page-footer"><span>§ I · Theater of Operations</span><span>p. 03</span></div>
   </div>
 
-  <!-- ============================ SECTION II — TURNS ============================ -->
+  <!-- ============================ SECTION II — CALENDAR ============================ -->
   <div class="page" id="sec-2">
     <div class="section-header">
       <div class="section-number">— SECTION II —</div>
       <h2 class="section-title">The Calendar of War</h2>
-      <div class="section-kicker">In which one turn is one month, and one hundred twenty months lie between the first shot and the last.</div>
+      <div class="section-kicker">One turn is one month; ten years lie between the first shot and the last.</div>
     </div>
 
     <p>
-      Each <strong>turn represents one calendar month</strong>. The game begins at the historical opening of the global conflict and ends at the Pacific surrender. Players may agree to play a shorter campaign by selecting any starting and ending month within the range.
+      Each <strong>turn represents one calendar month</strong>. The game opens at the historical spark of the global conflict and may run as long as the table desires; the full historical span is October 1935 to September 1945.
     </p>
 
     <div class="timeline">
@@ -1063,77 +1221,83 @@
       <div>
         <div class="timeline-pt-label">★ The Silence ★</div>
         <div class="timeline-pt-date">SEP 1945</div>
-        <div class="timeline-pt-event">Japan surrenders.<br>The final turn ends.</div>
+        <div class="timeline-pt-event">Japan surrenders.<br>Full campaign end.</div>
       </div>
     </div>
 
-    <div class="timeline-turns">
-      Full Campaign Length: <strong>120</strong> Turns &nbsp;·&nbsp; <strong>10</strong> Years &nbsp;·&nbsp; <strong>One</strong> War
+    <h3>Turn Order — The First Move</h3>
+    <p>
+      Because Italy struck the first blow of the war (October 1935, Ethiopia), <strong>Italy takes the first turn</strong> of the game. The Italian player then flips a coin to determine the direction of play:
+    </p>
+    <ul>
+      <li><strong>Heads —</strong> play proceeds <em>clockwise</em> around the table.</li>
+      <li><strong>Tails —</strong> play proceeds <em>counter-clockwise</em>.</li>
+    </ul>
+
+    <div class="clause">
+      <strong>Reversal Rule —</strong> At the start of every new round, the direction of play <strong>reverses</strong>. The last player of one round becomes the first player of the next, and so on. This prevents the same player from always reacting to the same neighbour, and prevents end-of-round kingmaking.
     </div>
 
-    <h3>Order of a Turn</h3>
+    <h3>Order of a Turn — Four Phases</h3>
+    <p>Each player resolves the following phases, in order, on their own turn:</p>
+
     <ol>
-      <li><strong>Event Phase.</strong> Resolve any historical event triggered by the current month, including events <em>played</em> by a commander whose prerequisites have been met (see § XI).</li>
-      <li><strong>Production Phase.</strong> Each factory produces its goods. Treasury and population grow or decline according to their historical trend.</li>
-      <li><strong>Action Phase.</strong> Each player, in turn order, takes actions: build units, move forces, declare war, sign pacts, raise taxes.</li>
-      <li><strong>Upkeep Phase.</strong> Pay daily necessities to feed the population. Adjust happiness. Check for revolution and inflation thresholds.</li>
-      <li><strong>Advance the Calendar.</strong> Move to the next month.</li>
+      <li><strong>Income Phase.</strong> Collect gold, population, and weapons from every city and factory under your control. Cities produce <strong>+5 gold and +1 population</strong> per turn. Factories produce <strong>+1 weapon</strong> per turn.</li>
+      <li><strong>Leader Phase.</strong> Use any leader or territorial ability. Passive abilities are always working and need not be declared; <strong>active</strong> abilities must be triggered now and may have a cost (gold, weapons, population) or a cooldown (CD) preventing reuse for a stated number of turns.</li>
+      <li><strong>Training Phase.</strong> Decide which military units to recruit and in which controlled territories to place them. A unit costs the weapons and population shown on the unit table. <em>Newly trained units cannot move or attack on the turn they are created;</em> they enter service next turn.</li>
+      <li><strong>Action Phase.</strong> Move and attack with previously trained units. A unit may attack <em>after</em> moving, but may not move <em>after</em> attacking unless its ability says otherwise.</li>
     </ol>
 
     <div class="briefing">
-      <strong>House Rule (Short Campaign) —</strong> For a shorter game, begin in <em>September 1939</em> (Invasion of Poland) and end at the player's choice. For a single sitting, end at <em>May 1945</em> (V-E Day) and treat the Pacific theater as resolved by treaty.
+      <strong>House Rule (Short Campaign) —</strong> For a single sitting, begin in <em>September 1939</em> (Invasion of Poland) and end whenever the table agrees, or by the first solo-victory threshold reached. For a quick demo game, play any scenario for <strong>12 turns</strong> and award the win to whoever holds the most territory at the end of the year.
     </div>
 
     <div class="page-footer"><span>§ II · The Calendar of War</span><span>p. 04</span></div>
   </div>
 
-  <!-- ============================ SECTION III — NATIONS ============================ -->
+  <!-- ============================ SECTION III — FORCES OF THE WORLD ============================ -->
   <div class="page" id="sec-3">
     <div class="section-header">
       <div class="section-number">— SECTION III —</div>
       <h2 class="section-title">Forces of the World</h2>
-      <div class="section-kicker">Eight great powers and eight regional theaters. Sixteen flags fly over the campaign map.</div>
+      <div class="section-kicker">Sixteen playable nations across the globe — nine in Europe, two in Asia, five elsewhere.</div>
     </div>
 
     <p>
-      The new edition of <em>The Cruelest Years</em> consolidates the world into <strong>sixteen playable powers</strong> — eight Great Powers who drive the war directly, and eight Regional Theaters representing the wider world caught in their orbit. Every flag is playable; every flag can also be steered as a wildcard or fall under occupation by another player.
+      <em>The Cruelest Years</em> consolidates the world into sixteen playable powers. They are weighted toward Europe and Asia where the war was fought most intensively, but every continent is represented and every nation can be taken to the field.
     </p>
 
-    <h3>The Great Powers</h3>
-    <p>The eight industrial and political heavyweights of the era. Most campaigns are decided among them.</p>
+    <h3>Europe — Nine Powers</h3>
     <div class="countries-grid">
-      <div class="country-card core-card"><div class="country-num">I</div><div class="country-name">Soviet Union</div></div>
-      <div class="country-card core-card"><div class="country-num">II</div><div class="country-name">Germany</div></div>
-      <div class="country-card core-card"><div class="country-num">III</div><div class="country-name">United States</div></div>
-      <div class="country-card core-card"><div class="country-num">IV</div><div class="country-name">China</div></div>
-      <div class="country-card core-card"><div class="country-num">V</div><div class="country-name">Italy</div></div>
-      <div class="country-card core-card"><div class="country-num">VI</div><div class="country-name">Japan</div></div>
-      <div class="country-card core-card"><div class="country-num">VII</div><div class="country-name">England</div></div>
-      <div class="country-card core-card"><div class="country-num">VIII</div><div class="country-name">France</div></div>
+      <div class="country-card core-card"><div class="country-num">I</div><div class="country-name">Germany</div></div>
+      <div class="country-card core-card"><div class="country-num">II</div><div class="country-name">United Kingdom</div></div>
+      <div class="country-card core-card"><div class="country-num">III</div><div class="country-name">France</div></div>
+      <div class="country-card core-card"><div class="country-num">IV</div><div class="country-name">Italy</div></div>
+      <div class="country-card core-card"><div class="country-num">V</div><div class="country-name">Soviet Union</div></div>
+      <div class="country-card"><div class="country-num">VI</div><div class="country-name">Poland</div></div>
+      <div class="country-card"><div class="country-num">VII</div><div class="country-name">SE Europe</div></div>
+      <div class="country-card"><div class="country-num">VIII</div><div class="country-name">N. Europe</div></div>
+      <div class="country-card"><div class="country-num">IX</div><div class="country-name">Iberian</div></div>
     </div>
 
-    <h3>The Regional Theaters</h3>
-    <p>
-      The wider world — colonies, federations, and continental blocs. Each regional theater is smaller in scale but holds territory, resources, or strategic chokepoints that the Great Powers must contest.
-    </p>
+    <h3>Asia — Two Powers</h3>
     <div class="countries-grid">
-      <div class="country-card"><div class="country-num">01</div><div class="country-name">South America</div></div>
-      <div class="country-card"><div class="country-num">02</div><div class="country-name">Africa</div></div>
-      <div class="country-card"><div class="country-num">03</div><div class="country-name">Oceania</div></div>
-      <div class="country-card"><div class="country-num">04</div><div class="country-name">Middle East</div></div>
-      <div class="country-card"><div class="country-num">05</div><div class="country-name">Northern Europe</div></div>
-      <div class="country-card"><div class="country-num">06</div><div class="country-name">Iberian</div></div>
-      <div class="country-card"><div class="country-num">07</div><div class="country-name">SE Europe</div></div>
-      <div class="country-card"><div class="country-num">08</div><div class="country-name">British India</div></div>
+      <div class="country-card core-card"><div class="country-num">X</div><div class="country-name">China</div></div>
+      <div class="country-card core-card"><div class="country-num">XI</div><div class="country-name">Japan</div></div>
     </div>
 
-    <div class="briefing">
-      <strong>Regional Theaters —</strong> Each regional bloc represents the dominant power or coalition of its zone in the 1930s–40s (e.g. Iberian = Spain & Portugal; SE Europe = Balkans + Hungary; Oceania = Australia, New Zealand & associated territories). They begin small but can grow rapidly if backed by a Great Power patron, or if invaded and stripped of resources by one.
+    <h3>The Wider World — Five Powers</h3>
+    <div class="countries-grid">
+      <div class="country-card core-card"><div class="country-num">XII</div><div class="country-name">United States</div></div>
+      <div class="country-card"><div class="country-num">XIII</div><div class="country-name">South America</div></div>
+      <div class="country-card"><div class="country-num">XIV</div><div class="country-name">Africa</div></div>
+      <div class="country-card"><div class="country-num">XV</div><div class="country-name">Oceania</div></div>
+      <div class="country-card"><div class="country-num">XVI</div><div class="country-name">Middle East</div></div>
     </div>
 
     <h3>Special Rule · The Two Chinas</h3>
     <p>
-      China occupies a unique political position in this period — a fragile coalition between the Nationalist government and the Communist resistance, both fighting Japan and themselves. To reflect this, China may be played in any of three modes, agreed upon by the table before the campaign begins.
+      China occupies a unique political position in this period — a fragile coalition between the Nationalist government (KMT) under Chiang Kai-shek and the Communist resistance under Mao Zedong, both fighting Japan and each other. To reflect this, China may be played in any of three modes, agreed upon by the table before the campaign begins.
     </p>
 
     <div class="pillars">
@@ -1141,26 +1305,26 @@
         <div class="pillar-icon">壹</div>
         <div class="pillar-title">Unified China</div>
         <div class="pillar-body">
-          A single player commands all of China's resources, units, and decisions. Standard play.
+          A single player commands all of China's resources, units, and decisions. Both leader cards (Mao and Chiang) are available to that one player.
         </div>
       </div>
       <div class="pillar">
         <div class="pillar-icon">貳</div>
         <div class="pillar-title">United Front</div>
         <div class="pillar-body">
-          <strong>Two players share China.</strong> Both have full decision rights; the treasury and unit pool are shared. Disagreements on major actions are resolved by die roll. A second seat at the table, one nation on the board.
+          <strong>Two players share China.</strong> Both have full decision rights; the treasury and unit pool are shared. Each plays one of the two Chinese leaders. Disagreements on major actions are resolved by die roll.
         </div>
       </div>
       <div class="pillar">
         <div class="pillar-icon">參</div>
         <div class="pillar-title">Civil Truce</div>
         <div class="pillar-body">
-          The dossier splits <strong>60 / 40</strong> between Nationalist (KMT) and Communist (CCP) players. They may cooperate, betray, or remain in armed truce while jointly facing the Japanese invasion. The most historically charged option.
+          The dossier splits <strong>60 / 40</strong> between Nationalist (KMT, Chiang) and Communist (CCP, Mao). They may cooperate, betray, or remain in armed truce while jointly facing the Japanese invasion.
         </div>
       </div>
     </div>
 
-    <div class="page-footer"><span>§ III · Forces of the World</span><span>p. 05–06</span></div>
+    <div class="page-footer"><span>§ III · Forces of the World</span><span>p. 05</span></div>
   </div>
 
   <!-- ============================ SECTION IV — NATIONAL DOSSIERS ============================ -->
@@ -1168,141 +1332,150 @@
     <div class="section-header">
       <div class="section-number">— SECTION IV —</div>
       <h2 class="section-title">National Dossiers</h2>
-      <div class="section-kicker">Starting statistics for the sixteen playable powers, as recorded by the War Department in 1935.</div>
+      <div class="section-kicker">Starting statistics — the resources each nation brings to the table at the opening of the campaign.</div>
     </div>
 
     <p>
-      Each nation enters the game with the values below. The <em>"X + Y"</em> notation indicates a starting value and a historical growth trend: <strong>X</strong> is the figure at the opening of Turn 1, and <strong>Y</strong> is the recurring trend value added across the campaign (see § VII for the convention).
+      Each nation enters the game with the values below. <em>Cities</em> and <em>Factories</em> on these lines are the starting count present on the home territories at Turn 1; both can be built or captured during play. The <em>"X + Y"</em> notation on Population and Treasury indicates a starting value and a recurring trend value added per in-game year.
     </p>
 
-    <h3>Great Powers — Starting Statistics</h3>
+    <h3>European Powers</h3>
     <div class="table-wrapper">
       <div class="table-caption">
-        <span>Table I · Dossiers, Great Powers</span>
+        <span>Table I · Dossiers, European Powers</span>
         <span class="form-num">WD FORM 3-A</span>
       </div>
       <table class="stat-table">
         <thead>
           <tr>
             <th>Statistic</th>
-            <th class="country-col">Soviet</th>
             <th class="country-col">Germany</th>
-            <th class="country-col">USA</th>
-            <th class="country-col">China</th>
-            <th class="country-col">Italy</th>
-            <th class="country-col">Japan</th>
-            <th class="country-col">England</th>
+            <th class="country-col">UK</th>
             <th class="country-col">France</th>
+            <th class="country-col">Italy</th>
+            <th class="country-col">Soviet</th>
+            <th class="country-col">Poland</th>
+            <th class="country-col regional-col">SE Europe</th>
+            <th class="country-col regional-col">N. Europe</th>
+            <th class="country-col regional-col">Iberian</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Population</td><td>35 + 3</td><td>18 + 2</td><td>16 + 2</td><td>15 + 3</td><td>9 + 1</td><td>9 + 1</td><td>6 + 1</td><td>5 + 1</td></tr>
-          <tr><td>Military Factory</td><td>4</td><td>5</td><td>3</td><td>1</td><td>2</td><td>2</td><td>3</td><td>2</td></tr>
-          <tr><td>Industrial Factory</td><td>4</td><td>3</td><td>3</td><td>1</td><td>2</td><td>2</td><td>2</td><td>1</td></tr>
-          <tr><td>National Treasury</td><td>22 + 2</td><td>24 + 2</td><td>106 + 3</td><td>3 + 2</td><td>14 + 2</td><td>9 + 2</td><td>51 + 3</td><td>39 + 2</td></tr>
-          <tr><td>Initial Weapons</td><td>5</td><td>5</td><td>5</td><td>1</td><td>2</td><td>3</td><td>5</td><td>5</td></tr>
-          <tr><td>Initial Units</td><td>3</td><td>3</td><td>3</td><td>5</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+          <tr><td>Population</td><td>18 + 2</td><td>6 + 1</td><td>5 + 1</td><td>9 + 1</td><td>35 + 3</td><td>4 + 1</td><td>3 + 1</td><td>2 + 1</td><td>3 + 1</td></tr>
+          <tr><td>Treasury</td><td>24 + 2</td><td>51 + 3</td><td>39 + 2</td><td>14 + 2</td><td>22 + 2</td><td>4 + 1</td><td>3 + 1</td><td>5 + 1</td><td>5 + 2</td></tr>
+          <tr><td>Cities</td><td>3</td><td>2</td><td>2</td><td>2</td><td>4</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Factories</td><td>5</td><td>3</td><td>2</td><td>2</td><td>4</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Initial Weapons</td><td>5</td><td>5</td><td>5</td><td>2</td><td>5</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Initial Units</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
         </tbody>
       </table>
-      <div class="table-footnotes">
-        <div>Population is given in millions. National Treasury is given in standard treasury units.</div>
-        <div>Initial Units are deployed on a player's home territory at start; default unit type is <em>Infantry</em>, but players may exchange one Infantry for one Militia at no cost.</div>
-        <div>China's larger pool of Initial Units (5) reflects its longer prior war footing.</div>
-      </div>
     </div>
 
-    <h3>Regional Theaters — Starting Statistics</h3>
+    <h3>Asian & Wider World Powers</h3>
     <div class="table-wrapper">
       <div class="table-caption">
-        <span>Table II · Dossiers, Regional Theaters</span>
+        <span>Table II · Dossiers, Asia & Wider World</span>
         <span class="form-num">WD FORM 3-B</span>
       </div>
       <table class="stat-table">
         <thead>
           <tr>
             <th>Statistic</th>
+            <th class="country-col">China</th>
+            <th class="country-col">Japan</th>
+            <th class="country-col">USA</th>
             <th class="country-col regional-col">S. America</th>
             <th class="country-col regional-col">Africa</th>
             <th class="country-col regional-col">Oceania</th>
             <th class="country-col regional-col">Mid. East</th>
-            <th class="country-col regional-col">N. Europe</th>
-            <th class="country-col regional-col">Iberian</th>
-            <th class="country-col regional-col">SE Europe</th>
-            <th class="country-col regional-col">Br. India</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Population</td><td>1 + 1</td><td>0 + 1</td><td>1 + 1</td><td>0 + 1</td><td>0 + 1</td><td>0 + 1</td><td>1 + 1</td><td>3 + 1</td></tr>
-          <tr><td>Military Factory</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>Industrial Factory</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>National Treasury</td><td>0 + 1</td><td>0 + 1</td><td>0 + 1</td><td>0 + 1</td><td>1 + 1</td><td>5 + 2</td><td>1 + 1</td><td>3 + 1</td></tr>
-          <tr><td>Initial Weapons</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>Initial Units</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Population</td><td>15 + 3</td><td>9 + 1</td><td>16 + 2</td><td>2 + 1</td><td>1 + 1</td><td>2 + 1</td><td>1 + 1</td></tr>
+          <tr><td>Treasury</td><td>3 + 2</td><td>9 + 2</td><td>106 + 3</td><td>2 + 1</td><td>1 + 1</td><td>2 + 1</td><td>3 + 1</td></tr>
+          <tr><td>Cities</td><td>3</td><td>2</td><td>3</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Factories</td><td>1</td><td>2</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Initial Weapons</td><td>1</td><td>3</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Initial Units</td><td>5</td><td>3</td><td>3</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
         </tbody>
       </table>
       <div class="table-footnotes">
-        <div>Regional theaters represent abstracted continental blocs. Their small starting populations reflect the limited <em>mobilizable</em> manpower in 1935, not historical population totals.</div>
-        <div>British India is the strongest regional theater at start, reflecting its size and its position in the British imperial system.</div>
-      </div>
-    </div>
-
-    <div class="page-footer"><span>§ IV · National Dossiers</span><span>p. 07</span></div>
-  </div>
-
-  <!-- ============================ SECTION V — FACTORIES ============================ -->
-  <div class="page" id="sec-5">
-    <div class="section-header">
-      <div class="section-number">— SECTION V —</div>
-      <h2 class="section-title">Industrial Capacity</h2>
-      <div class="section-kicker">Factories are the engine of every campaign. Without them, neither armies nor people endure.</div>
-    </div>
-
-    <p>
-      Every nation operates two classes of factory. They are the heartbeat of its economy and the most consequential tile a player will ever place on the board. Factories cost <strong>treasury</strong> to build, take <strong>turns</strong> to complete, and are vulnerable to bombing.
-    </p>
-
-    <div class="resources">
-      <div class="resource">
-        <div class="resource-icon">⚙</div>
-        <div class="resource-name">Military Factory</div>
-        <div class="resource-desc">
-          Produces <strong>1 weapon</strong> per turn. Weapons are the raw material of warfare — they combine with population units to form every military unit listed in § VIII. A nation without military factories cannot raise an army worth the name.
-        </div>
-      </div>
-      <div class="resource">
-        <div class="resource-icon">⌂</div>
-        <div class="resource-name">Industrial Factory</div>
-        <div class="resource-desc">
-          The civil engine of the nation. Each industrial factory may set its output each turn to <strong>one of three modes</strong>: pure food, pure gold, or a balanced split.
-        </div>
-      </div>
-    </div>
-
-    <h3>Industrial Factory · Output Modes</h3>
-    <p>Each industrial factory selects one mode per turn. The choice may be changed every month.</p>
-
-    <div class="factory-options">
-      <div class="factory-opt">
-        <div class="factory-opt-yield">+10<br><span style="font-size: 14px;">DN</span></div>
-        <div class="factory-opt-label">Feed the People</div>
-      </div>
-      <div class="factory-opt">
-        <div class="factory-opt-yield">+10<br><span style="font-size: 14px;">Money</span></div>
-        <div class="factory-opt-label">Fill the Treasury</div>
-      </div>
-      <div class="factory-opt">
-        <div class="factory-opt-yield">+5 / +5<br><span style="font-size: 14px;">DN & Money</span></div>
-        <div class="factory-opt-label">Balanced Run</div>
+        <div>Population is given in millions. Treasury in standard gold units. The "+Y" trend value is the natural growth added at the start of each in-game year (every 12 turns).</div>
+        <div>Initial Units are placed on the home territory at start; default unit type is <em>Infantry</em>. Players may exchange Infantry for any unit of equal-or-lower weapon cost at no extra cost.</div>
       </div>
     </div>
 
     <div class="clause">
-      <strong>Money flows into the Treasury.</strong> Funds produced by an industrial factory's "Money" output are added directly to the nation's National Treasury at the end of the Production Phase. They are not a separate currency.
+      <strong>Note on Factories &amp; Cities —</strong> The single "Factories" figure replaces the old Military / Industrial split. All factories now do one thing: produce <strong>1 weapon per turn</strong>. The income role of the former Industrial Factory has passed to <strong>Cities</strong>, which produce both gold and population each turn. See § V for the full mechanism.
     </div>
 
-    <h3>Building New Factories</h3>
+    <div class="page-footer"><span>§ IV · National Dossiers</span><span>p. 06</span></div>
+  </div>
+
+  <!-- ============================ SECTION V — PRODUCTION ============================ -->
+  <div class="page" id="sec-5">
+    <div class="section-header">
+      <div class="section-number">— SECTION V —</div>
+      <h2 class="section-title">Cities, Factories &amp; Resources</h2>
+      <div class="section-kicker">The three resources of war — gold, population, weapons — and the structures that produce them.</div>
+    </div>
+
     <p>
-      The factory count printed in each National Dossier (§ IV) is only the <em>starting</em> capacity. Across a ten-year war, an industrial power may double or triple its production base — but each new factory is a heavy investment that locks up treasury, manpower, and months of build time.
+      The streamlined economy of <em>The Cruelest Years</em> rests on three resources and two kinds of building. The math is simple by design — the strategy lies in <em>where</em> you place factories and how many turns you can hold a city against the enemy.
+    </p>
+
+    <h3>The Three Resources</h3>
+    <div class="resources">
+      <div class="resource">
+        <div class="resource-icon">🟡</div>
+        <div class="resource-name">Gold (Treasury)</div>
+        <div class="resource-desc">
+          The currency of the nation. Pays for ability costs, unit maintenance, and any agenda card with a money cost.
+        </div>
+      </div>
+      <div class="resource">
+        <div class="resource-icon">👥</div>
+        <div class="resource-name">Population</div>
+        <div class="resource-desc">
+          Manpower. Each new military unit consumes one or more population at training. Population is also the long-term measure of national strength.
+        </div>
+      </div>
+    </div>
+    <div class="resources" style="margin-top: 12px;">
+      <div class="resource" style="grid-column: 1 / -1;">
+        <div class="resource-icon">🔫</div>
+        <div class="resource-name">Weapons</div>
+        <div class="resource-desc">
+          The output of factories. Combined with population, weapons form military units according to the unit table (§ VI).
+        </div>
+      </div>
+    </div>
+
+    <h3>Cities — The Civil Engine</h3>
+    <p>
+      Cities are the heart of a nation's civil economy. Each city under your control produces:
+    </p>
+    <div class="factory-options">
+      <div class="factory-opt">
+        <div class="factory-opt-yield">+5<br><span style="font-size: 14px;">Gold</span></div>
+        <div class="factory-opt-label">Per City · Per Turn</div>
+      </div>
+      <div class="factory-opt">
+        <div class="factory-opt-yield">+1<br><span style="font-size: 14px;">Population</span></div>
+        <div class="factory-opt-label">Per City · Per Turn</div>
+      </div>
+      <div class="factory-opt">
+        <div class="factory-opt-yield">⚑<br><span style="font-size: 14px;">Capital</span></div>
+        <div class="factory-opt-label">One City is the Capital</div>
+      </div>
+    </div>
+    <p>
+      Cities are <strong>placed on the map at the start of the game</strong> and cannot be moved or rebuilt; if a city is captured by an enemy, its income belongs to the captor on the following turn. One city in each nation is designated the <strong>Capital</strong> — losing the capital is not a game-ending event by itself, but most Historical Plan and event cards reference it.
+    </p>
+
+    <h3>Factories — The War Engine</h3>
+    <p>
+      Factories produce <strong>1 weapon per turn</strong>, every turn, with no choices to make. Each nation begins with the factory count printed in its dossier (§ IV) and may build more across the campaign. Factories are tied to their territory — if you lose the territory, you lose the factory.
     </p>
 
     <div class="table-wrapper">
@@ -1313,568 +1486,573 @@
       <table>
         <thead>
           <tr>
-            <th>Factory Type</th>
-            <th>Treasury</th>
-            <th>Population</th>
-            <th>Turns to Build</th>
-            <th>Per-Region Cap</th>
+            <th>Cost Element</th>
+            <th>Per New Factory</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Military Factory</td><td>15</td><td>2</td><td>5</td><td>3</td></tr>
-          <tr><td>Industrial Factory</td><td>20</td><td>3</td><td>6</td><td>3</td></tr>
+          <tr><td>Treasury (gold)</td><td>15</td></tr>
+          <tr><td>Population</td><td>2</td></tr>
+          <tr><td>Build Time</td><td>5 turns</td></tr>
+          <tr><td>Per-Territory Cap</td><td>3 factories total</td></tr>
         </tbody>
       </table>
       <div class="table-footnotes">
-        <div>A region may hold at most <strong>3 factories total</strong>, in any combination of Military and Industrial.</div>
-        <div><strong>Diminishing returns:</strong> the second factory in a region costs +5 treasury and +1 turn; the third costs +10 treasury and +2 turns. A concentrated industrial heartland is expensive to grow.</div>
-        <div>Factories cannot be relocated. They are destroyed by sustained bombing or captured with the territory.</div>
+        <div>A territory may hold at most <strong>3 factories</strong>. The second factory in a territory costs +5 treasury and +1 turn; the third costs +10 treasury and +2 turns. Concentrated industry is expensive to grow.</div>
+        <div>Factories cannot be relocated. They are destroyed by a sustained Bomber strike on their territory or captured with the territory itself.</div>
       </div>
     </div>
 
     <div class="clause">
-      <strong>Strategic Vulnerability —</strong> Concentrating factories in one region is efficient but dangerous. A single sustained bombing campaign on Berlin, the Ruhr, the Donbas, or Detroit can cripple a nation's entire production cycle for many turns. Distribute or fortify.
+      <strong>Strategic Vulnerability —</strong> Concentrating factories in one territory is efficient but dangerous. A single sustained bombing campaign on Berlin, the Ruhr, the Donbas, or Detroit can cripple a nation's entire production cycle. Distribute or fortify.
     </div>
-
-    <h3>Building Units from Weapons</h3>
-    <p>
-      A <strong>weapon</strong> and a <strong>population unit</strong> combine to form a soldier, tank, plane, or boat. Different unit types require different combinations of weapons, population, and time — refer to the Order of Battle in § VIII for the full cost sheet. <em>The act of combining ends the turn for those resources;</em> they cannot be moved or used elsewhere in the same month.
-    </p>
-
-    <div class="warning">
-      <strong>Choke Point —</strong> A nation that produces only weapons will starve. A nation that produces only daily necessities will be conquered. A nation that produces only money will inflate itself into ruin. The three-way choice on every industrial factory, every month, is the heart of this game's strategy.
-    </div>
-
-    <div class="page-footer"><span>§ V · Industrial Capacity</span><span>p. 08–09</span></div>
-  </div>
-
-  <!-- ============================ SECTION VI — HOME FRONT ============================ -->
-  <div class="page" id="sec-6">
-    <div class="section-header">
-      <div class="section-number">— SECTION VI —</div>
-      <h2 class="section-title">The Home Front</h2>
-      <div class="section-kicker">Population, daily necessities, and the limits of what a people will endure.</div>
-    </div>
-
-    <h3>Population</h3>
-    <p>
-      <strong>1 population unit = 1 million people.</strong> Every nation begins with a historical population (see § IV) and grows or declines each turn according to its trend value. Population is spent to build units, lost to combat and famine, and is the ultimate measure of a nation's capacity to wage war.
-    </p>
-
-    <h3>Daily Necessities</h3>
-    <p>
-      Each turn, every nation must pay <strong>1 unit of daily necessities for every million people</strong> in its population. Necessities are produced by industrial factories or imported through trade. <em>Shortfalls are paid in happiness</em>, as below.
-    </p>
-
-    <h3>Population Happiness</h3>
-    <p>
-      Happiness measures whether your people support the regime. It begins at <strong>100%</strong> and changes each turn according to whether the regime can feed and pay its own house.
-    </p>
-
-    <div class="clause">
-      <strong>Happiness Mechanics —</strong> Happiness <strong>drops by 10%</strong> each turn that the nation:
-      <ul style="margin-top: 8px;">
-        <li>Fails to supply daily necessities to its full population (a DN shortfall of any size), <em>or</em></li>
-        <li>Runs out of money during the Upkeep Phase (Treasury reaches zero before all obligations are met).</li>
-      </ul>
-      Happiness <strong>recovers by 5%</strong> each turn that all DN obligations are met <em>and</em> the Treasury ends the turn above zero. Maximum 100%.
-    </div>
-
-    <div class="happiness">
-      <div class="happiness-row">
-        <div class="happiness-level">75%+</div>
-        <div class="happiness-desc">
-          <strong>Steady.</strong> The population accepts the war effort. No penalties whatsoever; the regime governs with consent.
-        </div>
-      </div>
-      <div class="happiness-row">
-        <div class="happiness-level">50%</div>
-        <div class="happiness-desc">
-          <strong>Strained.</strong> Slowdowns ripple through the home front. <em>Industrial Factories produce only 8 (instead of 10) in their chosen mode, or 4/4 on Balanced Run.</em>
-        </div>
-      </div>
-      <div class="happiness-row">
-        <div class="happiness-level">25%</div>
-        <div class="happiness-desc">
-          <strong>Cracking.</strong> Strikes, riots, deserters. <em>All unit construction takes one additional turn.</em>
-        </div>
-      </div>
-      <div class="happiness-row">
-        <div class="happiness-level">0%</div>
-        <div class="happiness-desc">
-          <strong>Revolution.</strong> The regime falls. The nation passes to civil-war status and is removed from the active war effort for a determined number of turns.
-        </div>
-      </div>
-    </div>
-
-    <div class="warning">
-      <strong>The Quiet Front —</strong> A leader who wins every battle but loses their capital to bread riots has not won. Revolution is the most expensive defeat in this game.
-    </div>
-
-    <div class="page-footer"><span>§ VI · The Home Front</span><span>p. 09</span></div>
-  </div>
-
-  <!-- ============================ SECTION VII — TREASURY ============================ -->
-  <div class="page" id="sec-7">
-    <div class="section-header">
-      <div class="section-number">— SECTION VII —</div>
-      <h2 class="section-title">Treasury &amp; The Inflation Track</h2>
-      <div class="section-kicker">In which gold is printed, debts come due, and the ledger keeps its own kind of war.</div>
-    </div>
-
-    <p>
-      Each nation maintains a <strong>National Treasury</strong>, denominated in units of gold and credit. Treasury grows each turn by its historical trend value (the <em>"+Y"</em> in each dossier line, § IV) and by any industrial factory output set to "Money" mode (§ V).
-    </p>
 
     <h3>Maintenance Fees</h3>
     <p>
-      Every active asset on the board costs treasury each turn to keep operating. These fees are paid during the Upkeep Phase. Militia are conscripted irregulars and pay no maintenance — they are the cheap army of a struggling state.
-    </p>
-
-    <div class="table-wrapper">
-      <div class="table-caption">
-        <span>Table · Base Maintenance Fees (per turn)</span>
-        <span class="form-num">WD FORM 7-M</span>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Asset</th>
-            <th>Base Fee</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Military Factory</td><td>1 Treasury</td></tr>
-          <tr><td>Industrial Factory</td><td>1 Treasury</td></tr>
-          <tr><td>Military Unit (per stack, excluding Militia)</td><td>1 Treasury</td></tr>
-          <tr><td>Militia</td><td>0 (free)</td></tr>
-        </tbody>
-      </table>
-      <div class="table-footnotes">
-        <div>Maintenance is paid <strong>per stack</strong>, not per individual unit — a stack of three Heavy Tanks pays 1, not 3. This rewards concentration.</div>
-        <div>All base fees are multiplied by the current Inflation level, below.</div>
-      </div>
-    </div>
-
-    <h3>Printing Money &amp; Inflation</h3>
-    <p>
-      A nation may choose to <strong>inject additional treasury</strong> mid-game — war bonds, debased currency, forced loans. This is permitted, but it always raises the <strong>Inflation Track</strong>. Inflation multiplies every maintenance fee in the nation. The more you print, the more expensive the next month becomes.
-    </p>
-
-    <div class="table-wrapper">
-      <div class="table-caption">
-        <span>Table · The Inflation Track</span>
-        <span class="form-num">WD FORM 7-I</span>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Level</th>
-            <th>State</th>
-            <th>Maintenance Multiplier</th>
-            <th>Trigger to Rise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Level 1</td><td>Normal</td><td>× 1</td><td>— (starting state)</td></tr>
-          <tr><td>Level 2</td><td>Pressured</td><td>× 2</td><td>+10 Treasury printed, OR Treasury hits 0</td></tr>
-          <tr><td>Level 3</td><td>Strained</td><td>× 3</td><td>+20 cumulative printed, OR 2nd Treasury-0 event</td></tr>
-          <tr><td>Level 4</td><td>Crisis</td><td>× 4</td><td>+40 cumulative printed, OR 3rd Treasury-0 event</td></tr>
-          <tr><td>Level 5</td><td>Collapse</td><td>× 5</td><td>+80 cumulative printed, OR 4th Treasury-0 event</td></tr>
-        </tbody>
-      </table>
-      <div class="table-footnotes">
-        <div>Inflation <strong>recovers by 1 level</strong> for every 12 consecutive turns the nation neither prints additional treasury nor reaches a zero-treasury crisis (one full historical year of fiscal discipline).</div>
-        <div>Inflation never recovers below Level 1, and never rises above Level 5. A nation already at Level 5 that suffers another inflation trigger loses 10% happiness instead.</div>
-      </div>
-    </div>
-
-    <div class="warning">
-      <strong>The Spiral —</strong> A nation in crisis is tempted to print money to cover its bills. Each printing makes the next month's bills larger. This is the historical trap of every wartime economy — and the trap your players will fall into if they do not plan their production base properly.
-    </div>
-
-    <h3>Why It Matters</h3>
-    <p>
-      A wartime economy that prints too freely will hollow itself from within. A wartime economy that prints too little will run out of weapons. The treasury is the lever that connects every other system in the game: factories cannot be built without it, units cannot be raised without it, and even diplomacy is paid in coin.
+      Every military unit on the board costs treasury each turn to keep in the field, paid during the Income Phase. Per-unit fees are listed in the unit table (§ VI). A unit whose maintenance cannot be paid is removed from the board.
     </p>
 
     <div class="briefing">
-      <strong>The Starting Gap —</strong> The opening dossiers reveal an immense disparity: the United States begins with a treasury of 106 while China begins with 3. This mirrors the historical record. China's compensation is a larger initial military force and a stronger pool of fighters in the field; the United States starts in industrial peace and must build for war.
+      <strong>Why the Old Inflation Track Is Gone —</strong> In earlier editions, printing treasury raised an inflation multiplier on every maintenance fee. The streamlined edition removes the multiplier and instead enforces discipline directly: <em>if you cannot pay your maintenance, the unit goes home.</em> Simple, sharp, no bookkeeping.
     </div>
 
-    <div class="page-footer"><span>§ VII · Treasury & The Inflation Track</span><span>p. 10–11</span></div>
+    <div class="page-footer"><span>§ V · Cities, Factories & Resources</span><span>p. 07</span></div>
   </div>
 
-  <!-- ============================ SECTION VIII — UNITS ============================ -->
-  <div class="page" id="sec-8">
+  <!-- ============================ SECTION VI — ORDER OF BATTLE ============================ -->
+  <div class="page" id="sec-6">
     <div class="section-header">
-      <div class="section-number">— SECTION VIII —</div>
+      <div class="section-number">— SECTION VI —</div>
       <h2 class="section-title">Order of Battle</h2>
-      <div class="section-kicker">A full register of every common military unit, with cost, statistics, and special restrictions.</div>
+      <div class="section-kicker">The nine military units of the streamlined edition.</div>
     </div>
 
     <p>
-      The roster below applies to every nation. Common units may be raised by any commander with the weapons, population, treasury, and time to spare. Unique national units — the standout creations of each power — are listed separately in § X.
+      The roster has been consolidated. Where earlier editions distinguished Light from Heavy variants of tanks, boats, and planes, the streamlined edition presents one canonical unit per role. National flavour — heavier tanks, faster fighters, deadlier bombers — is delivered through the <strong>Unique Unit Trait</strong> (§ VIII) that modifies your nation's base units.
     </p>
 
     <h4>Reading the Table</h4>
     <p>
-      Each unit lists its build cost (Weapon, Population, Turn, Fee) and its battlefield statistics (Blood, Range, Attack, Speed). Up to three identical units may stack in a single region. When stacked, <strong>blood and attack add together</strong>; range, speed, and other statistics remain at their base value.
+      Each unit lists its build cost (Weapon, Population) and its battlefield statistics (HP, Range, Attack, Speed, Fee). All units take <strong>one turn</strong> to train except the Aircraft Carrier (which takes longer to assemble in practice — handled by its higher cost rather than a separate timer in this edition).
     </p>
 
     <div class="table-wrapper">
       <div class="table-caption">
-        <span>Table III · Common Military Units</span>
+        <span>Table III · Military Units</span>
         <span class="form-num">WD FORM 7-A</span>
       </div>
       <table>
         <thead>
           <tr>
-            <th>Military Unit</th>
-            <th>Weapon</th>
-            <th>Pop.</th>
-            <th>Turn</th>
-            <th>Blood</th>
-            <th>Range</th>
-            <th>Attack</th>
-            <th>Speed</th>
-            <th>Fee</th>
+            <th>Unit</th>
+            <th>🔫 Weapon</th>
+            <th>👥 Pop.</th>
+            <th>❤️ HP</th>
+            <th>🎯 Range</th>
+            <th>⚔️ Attack</th>
+            <th>༄ Speed</th>
+            <th>🟡 Fee</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Militia</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
-          <tr><td>Infantry</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td></tr>
-          <tr><td>Mechanized Infantry</td><td>2</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
-          <tr><td>Cannon</td><td>2</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td>2</td></tr>
-          <tr><td>Light Tank</td><td>3</td><td>1</td><td>1</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td></tr>
-          <tr><td>Heavy Tank</td><td>4</td><td>1</td><td>2</td><td>3</td><td>2</td><td>2</td><td>2</td><td>4</td></tr>
-          <tr><td>Light Boat</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
-          <tr><td>Heavy Boat</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>3</td></tr>
-          <tr><td>Aircraft Carrier</td><td>3</td><td>3</td><td>3</td><td>6</td><td>1</td><td>1</td><td>2</td><td>6</td></tr>
-          <tr><td>Light Plane</td><td>2</td><td>1</td><td>1</td><td>1</td><td>3</td><td>1</td><td>3</td><td>3</td></tr>
-          <tr><td>Heavy Plane</td><td>3</td><td>1</td><td>2</td><td>2</td><td>3</td><td>1</td><td>3</td><td>3</td></tr>
-          <tr><td>Bomber</td><td>5</td><td>1</td><td>3</td><td>3</td><td>2</td><td>2</td><td>2</td><td>5</td></tr>
-          <tr><td>Anti-Aircraft Artillery</td><td>2</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td>3</td></tr>
+          <tr><td>Infantry</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td></tr>
+          <tr><td>Mechanized Infantry</td><td>2</td><td>1</td><td>1</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
+          <tr><td>Artillery</td><td>2</td><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td>2</td></tr>
+          <tr><td>Tank</td><td>4</td><td>1</td><td>3</td><td>2</td><td>2</td><td>2</td><td>4</td></tr>
+          <tr><td>Boat</td><td>3</td><td>1</td><td>2</td><td>1</td><td>2</td><td>2</td><td>3</td></tr>
+          <tr><td>Aircraft Carrier</td><td>3</td><td>3</td><td>6</td><td>1</td><td>1</td><td>2</td><td>6</td></tr>
+          <tr><td>Plane</td><td>4</td><td>1</td><td>2</td><td>3</td><td>2</td><td>3</td><td>3</td></tr>
+          <tr><td>Bomber</td><td>5</td><td>1</td><td>3</td><td>2</td><td>2</td><td>2</td><td>5</td></tr>
+          <tr><td>Anti-Air Artillery</td><td>2</td><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td>4</td></tr>
         </tbody>
       </table>
       <div class="table-footnotes">
-        <div>Up to three identical units may stack in the same region. Blood and Attack stack; Range, Speed, and other attributes do not.</div>
-        <div>Combining weapons and population to form a unit ends the action for those resources this turn.</div>
-        <div>Boats carry the same number of troop units as their treasury Fee (Light Boat 2, Heavy Boat 3, Aircraft Carrier 6). <strong>Aircraft Carriers may also transport land units</strong> across water in the same way as other naval vessels.</div>
-        <div>Only planes and Anti-Aircraft Artillery may target aircraft. Aircraft Carriers have minimal self-defense (Range 1, Attack 1) — they are not warships in their own right.</div>
+        <div><strong>HP</strong> is tracked by placing HP coins under the unit figure. When attacked, remove coins equal to the attacker's Attack value.</div>
+        <div><strong>Aircraft Carriers</strong> may transport land units across water (cargo capacity equal to Fee = 6 land units). They also serve as a launching platform for friendly Planes.</div>
+        <div><strong>Only Planes and Anti-Air Artillery</strong> may target enemy aircraft. All other units must endure aerial attack without reply.</div>
+        <div><strong>Boats</strong> carry land troops equal to their Fee (3 units).</div>
       </div>
     </div>
 
-    <div class="page-footer"><span>§ VIII · Order of Battle</span><span>p. 11</span></div>
+    <div class="page-footer"><span>§ VI · Order of Battle</span><span>p. 08</span></div>
   </div>
 
-  <!-- ============================ SECTION IX — COMBAT ============================ -->
-  <div class="page" id="sec-9">
+  <!-- ============================ SECTION VII — RULES OF ENGAGEMENT ============================ -->
+  <div class="page" id="sec-7">
     <div class="section-header">
-      <div class="section-number">— SECTION IX —</div>
+      <div class="section-number">— SECTION VII —</div>
       <h2 class="section-title">Rules of Engagement</h2>
-      <div class="section-kicker">Combat, stacking, transport, and the targeting of the skies.</div>
+      <div class="section-kicker">Training, movement, combat, and the targeting of the skies.</div>
+    </div>
+
+    <h3>Training Units</h3>
+    <p>
+      Trained units are formed during the Training Phase. Pay the listed Weapons and Population from your stockpile; place an <em>untrained</em> figure on a controlled territory. The unit completes training at the start of your next turn and may then move and attack.
+    </p>
+
+    <div class="clause">
+      <strong>No Stacking —</strong> Each tile (territory) may contain <strong>only one military unit</strong> at a time. The earlier "stacks of three" rule is removed. Concentrate your striking power by careful sequencing of attacks, not by piling up tokens.
     </div>
 
     <h3>Movement &amp; Speed</h3>
     <p>
-      A unit's <strong>speed</strong> determines how many tiles or zones it may traverse in a single action phase. Combining weapons and population to construct a unit ends the action for those resources that turn — the new unit cannot move until the following month.
+      A unit's <strong>Speed</strong> is the number of tiles it may traverse in a single Action Phase. A unit may attack <em>after</em> moving, but may not move <em>after</em> attacking (unless a leader ability or agenda card specifically permits).
     </p>
 
-    <h3>Range &amp; Attack</h3>
+    <h3>Combat &amp; HP Coins</h3>
     <p>
-      <strong>Range</strong> is the maximum distance at which a unit may strike. <strong>Attack</strong> is the damage it deals upon a successful engagement. <strong>Blood</strong> is the unit's resilience — when it is reduced to zero, the unit is removed from the board.
+      Each unit's HP is tracked by HP coins placed beneath the figure. When a unit is attacked, remove HP coins equal to the attacker's <strong>Attack</strong> value. A unit with no remaining HP coins is destroyed and removed from the board.
     </p>
 
-    <h3>Stacking</h3>
+    <h3>Range &amp; The Over-Range Strike</h3>
     <p>
-      Up to <strong>three identical units</strong> may share a single region. Their Blood pools and their Attack values add together; their Range, Speed, and other attributes remain at the base figure. Stack depth is marked beneath the unit figure with the corresponding number of cardboard counters.
+      <strong>Range</strong> is the maximum number of tiles between attacker and target for a normal strike. A commander may also attempt an <em>over-range strike</em>: declaring an attack against a target one tile beyond the unit's printed range. To succeed, the attacker flips a coin.
     </p>
-
-    <h3>Naval Transport</h3>
+    <ul>
+      <li><strong>Heads —</strong> the over-range strike hits normally.</li>
+      <li><strong>Tails —</strong> the strike misses; the attack is wasted but the unit's action is still spent.</li>
+    </ul>
     <p>
-      Boats are the only means of transporting land forces across water. Each boat carries a number of troop units equal to its treasury Fee — Light Boat 2, Heavy Boat 3, Aircraft Carrier 6. A sunk boat carries its passengers down with it.
+      Over-range strikes may only extend a unit's range by <strong>one tile</strong>. They cannot chain.
     </p>
 
     <h3>Air Warfare</h3>
     <p>
-      Aircraft operate in their own envelope. <strong>Only planes and Anti-Aircraft Artillery may target aircraft.</strong> All other units must endure aerial bombardment without reply. Heavy bombers in particular can shatter industrial centers — a single sustained strike on a factory complex may set production back several turns.
+      Aircraft operate in a layer of their own. <strong>Only Planes and Anti-Air Artillery may target aircraft.</strong> All other units must endure aerial bombardment without reply. Bombers in particular can shatter industrial centres — sustained Bomber raids can destroy factories on a captured-or-defended territory.
     </p>
 
     <div class="briefing">
-      <strong>Aircraft Carriers —</strong> The carrier exists to project planes far from the home coast. Its own combat profile is minimal — Range 1, Attack 1 — strong enough to drive off a lone raider, never enough to fight a battleship. Planes launched from a carrier use the carrier's tile as their point of origin. <strong>Carriers can also transport land units</strong> across water, exactly as Light and Heavy Boats do; their fee of 6 sets their land-troop capacity at 6 units.
+      <strong>Aircraft Carriers —</strong> The carrier's Range 1, Attack 1 stats are for self-defence only. Its real value is two-fold: it launches friendly Planes from the deep ocean, and it carries up to six land units across water. Without carriers, a Pacific war is impossible to win.
     </div>
 
-    <div class="page-footer"><span>§ IX · Rules of Engagement</span><span>p. 12</span></div>
+    <div class="page-footer"><span>§ VII · Rules of Engagement</span><span>p. 09</span></div>
   </div>
 
-  <!-- ============================ SECTION X — LEADERS / UNIQUE UNITS / IDEOLOGY ============================ -->
-  <div class="page" id="sec-10">
+  <!-- ============================ SECTION VIII — LEADERS & UNIQUE UNITS (Europe) ============================ -->
+  <div class="page" id="sec-8">
     <div class="section-header">
-      <div class="section-number">— SECTION X —</div>
-      <h2 class="section-title">Leaders, Unique Units & National Ideology</h2>
-      <div class="section-kicker">Three pillars that distinguish one nation from another and make every campaign asymmetric.</div>
+      <div class="section-number">— SECTION VIII —</div>
+      <h2 class="section-title">Leaders &amp; Unique Units</h2>
+      <div class="section-kicker">The face, the doctrine, and the trademark formation of each nation. The heart of the asymmetric game.</div>
     </div>
 
-    <p>
-      Beyond raw statistics, every playable power carries a flag, a face, and a creed. Three signature attributes give each nation its character on the board — and its weaknesses.
-    </p>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-icon">★</div>
-        <div class="pillar-title">Leader Ability</div>
-        <div class="pillar-body">
-          Each nation's head of state grants <strong>one signature ability</strong>, either <strong>passive</strong> (always on) or <strong>active</strong> (used once per turn or with a cooldown). The full set of leader cards is still in design — examples in development include accelerated mobilization, diplomatic flexibility, and free recruitment in friendly territory.
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">⚔</div>
-        <div class="pillar-title">Unique Unit</div>
-        <div class="pillar-body">
-          Every nation may field one unit that no other power can build. Unique units replace or supplement a common unit type and are typically stronger but more costly, or cheaper but more specialized. The full register follows on the next page.
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">✶</div>
-        <div class="pillar-title">National Ideology</div>
-        <div class="pillar-body">
-          A single trait reflecting the nation's political and cultural orientation in the 1930s–40s. Ideology shapes which <strong>Agenda &amp; Policy cards</strong> (§ XI) a power may play, which alliances it may join, and which actions cost the regime its happiness.
-        </div>
-      </div>
-    </div>
-
-    <h3>Unique Units · Register</h3>
-    <p>
-      The two tables below list every nation's signature formation, with its full statistical profile. Reading conventions are identical to § VIII.
-    </p>
-
-    <div class="table-wrapper">
-      <div class="table-caption">
-        <span>Table IV · Unique Units, Great Powers</span>
-        <span class="form-num">WD FORM 10-A</span>
-      </div>
-      <table class="stat-table">
-        <thead>
-          <tr>
-            <th>Statistic</th>
-            <th class="country-col">Soviet</th>
-            <th class="country-col">Germany</th>
-            <th class="country-col">USA</th>
-            <th class="country-col">China</th>
-            <th class="country-col">Italy</th>
-            <th class="country-col">Japan</th>
-            <th class="country-col">England</th>
-            <th class="country-col">France</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Unit Name</td>
-            <td>T-34 Tank</td>
-            <td>Tiger Tank</td>
-            <td>Trench-Gun Infantry</td>
-            <td>Guerrilla Infantry</td>
-            <td>Bersaglieri</td>
-            <td>A6M Zero</td>
-            <td>Sea Miner</td>
-            <td>Char B1</td>
-          </tr>
-          <tr><td>Weapon</td><td>3</td><td>5</td><td>3</td><td>1</td><td>1</td><td>2</td><td>4</td><td>4</td></tr>
-          <tr><td>Population</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>Turn</td><td>1</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
-          <tr><td>Blood</td><td>3</td><td>4</td><td>1</td><td>2</td><td>1</td><td>1</td><td>1</td><td>3</td></tr>
-          <tr><td>Range</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>3</td><td>1</td><td>2</td></tr>
-          <tr><td>Attack</td><td>3</td><td>3</td><td>3</td><td>1*</td><td>2</td><td>2</td><td>6</td><td>3</td></tr>
-          <tr><td>Speed</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>4</td><td>2</td><td>1</td></tr>
-          <tr><td>Fee</td><td>4</td><td>6</td><td>3</td><td>0</td><td>2</td><td>5</td><td>5</td><td>5</td></tr>
-        </tbody>
-      </table>
-      <div class="table-footnotes">
-        <div>★ <strong>Guerrilla Infantry (China):</strong> attack scales with stack size — a single unit attacks at <strong>1</strong>, a stack of two at <strong>3</strong>, and a stack of three at <strong>4</strong>. The bonus activates once per stack (it does not stack further) and represents the synergy of guerrilla cells supporting one another in the field.</div>
-        <div>★ <strong>Sea Miner (England):</strong> Naval unit. Devastating attack (6) but only 1 Blood and a 2-turn build. Best used to deny chokepoints and convoy lanes.</div>
-        <div>★ <strong>A6M Zero (Japan):</strong> Light fighter with Range 3 and Speed 4 — the fastest unit in the game at game start.</div>
-      </div>
-    </div>
-
-    <div class="page-footer"><span>§ X · Leaders, Unique Units & Ideology</span><span>p. 13</span></div>
-  </div>
-
-  <!-- ============================ SECTION X — CONT. (Regional Unique Units) ============================ -->
-  <div class="page">
-    <div class="section-header">
-      <div class="section-number">— SECTION X · CONT. —</div>
-      <h2 class="section-title">Unique Units · Regional Theaters</h2>
-      <div class="section-kicker">The signature formations of the eight regional powers. Smaller in scale, sharper in flavor.</div>
-    </div>
-
-    <div class="table-wrapper">
-      <div class="table-caption">
-        <span>Table V · Unique Units, Regional Theaters</span>
-        <span class="form-num">WD FORM 10-B</span>
-      </div>
-      <table class="stat-table">
-        <thead>
-          <tr>
-            <th>Statistic</th>
-            <th class="country-col regional-col">S. America</th>
-            <th class="country-col regional-col">Africa</th>
-            <th class="country-col regional-col">Oceania</th>
-            <th class="country-col regional-col">Mid. East</th>
-            <th class="country-col regional-col">N. Europe</th>
-            <th class="country-col regional-col">Iberian</th>
-            <th class="country-col regional-col">SE Europe</th>
-            <th class="country-col regional-col">Br. India</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Unit Name</td>
-            <td>Jungle Scout</td>
-            <td>Desert Raider</td>
-            <td>ANZAC Infantry</td>
-            <td>Bedouin Raider</td>
-            <td>Ski Trooper</td>
-            <td>Tercio Legionnaire</td>
-            <td>Partisan Fighter</td>
-            <td>Gurkha Rifles</td>
-          </tr>
-          <tr><td>Weapon</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td><td>1</td></tr>
-          <tr><td>Population</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>Turn</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>Blood</td><td>2</td><td>2</td><td>2</td><td>2</td><td>1</td><td>2</td><td>2</td><td>1</td></tr>
-          <tr><td>Range</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-          <tr><td>Attack</td><td>1</td><td>1</td><td>2</td><td>1</td><td>2</td><td>2</td><td>1</td><td>2</td></tr>
-          <tr><td>Speed</td><td>3</td><td>2</td><td>2</td><td>2</td><td>3</td><td>2</td><td>3</td><td>2</td></tr>
-          <tr><td>Fee</td><td>1</td><td>1</td><td>4</td><td>1</td><td>1</td><td>3</td><td>1</td><td>3</td></tr>
-        </tbody>
-      </table>
-      <div class="table-footnotes">
-        <div>Regional unique units are inexpensive infantry-class formations, each tuned to its terrain — jungle, desert, alpine, mountain, or open steppe.</div>
-        <div>Future editions may add <em>terrain bonuses</em> when these units fight in their native biome.</div>
-      </div>
-    </div>
-
-    <div class="briefing">
-      <strong>Reading the Asymmetry —</strong> The unique units chart reveals the design intent of each nation. Germany's Tiger Tank is a slow, expensive juggernaut. Japan's A6M Zero is fast and ranged. China's Guerrilla Infantry costs nothing but is only effective in numbers. England's Sea Miner is a defensive specialist. Each represents the historical strength — and the historical weakness — of its nation.
-    </div>
-
-    <h3>Starting Unique Units</h3>
-    <p>
-      The "Initial Units" figure in each National Dossier (§ IV) refers to <strong>starting unique units</strong> placed on the home territory at the opening of Turn 1. The default counts have been adjusted from the flat dossier value to reflect the relative strength of each nation's unique formation — strong units start in smaller numbers, weak or specialized units start in larger numbers.
-    </p>
-
-    <div class="table-wrapper">
-      <div class="table-caption">
-        <span>Table VI · Starting Unique Unit Counts (Proposed)</span>
-        <span class="form-num">WD FORM 10-S</span>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Nation</th>
-            <th>Unique Unit</th>
-            <th>Starting Count</th>
-            <th>Rationale</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Soviet Union</td><td>T-34 Tank</td><td>3</td><td>Strong, balanced cost — standard count.</td></tr>
-          <tr><td>Germany</td><td>Tiger Tank</td><td>1</td><td>Devastating but very expensive — small start.</td></tr>
-          <tr><td>United States</td><td>Trench-Gun Infantry</td><td>3</td><td>Strong attack but fragile — standard count.</td></tr>
-          <tr><td>China</td><td>Guerrilla Infantry</td><td>5</td><td>Free unit, weak alone — large start enables stacking strategy.</td></tr>
-          <tr><td>Italy</td><td>Bersaglieri</td><td>3</td><td>Light, fast, cheap — standard count.</td></tr>
-          <tr><td>Japan</td><td>A6M Zero</td><td>2</td><td>Fast & ranged but moderate cost — slightly reduced.</td></tr>
-          <tr><td>England</td><td>Sea Miner</td><td>1</td><td>Fragile, specialized, expensive — small start.</td></tr>
-          <tr><td>France</td><td>Char B1</td><td>2</td><td>Heavy tank, expensive — slightly reduced.</td></tr>
-          <tr><td>All Regional Theaters</td><td>(see Table V)</td><td>1 each</td><td>Reflects limited mobilization at game start.</td></tr>
-        </tbody>
-      </table>
-      <div class="table-footnotes">
-        <div>These counts are a proposed adjustment to the flat dossier value. They are open to playtest revision.</div>
-      </div>
-    </div>
-
-    <div class="page-footer"><span>§ X · Unique Units, Regional</span><span>p. 14</span></div>
-  </div>
-
-  <!-- ============================ SECTION XI — AGENDAS, POLICIES, PLANS ============================ -->
-  <div class="page" id="sec-11">
-    <div class="section-header">
-      <div class="section-number">— SECTION XI —</div>
-      <h2 class="section-title">Agendas, Policies &amp; Historical Plans</h2>
-      <div class="section-kicker">Three cards in every commander's hand — the levers of national strategy beyond the battlefield.</div>
-    </div>
-
-    <p>
-      Beyond units and treasury, each nation holds <strong>three signature cards</strong> representing the deliberate strategic doctrines of its leadership in the 1930s–40s. These are called Agendas, Policies, or Historical Plans depending on their flavor — Germany's Blitzkrieg, the Soviet Scorched Earth doctrine, America's Lend-Lease program, Britain's Convoy Defense, Japan's Bushidō, and so on.
-    </p>
-
-    <h3>How Cards Work</h3>
-    <ol>
-      <li><strong>Activation.</strong> A commander declares a card during the Action Phase and pays its cost. The cost may be money, weapons, units, happiness, or a combination.</li>
-      <li><strong>Effect.</strong> The card's effect resolves immediately or persists for a stated number of turns.</li>
-      <li><strong>Cooldown.</strong> Once played, the card is set aside for a number of turns equal to its <em>cooldown</em>. It cannot be played again until the cooldown expires.</li>
-      <li><strong>Conditional Plans.</strong> Some cards are <em>conditional</em> — they may only be played if a precondition is met (e.g. "must be at war with a Great Power").</li>
-    </ol>
-
-    <h3>Worked Example · Germany's Blitzkrieg</h3>
-
-    <div class="resources">
-      <div class="resource" style="grid-column: 1 / -1;">
-        <div class="resource-icon">⚡</div>
-        <div class="resource-name">Blitzkrieg — Germany</div>
-        <div class="resource-desc" style="margin-top: 8px;">
-          <strong>Cost:</strong> 1 Money per Tank in play, paid at the moment of activation.<br>
-          <strong>Effect:</strong> All German Tanks (Light, Heavy, Tiger) gain <strong>+2 Speed for one turn</strong>.<br>
-          <strong>Cooldown:</strong> 6 turns.<br>
-          <strong>Flavor:</strong> The lightning-war doctrine of armored breakthrough that defined the German campaigns of 1939–1941.
-        </div>
-      </div>
-    </div>
-
-    <div class="draft">
-      <strong>Card Library — In Development.</strong> The full deck of <strong>48 cards</strong> (three per nation × sixteen nations) is still being designed and balanced. Each card will follow the cost / effect / cooldown / condition format above. Future drafts of this rulebook will publish the full list with national flavor text.
-      <br><br>
-      <em>Provisional examples under consideration include:</em>
-      <ul style="margin-top: 8px;">
-        <li><strong>Soviet · Scorched Earth.</strong> Burn the improvements of a region to deny them to an invader. Cost: 5 Money, –10% Happiness. Cooldown: 8 turns.</li>
-        <li><strong>USA · Lend-Lease.</strong> Gift weapons or treasury to an ally. Cost: 15 Money to give 10 Weapons or Treasury. Cooldown: 4 turns.</li>
-        <li><strong>Japan · Bushidō Charge.</strong> All Infantry +2 Attack for one turn; –1 Blood next turn. Cost: free. Cooldown: 6 turns.</li>
-        <li><strong>England · Convoy Defense.</strong> Reveal one enemy naval region per turn for 3 turns. Cost: 5 Money. Cooldown: 5 turns.</li>
-        <li><strong>China · Long March.</strong> Move any number of friendly units 2 regions toward the interior without combat penalty. Cost: –5% Happiness. Cooldown: 10 turns.</li>
-      </ul>
-    </div>
-
-    <div class="briefing">
-      <strong>Regional Policies —</strong> The eight regional theaters also hold three Agenda cards each, often modeling the distinctive resources of their geography (oil in the Middle East, mountains in SE Europe, distance in Oceania, etc.) These card effects compensate for the regions' small statistical starts.
-    </div>
-
-    <div class="page-footer"><span>§ XI · Agendas, Policies & Plans</span><span>p. 16</span></div>
-  </div>
-
-  <!-- ============================ SECTION XII — HISTORICAL EVENTS ============================ -->
-  <div class="page" id="sec-12">
-    <div class="section-header">
-      <div class="section-number">— SECTION XII —</div>
-      <h2 class="section-title">Chronicle of War</h2>
-      <div class="section-kicker">In which the calendar itself becomes a player at the table.</div>
-    </div>
-
-    <p>
-      The world does not pause for the convenience of the commander. <strong>Historical events</strong> are revealed and resolved during the Event Phase of the turn. They may trigger new wars, force diplomatic decisions, change resource trends, or alter the morale of populations.
-    </p>
-
-    <h3>Two Kinds of Event</h3>
-    <p>
-      Events come in two varieties: those that fire <strong>automatically</strong> on their historical date, and those that a commander <strong>may or must play</strong> when its prerequisite conditions have been met. Some events are doomed to occur; others are choices a leader places on the table.
+    <p class="lead">
+      Every nation in <em>The Cruelest Years</em> carries three signatures of its own. <strong>Leader cards</strong> grant one or two named individuals with passive or active abilities. The <strong>Unique Unit Trait</strong> modifies the nation's base units according to its historical industrial specialty. Together these define how the nation feels on the board, and they are the chief source of the game's replayability.
     </p>
 
     <div class="clause">
-      <strong>Playable Events —</strong> An event with prerequisites enters the player's hand once those prerequisites are met. The player may then <em>choose</em> to play it on the appropriate turn — accepting both its benefits and its costs. Some events become <strong>mandatory</strong> if the leader has gained too much of a certain resource or has reached a historical pressure point.
+      <strong>How Leaders Work —</strong> A nation has one to three leader cards drawn from its historical leadership. <em>At the start of the campaign, the player chooses one leader to govern with for the entire game.</em> The choice is binding — there is no swap mid-game except via specific event cards. Leader abilities are tagged <span class="ability-tag passive">PASSIVE</span> (always on), <span class="ability-tag active">ACTIVE</span> (declared on a turn, may have cost and cooldown), or <span class="ability-tag hybrid">HYBRID</span> (a permanent effect plus an activatable component).
     </div>
+
+    <h3>Europe — Nine Powers</h3>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Germany</span><span class="nation-card-region">Europe · Axis</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Adolf Hitler <span class="role">— Führer</span></div>
+          <div class="ability-name">Total War <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Every 4 Factories you control produce +1 extra weapon per turn.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Paul von Hindenburg <span class="role">— Reichspräsident</span></div>
+          <div class="ability-name">War Bond <span class="ability-tag hybrid">Hybrid</span></div>
+          <div class="ability-text">Cities produce +1 treasury (passive). When you train any unit, you may pay 4 gold to reduce its weapon cost by 1.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Tiger Tank's Blitzkrieg</div>
+          <div class="ability-text"><strong>Passive:</strong> All German Tanks gain +1 Attack and +1 HP, but cost +1 Weapon (so 5W / 4HP / 3A).<br><strong>Active (CD 6):</strong> Pay 2 gold per chosen Tank to give those Tanks +2 Speed for one turn.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">United Kingdom</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Winston Churchill <span class="role">— Prime Minister</span></div>
+          <div class="ability-name">Never Surrender <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 1 gold. When one of your military units is being attacked, flip a coin. On heads, damage is reduced by 1. May be triggered multiple times against a single attack. No cooldown.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Neville Chamberlain <span class="role">— Prime Minister</span></div>
+          <div class="ability-name">Appeasement <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">If you did not attack any enemy unit this turn, gain +5 gold and +1 weapon at end of turn.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Sea Surface Minelayers</div>
+          <div class="ability-text">All British Boats gain +2 Attack and lose 1 HP (so 3W / 1HP / 4A — devastating but fragile).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">France</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Charles de Gaulle <span class="role">— Free France</span></div>
+          <div class="ability-name">Free France <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Cities you control outside metropolitan French territory produce +3 treasury.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Édouard Daladier <span class="role">— Prime Minister</span></div>
+          <div class="ability-name">Rearmament Program <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Your Factories produce +1 weapon every 2 turns (i.e., +1 weapon on even-numbered turns).</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Albert Lebrun <span class="role">— President</span></div>
+          <div class="ability-name">Republican Guard <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one Tank in your starting territory. It and all adjacent friendly Tanks gain +2 HP. Cooldown: 12 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Char B1 Heavy Tank</div>
+          <div class="ability-text">All French Tanks gain +1 HP (so 4W / 4HP / 2A).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Italy</span><span class="nation-card-region">Europe · Axis</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Benito Mussolini <span class="role">— Duce</span></div>
+          <div class="ability-name">Battle for Grain <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Training cost of a single Mechanized Infantry is reduced by 1 Population. Cooldown: 1 turn.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Victor Emmanuel III <span class="role">— King</span></div>
+          <div class="ability-name">Royal Decree <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 3 weapons, 2 population. Choose one Mechanized Infantry. Create two additional Mechanized Infantry adjacent to it. Cooldown: 8 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Bersaglieri Motorized Infantry</div>
+          <div class="ability-text">All Italian Mechanized Infantry gain +1 Speed and pay 1 less Fee per turn (so 2W / 1HP / 1A / Speed 4 / Fee 1).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>§ VIII · Leaders & Unique Units</span><span>p. 10</span></div>
+  </div>
+
+  <!-- ============================ SECTION VIII — CONT. (Europe rest + Soviet + East) ============================ -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-number">— SECTION VIII · CONT. —</div>
+      <h2 class="section-title">Leaders &amp; Unique Units</h2>
+      <div class="section-kicker">The Soviet Union, the eastern flanks, and the remaining European powers.</div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Soviet Union</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Joseph Stalin <span class="role">— General Secretary</span></div>
+          <div class="ability-name">Collectivization <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">On even-numbered turns, your cities produce +2 extra gold.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Vyacheslav Molotov <span class="role">— Foreign Minister</span></div>
+          <div class="ability-name">Non-Aggression Pact <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 5 gold. Choose one enemy unit. It cannot attack your units this turn. Cooldown: 5 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — T-34 Tank</div>
+          <div class="ability-text">All Soviet Tanks cost 1 fewer Weapon to train (so 3W / 3HP / 2A — the most cost-efficient tank in the game).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Poland</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Władysław Sikorski <span class="role">— PM in Exile</span></div>
+          <div class="ability-name">Government-in-Exile <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Whenever an enemy unit enters your territory, gain +1 treasury.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Ignacy Mościcki <span class="role">— President</span></div>
+          <div class="ability-name">Emergency Conscription <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one city in your starting territory. Each adjacent enemy unit takes 1 damage. Cooldown: 5 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Armia Krajowa</div>
+          <div class="ability-text">All Polish Infantry stationed in Polish territory gain +1 HP and pay 1 less Fee per turn (so 1W / 2HP / 1A / Fee 0 — free home-front infantry).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Southeastern Europe</span><span class="nation-card-region">Europe · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Josip Broz Tito <span class="role">— Partisan Leader</span></div>
+          <div class="ability-name">Brotherhood &amp; Unity <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">When an enemy unit is destroyed in your territory (by any cause), flip a coin. On tails, gain +1 weapon.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">King Michael I <span class="role">— King of Romania</span></div>
+          <div class="ability-name">Royal Coup <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one enemy unit adjacent to your Infantry. It takes 1 damage and cannot move during its owner's next turn. Cooldown: 7 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Partisan Fighter</div>
+          <div class="ability-text">All Southeastern Infantry gain +1 Speed and pay 1 less Fee per turn (so 1W / 1HP / 1A / Speed 3 / Fee 0).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Northern Europe</span><span class="nation-card-region">Europe · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">King Haakon VII <span class="role">— King of Norway</span></div>
+          <div class="ability-name">Government in Exile <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">For every city captured from you by another power, you gain +1 population and +3 gold per turn. You may move your capital city with one of your military units.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Risto Ryti <span class="role">— President of Finland</span></div>
+          <div class="ability-name">Winter War Diplomacy <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">If you control fewer cities than any adjacent player, your cities produce +1 treasury per turn.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Ski Trooper</div>
+          <div class="ability-text">All Northern Mechanized Infantry pay +2 Population but -2 Weapon to train (so 0W / 3P / 1HP / 1A — useful when weapons are scarce).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Iberian Peninsula</span><span class="nation-card-region">Europe · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Francisco Franco <span class="role">— Caudillo of Spain</span></div>
+          <div class="ability-name">Nationalist Consolidation <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">+2 population per turn.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">António de Oliveira Salazar <span class="role">— PM of Portugal</span></div>
+          <div class="ability-name">Neutrality Act <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">If you did not attack any unit this turn, gain +2 weapons.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Tercio Legionnaire</div>
+          <div class="ability-text">All Iberian Mechanized Infantry cost +1 Weapon and gain +1 HP and +1 Attack (so 3W / 2HP / 2A — heavy and expensive).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>§ VIII · Leaders & Unique Units</span><span>p. 11–12</span></div>
+  </div>
+
+  <!-- ============================ SECTION VIII — CONT. (Asia + Americas + Oceania + ME) ============================ -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-number">— SECTION VIII · CONT. —</div>
+      <h2 class="section-title">Leaders &amp; Unique Units</h2>
+      <div class="section-kicker">Asia, the Pacific, and the wider world.</div>
+    </div>
+
+    <h3>Asia — Two Powers</h3>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">China</span><span class="nation-card-region">Asia · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Mao Zedong <span class="role">— CCP Chairman</span></div>
+          <div class="ability-name">Battle of Chishui River <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">All Chinese Infantry and Mechanized Infantry gain +1 Speed for 1 turn. Cooldown: 2 turns.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Chiang Kai-shek <span class="role">— KMT Generalissimo</span></div>
+          <div class="ability-name">Nationalist Conscription <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">When you train Infantry, flip a coin. On heads, gain 2 gold.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Guerrilla Infantry</div>
+          <div class="ability-text">All Chinese Infantry cost 1 less Weapon and gain +1 Speed (so 0W / 1HP / 1A / Speed 3 — the cheapest, fastest infantry in the game).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Japan</span><span class="nation-card-region">Asia · Axis</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Emperor Hirohito <span class="role">— Emperor</span></div>
+          <div class="ability-name">Imperial Rescript <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Once per turn, when one of your units is destroyed, flip a coin. On heads, the enemy unit that destroyed it takes 1 damage.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — MXY-7 Sakura</div>
+          <div class="ability-text">Once per turn, you may choose any number of Japanese Planes to gain +1 Attack for the attack — but each Plane so chosen crashes (is destroyed) immediately after its attack resolves.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>North America &amp; The Wider World</h3>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">United States</span><span class="nation-card-region">N. America · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Franklin D. Roosevelt <span class="role">— President</span></div>
+          <div class="ability-name">Arsenal of Democracy <span class="ability-tag hybrid">Hybrid</span></div>
+          <div class="ability-text"><strong>Passive:</strong> +1 weapon and +3 gold per turn.<br><strong>Active:</strong> When training a unit, pay +1 gold to skip its 1-turn training time (the unit may act immediately).</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Harry S. Truman <span class="role">— Vice/President</span></div>
+          <div class="ability-name">Truman Doctrine <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 5 gold. Choose up to 2 allied players. Each gains +2 gold and +1 weapon. Cooldown: 5 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Trench-Gun Infantry</div>
+          <div class="ability-text">All American Infantry gain +1 Attack (so 1W / 1HP / 2A — the deadliest standard infantry in the game).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">South America</span><span class="nation-card-region">Americas · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Getúlio Vargas <span class="role">— President of Brazil</span></div>
+          <div class="ability-name">Import Substitution <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Once per turn, your Mechanized Infantry and Tanks cost 1 less Weapon to train, but their maintenance Fee is +3 gold for as long as they remain on the board.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Juan Perón <span class="role">— President of Argentina</span></div>
+          <div class="ability-name">Justicialist Rally <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 3 gold. Choose one city. It produces +2 population next turn. If an enemy unit is adjacent to that city, it produces +2 weapons instead. Cooldown: 4 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Gauchos</div>
+          <div class="ability-text">South American Mechanized Infantry in South America gain +1 Attack, +1 Speed, and cost +1 Weapon (so 3W / 1HP / 2A / Speed 4).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Africa</span><span class="nation-card-region">Africa · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">J.B.M. Hertzog <span class="role">— PM of South Africa</span></div>
+          <div class="ability-name">Union Defence <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">All Infantry in your territory gain +1 Attack on odd-numbered turns.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Haile Selassie <span class="role">— Emperor of Ethiopia</span></div>
+          <div class="ability-name">League of Nations Appeal <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one enemy unit adjacent to your Infantry. It takes 1 damage and its Attack is reduced by 1 until your next turn. Cooldown: 4 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Askari Corps</div>
+          <div class="ability-text">All African Infantry gain +1 HP and pay 1 less Fee per turn (so 1W / 2HP / 1A / Fee 0).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Oceania</span><span class="nation-card-region">Pacific · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">John Curtin <span class="role">— PM of Australia</span></div>
+          <div class="ability-name">Pacific Pact <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">All friendly Boats (your own and your allies') gain +1 Speed on odd-numbered turns.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Peter Fraser <span class="role">— PM of New Zealand</span></div>
+          <div class="ability-name">Island Hopping Coordination <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 3 gold. Choose one Infantry. It gains +1 Attack and +1 HP for every friendly military unit adjacent to it. Cooldown: 99 turns (effectively once per game).</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Diggers</div>
+          <div class="ability-text">Oceanian Infantry in Oceania gain +1 Attack, +1 HP, and pay +1 Fee per turn (so 1W / 2HP / 2A / Fee 2 — pricey but very tough on home soil).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Middle East</span><span class="nation-card-region">Middle East · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Mustafa Kemal Atatürk <span class="role">— President of Turkey</span></div>
+          <div class="ability-name">Kemalist Reforms <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">+1 population per turn. Infantry that complete training gain +1 Attack on the turn they finish training.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Reza Shah Pahlavi <span class="role">— Shah of Iran</span></div>
+          <div class="ability-name">Persian Oil Concessions <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">No cost. Gain +10 gold. Cooldown: 1 turn.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Desert Cavalry</div>
+          <div class="ability-text">All Middle Eastern Mechanized Infantry in the Middle East cost 1 less Weapon and gain +1 Speed (so 1W / 1HP / 1A / Speed 4).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <strong>Balance Note —</strong> Some abilities listed above are visibly stronger than others (notably <em>Persian Oil Concessions</em>, <em>Arsenal of Democracy</em>, and the long-cooldown <em>Island Hopping Coordination</em>). The intention is for the weaker-nation cards to compensate via the multi-region campaign system — but these values are open to playtest revision and should be considered <strong>provisional</strong>.
+    </div>
+
+    <div class="page-footer"><span>§ VIII · Leaders & Unique Units</span><span>p. 13–15</span></div>
+  </div>
+
+  <!-- ============================ SECTION IX — AGENDAS ============================ -->
+  <div class="page" id="sec-9">
+    <div class="section-header">
+      <div class="section-number">— SECTION IX —</div>
+      <h2 class="section-title">Agendas, Policies &amp; Historical Plans</h2>
+      <div class="section-kicker">A small deck of strategic doctrines layered on top of leader cards. Still in design.</div>
+    </div>
+
+    <p>
+      Beyond their leader cards and unit traits, each nation will hold <strong>three Agenda cards</strong> representing the deliberate strategic doctrines of its wartime leadership. These are <em>not</em> required for play — the streamlined edition is complete without them — but they add a second layer of strategy and are the home for the more flavourful national mechanics (food policy, mobilization edicts, alliance frameworks, etc.).
+    </p>
+
+    <h3>How a Card Works</h3>
+    <ol>
+      <li><strong>Activation.</strong> Declare during the Leader Phase. Pay any cost in gold, weapons, population, or units.</li>
+      <li><strong>Effect.</strong> Resolve immediately, or persist for the stated number of turns.</li>
+      <li><strong>Cooldown.</strong> Once played, set the card aside for its stated cooldown.</li>
+      <li><strong>Conditional Plans.</strong> Some cards may only be played if a precondition is met (e.g. "must be at war with a Great Power").</li>
+    </ol>
+
+    <h3>Worked Example · Germany's Blitzkrieg</h3>
+    <p>
+      Germany's Tiger Tank trait already grants +2 Speed as an active ability with cooldown 6 (§ VIII). The Agenda card layer extends this idea to other doctrines.
+    </p>
+
+    <div class="draft">
+      <strong>Card Library — In Development.</strong> The full deck of <strong>48 cards</strong> (three per nation × sixteen nations) is still being designed and balanced. Each card will follow the cost / effect / cooldown / condition format above. Provisional drafts under consideration include:
+      <ul style="margin-top: 8px;">
+        <li><strong>Soviet · Scorched Earth.</strong> Burn the improvements of a region to deny them to an invader. Cost: 5 gold. Cooldown: 8 turns.</li>
+        <li><strong>USA · Lend-Lease.</strong> Gift weapons or treasury to an ally. Cost: 15 gold to give 10 weapons or 10 treasury. Cooldown: 4 turns.</li>
+        <li><strong>Japan · Bushidō Charge.</strong> All Infantry +2 Attack for one turn; –1 HP next turn. Cost: free. Cooldown: 6 turns.</li>
+        <li><strong>UK · Convoy Defense.</strong> Reveal one enemy naval region per turn for 3 turns. Cost: 5 gold. Cooldown: 5 turns.</li>
+        <li><strong>China · Long March.</strong> Move any number of friendly units 2 tiles toward the interior without combat penalty. Cost: free. Cooldown: 10 turns.</li>
+      </ul>
+    </div>
+
+    <div class="page-footer"><span>§ IX · Agendas & Plans</span><span>p. 16</span></div>
+  </div>
+
+  <!-- ============================ SECTION X — CHRONICLE ============================ -->
+  <div class="page" id="sec-10">
+    <div class="section-header">
+      <div class="section-number">— SECTION X —</div>
+      <h2 class="section-title">Chronicle of War</h2>
+      <div class="section-kicker">A small deck of historical events that fires on calendar dates. Optional for the streamlined game.</div>
+    </div>
+
+    <p>
+      An optional Historical Events deck reflects the real calendar of the war — events that altered alliances, opened fronts, or forced decisions. Some events fire automatically on their historical date; others must be <em>played</em> by a commander whose prerequisite conditions have been met.
+    </p>
 
     <h3>Three Hinges of History</h3>
     <p>
-      Among the dozens of events in the deck, three are weighted as <strong>decision points</strong> — moments at which a single different choice could have changed the entire course of the war. Each is presented to the relevant players with a choice, and the cost of the choice ripples through the rest of the game.
+      Three events are weighted as <strong>decision points</strong> — moments where a different choice could have changed the rest of the war.
     </p>
 
     <div class="decisions">
@@ -1892,170 +2070,177 @@
       </div>
     </div>
 
-    <div class="briefing">
-      <strong>Replayability —</strong> Because the events deck branches on player choices and on the state of the board, no two games unfold in the same way. The same hinge may produce alliance, betrayal, or stalemate depending on what the table has already done.
+    <div class="draft">
+      <strong>Events Deck — In Development.</strong> The full deck (target ~30 events spanning 1935–1945) is still being designed. Each event will list a trigger date, a precondition (if any), and a resolution effect. The streamlined game plays cleanly without the deck; events are an optional layer for groups that want a longer, more historically textured campaign.
     </div>
 
-    <div class="page-footer"><span>§ XII · Chronicle of War</span><span>p. 17</span></div>
+    <div class="page-footer"><span>§ X · Chronicle of War</span><span>p. 17</span></div>
   </div>
 
-  <!-- ============================ SECTION XIII — CAMPAIGN SCENARIOS ============================ -->
-  <div class="page" id="sec-13">
+  <!-- ============================ SECTION XI — CAMPAIGN SCENARIOS ============================ -->
+  <div class="page" id="sec-11">
     <div class="section-header">
-      <div class="section-number">— SECTION XIII —</div>
+      <div class="section-number">— SECTION XI —</div>
       <h2 class="section-title">Campaign Scenarios</h2>
-      <div class="section-kicker">The full ten-year war is the flagship campaign. Theatre modules cut the world into smaller, faster engagements for a single sitting.</div>
+      <div class="section-kicker">The full world war, or a smaller theatre. The same rulebook, scaled to the time you have.</div>
     </div>
 
     <p>
-      <em>The Cruelest Years</em> is built around the complete <strong>120-turn global campaign</strong>, but few groups have ten hours to spare. The scenarios below are <strong>theatre modules</strong> — pre-defined slices of the war with a fixed roster of belligerents, a fixed start and end month, and a recommended player count. Each module is balanced to be playable in a single sitting while preserving the asymmetric stakes that make the full game work.
+      <em>The Cruelest Years</em> is built around the global campaign, but few groups have ten hours to spare. Each scenario below is a self-contained module — a fixed roster of belligerents, a fixed start month, and a recommended player count. The same rulebook applies; only the map and the victory threshold change.
     </p>
 
-    <div class="briefing">
-      <strong>How to Read a Scenario —</strong> Each card below lists the <em>active belligerents</em> (the playable nations), the <em>regional wildcards</em> (controlled by the rules or by additional players if available), the <em>turn range</em> (start month → end month), the <em>player count</em>, and a one-line strategic premise. Use the National Dossier values in § IV unchanged, but restrict play to the listed nations.
+    <h3>Victory Thresholds by Theatre</h3>
+    <p>The territories required for victory in each theatre. When multiple theatres are played together, sum the thresholds.</p>
+    <div class="win-conditions">
+      <div class="win-card">
+        <div class="win-card-scope">World</div>
+        <div class="win-card-total">41 total</div>
+        <div class="win-line"><span>Solo</span><span class="num">21</span></div>
+        <div class="win-line"><span>Team</span><span class="num">28</span></div>
+      </div>
+      <div class="win-card">
+        <div class="win-card-scope">European</div>
+        <div class="win-card-total">21 total</div>
+        <div class="win-line"><span>Solo</span><span class="num">12</span></div>
+        <div class="win-line"><span>Team</span><span class="num">15</span></div>
+      </div>
+      <div class="win-card">
+        <div class="win-card-scope">Asian</div>
+        <div class="win-card-total">11 total</div>
+        <div class="win-line"><span>Solo</span><span class="num">6</span></div>
+        <div class="win-line"><span>Team</span><span class="num">8</span></div>
+      </div>
     </div>
 
     <h3>The Flagship · The Full War</h3>
-
     <div class="resources">
       <div class="resource" style="grid-column: 1 / -1;">
         <div class="resource-icon">★</div>
         <div class="resource-name">The Cruelest Years — Full Campaign</div>
         <div class="resource-desc" style="margin-top: 8px;">
-          <strong>Belligerents:</strong> All 8 Great Powers, all 8 Regional Theatres.<br>
+          <strong>Belligerents:</strong> All 16 powers.<br>
           <strong>Turns:</strong> Oct 1935 → Sep 1945 (120 turns).<br>
-          <strong>Players:</strong> 4 – 8 (one per Great Power, regional theatres as wildcards or extra seats).<br>
-          <strong>Premise:</strong> The whole second world war, fought from the Italian invasion of Ethiopia to the Japanese surrender. The intended deep experience.
+          <strong>Players:</strong> 4 – 8 (regional powers as wildcards or extra seats).<br>
+          <strong>Win:</strong> Solo 21/41, Team 28/41.<br>
+          <strong>Premise:</strong> The whole second world war. The intended deep experience.
         </div>
       </div>
     </div>
 
-    <h3>Theatre Modules · The Five Shorter Campaigns</h3>
+    <h3>Theatre Modules · Five Shorter Campaigns</h3>
 
     <div class="resources">
       <div class="resource">
         <div class="resource-icon">⚔</div>
-        <div class="resource-name">I. The Western Front</div>
+        <div class="resource-name">I. The European War</div>
         <div class="resource-desc" style="margin-top: 8px;">
-          <strong>Belligerents:</strong> England + France (+ optional Soviet) <em>vs.</em> Germany + Italy.<br>
-          <strong>Wildcards:</strong> Northern Europe, Iberian, SE Europe.<br>
+          <strong>Belligerents:</strong> Germany, UK, France, Italy, Soviet, Poland, SE Europe, N. Europe, Iberian.<br>
           <strong>Turns:</strong> Sep 1939 → May 1945 (~68 turns).<br>
-          <strong>Players:</strong> 2 – 5.<br>
-          <strong>Premise:</strong> The European war as the Allies originally fought it — invasion, occupation, liberation.
+          <strong>Players:</strong> 3 – 9.<br>
+          <strong>Win:</strong> Solo 12/21, Team 15/21.<br>
+          <strong>Premise:</strong> Europe alone — no Pacific, no American mainland.
         </div>
       </div>
       <div class="resource">
         <div class="resource-icon">⌖</div>
-        <div class="resource-name">II. The Pacific Theatre</div>
+        <div class="resource-name">II. The Asian Theatre</div>
         <div class="resource-desc" style="margin-top: 8px;">
-          <strong>Belligerents:</strong> Japan <em>vs.</em> China + USA + British India + Oceania.<br>
-          <strong>Wildcards:</strong> South America, Middle East (oil supply).<br>
-          <strong>Turns:</strong> Jul 1937 → Sep 1945 (~98 turns) — or start at Dec 1941 (Pearl Harbor) for a ~45-turn version.<br>
-          <strong>Players:</strong> 2 – 5 (China benefits from the <em>Two Chinas</em> rule, § III).<br>
-          <strong>Premise:</strong> Empire and resistance across the Pacific basin. The widest map.
+          <strong>Belligerents:</strong> Japan, China.<br>
+          <strong>Wildcards:</strong> Oceania, Middle East.<br>
+          <strong>Turns:</strong> Jul 1937 → Sep 1945 (~98 turns) — or start at Dec 1941 for a ~45-turn version.<br>
+          <strong>Players:</strong> 2 – 4 (China benefits from the <em>Two Chinas</em> rule, § III).<br>
+          <strong>Win:</strong> Solo 6/11, Team 8/11.
         </div>
       </div>
     </div>
 
     <div class="resources">
       <div class="resource">
-        <div class="resource-icon">⚜</div>
-        <div class="resource-name">III. The European War</div>
+        <div class="resource-icon">❄</div>
+        <div class="resource-name">III. The Eastern Front</div>
         <div class="resource-desc" style="margin-top: 8px;">
-          <strong>Belligerents:</strong> Soviet, Germany, England, France, Italy.<br>
-          <strong>Wildcards:</strong> Northern Europe, Iberian, SE Europe.<br>
-          <strong>Turns:</strong> Sep 1939 → May 1945 (~68 turns).<br>
-          <strong>Players:</strong> 4 – 8.<br>
-          <strong>Premise:</strong> Europe alone — no Pacific, no American mainland. The continent decides its own fate.
+          <strong>Belligerents:</strong> Soviet Union vs. Germany.<br>
+          <strong>Wildcards:</strong> SE Europe (Finland, Romania, Hungary as German co-belligerents); Poland (occupied at start).<br>
+          <strong>Turns:</strong> Jun 1941 → May 1945 (~48 turns).<br>
+          <strong>Players:</strong> 2 – 4.<br>
+          <strong>Win:</strong> Subset of European thresholds — first player to hold 8 territories wins.
         </div>
       </div>
       <div class="resource">
-        <div class="resource-icon">❄</div>
-        <div class="resource-name">IV. The Eastern Front</div>
+        <div class="resource-icon">☼</div>
+        <div class="resource-name">IV. The Mediterranean Campaign</div>
         <div class="resource-desc" style="margin-top: 8px;">
-          <strong>Belligerents:</strong> Soviet Union <em>vs.</em> Germany.<br>
-          <strong>Wildcards:</strong> SE Europe (Finland, Romania, Hungary as German co-belligerents).<br>
-          <strong>Turns:</strong> Jun 1941 → May 1945 (~48 turns).<br>
+          <strong>Belligerents:</strong> Italy + Germany vs. UK + France.<br>
+          <strong>Wildcards:</strong> Africa, Middle East, Iberian.<br>
+          <strong>Turns:</strong> Jun 1940 → Sep 1943 (~40 turns).<br>
           <strong>Players:</strong> 2 – 4.<br>
-          <strong>Premise:</strong> The largest land war in history, played head-to-head. Brutal, attritional, asymmetric.
+          <strong>Premise:</strong> Desert war, blockade, and the contest for Suez.
         </div>
       </div>
     </div>
 
     <div class="resources">
       <div class="resource" style="grid-column: 1 / -1;">
-        <div class="resource-icon">☼</div>
-        <div class="resource-name">V. The Mediterranean Campaign</div>
+        <div class="resource-icon">▲</div>
+        <div class="resource-name">V. The Open Bout (Quickplay)</div>
         <div class="resource-desc" style="margin-top: 8px;">
-          <strong>Belligerents:</strong> Italy + Germany <em>vs.</em> England + France.<br>
-          <strong>Wildcards:</strong> Africa, Middle East, Iberian (as bystander or co-belligerent).<br>
-          <strong>Turns:</strong> Jun 1940 → Sep 1943 (~40 turns).<br>
-          <strong>Players:</strong> 2 – 4.<br>
-          <strong>Premise:</strong> Desert war, naval blockade, and the contest for Suez. The shortest module on offer.
+          <strong>Belligerents:</strong> Any 2 powers, agreed by the table.<br>
+          <strong>Turns:</strong> 12 (one in-game year).<br>
+          <strong>Players:</strong> 2.<br>
+          <strong>Win:</strong> Whoever holds the most territory at the end of the year. Tied? Whoever has the higher (Population + Treasury) total.<br>
+          <strong>Premise:</strong> Tutorial-length introduction. Use for first plays.
         </div>
       </div>
     </div>
 
-    <h3>The Open Bout · For Quick Games</h3>
-
-    <p>
-      For tables with less than two hours: pick any two nations, agree on a starting month, and play for <strong>12 turns</strong> (one in-game year). National Dossiers begin at their § IV values but adjusted to the chosen month (growth values applied). The winner is whoever holds the most territory at the end of the year — or whoever has not yet collapsed into Revolution.
-    </p>
-
     <div class="briefing">
-      <strong>Designer's Note —</strong> The theatre modules are intentionally lighter on the events deck. Some historical events from the full campaign are pre-resolved (e.g. Pearl Harbor is assumed to have happened in the Pacific module, the Non-Aggression Pact is assumed to be already broken in the Eastern Front module). Each module ships with a smaller, focused events deck rather than the full sixty-event chronicle.
+      <strong>Designer's Note —</strong> Theatre modules are <em>not</em> miniature versions of the full game; they are real campaigns at smaller scale. Each ships with its own subset of the events deck (Pearl Harbor is pre-resolved in the Pacific module, etc.) and its own balance adjustments. The full 120-turn flagship is the only way to feel the strategic linkage between fronts — Stalingrad relieving Britain, Pearl Harbor dragging America into Europe.
     </div>
 
-    <div class="warning">
-      <strong>What Theatre Modules Will Not Do —</strong> A theatre module cannot show the strategic linkage between fronts — the way Stalingrad relieves pressure on Britain, the way Pearl Harbor pulls American industry into Europe. For the full second-order experience, only the flagship 120-turn campaign delivers. Theatre modules are an introduction and a quick fix, not a substitute.
-    </div>
-
-    <div class="page-footer"><span>§ XIII · Campaign Scenarios</span><span>p. 18–19</span></div>
+    <div class="page-footer"><span>§ XI · Campaign Scenarios</span><span>p. 18–19</span></div>
   </div>
 
-  <!-- ============================ SECTION XIV — DESIGNER'S NOTES ============================ -->
-  <div class="page" id="sec-14">
+  <!-- ============================ SECTION XII — DESIGNER'S NOTES ============================ -->
+  <div class="page" id="sec-12">
     <div class="section-header">
-      <div class="section-number">— SECTION XIV —</div>
+      <div class="section-number">— SECTION XII —</div>
       <h2 class="section-title">Designer's Field Notes</h2>
       <div class="section-kicker">A candid record of the questions every wargame about this war must answer.</div>
     </div>
 
     <p class="lead">
-      No game set in the years 1935–1945 can be made innocently. The designer of <em>The Cruelest Years</em> wrote down the questions below before placing a single counter on the board. They are reproduced here so that every commander who plays the game knows what was being attempted, and what was being refused.
+      No game set in the years 1935–1945 can be made innocently. The designer of <em>The Cruelest Years</em> wrote down the questions below before placing a single counter on the board, and revisits them with every edition of the rulebook. They are reproduced here so that every commander who plays the game knows what was being attempted, and what was being refused.
     </p>
 
     <div class="qa">
       <div class="qa-question">What historical event are you considering?</div>
-      <div class="qa-answer">The Second World War, from the Italian invasion of Ethiopia in October 1935 to the Japanese surrender in September 1945.</div>
+      <div class="qa-answer">The Second World War, from the Italian invasion of Ethiopia in October 1935 to the Japanese surrender in September 1945. 120 turns of one month each.</div>
 
       <div class="qa-question">What is the central conflict or tension?</div>
-      <div class="qa-answer">Growing imperialism, colonialism, and nationalism produced overlapping conflicts of land, money, and prestige between countries throughout the world. The war was the spillover of those appetites.</div>
+      <div class="qa-answer">Growing imperialism, colonialism, and nationalism produced overlapping conflicts of land, money, and prestige between countries throughout the world. In the streamlined edition the central tension is operationalized as a contest for <em>territory</em> — the soil your nation can hold at the end of the war.</div>
 
-      <div class="qa-question">Who are the major players — winners, losers, and those affected but not directly involved?</div>
+      <div class="qa-question">Who are the major players?</div>
       <div class="qa-answer">
-        <strong>Winners — the Allies:</strong> the United States, the Soviet Union, France, England, China, and others.<br>
-        <strong>Losers — the Axis:</strong> Germany, Italy, Japan, and their co-belligerents.<br>
-        <strong>Others affected:</strong> the smaller European and Asian states caught between the great powers, the colonies, and the civilian populations of every nation.
+        Sixteen nations, weighted to the European and Asian theatres where the war was fought hardest. Nine European powers; two Asian; five distributed across the Americas, Africa, the Pacific, and the Middle East. Each nation carries one or more named historical leaders.
       </div>
 
       <div class="qa-question">What was at stake?</div>
-      <div class="qa-answer">At the level of leaders, the stake was land, money, and power. At the level of populations, the stake was survival — of cities, of families, of national identity, and in many cases of life itself.</div>
+      <div class="qa-answer">At the level of leaders, the stake was land, money, and power. At the level of populations, the stake was survival. The streamlined game expresses this as the simple, brutal question: <em>who holds the ground when the smoke clears?</em></div>
 
       <div class="qa-question">Is there one moment where a different decision could have changed everything?</div>
-      <div class="qa-answer">There are several. The game treats three as formal decision points: the German – Soviet Non-Aggression Pact, the German invasion of the Soviet Union, and the Japanese attack on Pearl Harbor.</div>
+      <div class="qa-answer">There are several. The game's optional events deck (§ X) treats three as formal decision points: the German – Soviet Non-Aggression Pact, the German invasion of the Soviet Union, and the Japanese attack on Pearl Harbor.</div>
 
-      <div class="qa-question">Why does the event work as a game?</div>
-      <div class="qa-answer">Because it teaches players to feel the second-order consequences of their choices. With many interacting systems — military, industrial, demographic, monetary, diplomatic — every game produces a different war. The lesson is not which side won; the lesson is how the choices accumulate.</div>
+      <div class="qa-question">Why does the game work?</div>
+      <div class="qa-answer">Because the asymmetry is real. Sixteen leader pools, sixteen unit traits, four theatres, and a coin-flip turn-direction at game start mean every campaign tells a different story. The streamlined rules keep the moving parts few; the variety lives in the cards, not the bookkeeping.</div>
 
       <div class="qa-question">What could go wrong?</div>
-      <div class="qa-answer">The hardest design problem is how to represent the genuine brutality of the Axis regimes — atrocities, occupation, genocide — without sanitizing them and without turning them into entertainment. The game does not allow these acts to be "performed" as moves; it represents their costs as fixed historical penalties and through the events deck.</div>
+      <div class="qa-answer">Two persistent design problems. <strong>First</strong>, the brutality of the Axis regimes — atrocities, occupation, genocide — cannot be performed as moves and is not present mechanically. The streamlined game represents the cost only through territory loss and historical events. <strong>Second</strong>, balance: some leader cards are visibly stronger than others (FDR, Reza Shah, Hindenburg) and will require playtest revision. The current solution is the team-victory mechanic, which lets weaker neighbours combine against a strong central power.</div>
 
       <div class="qa-question">Is it ethical for this to be a board game?</div>
-      <div class="qa-answer">The event is ethical to use as a game so long as the approach is comprehensive and educational — to learn from history's mistakes, not to re-enact them as spectacle. The rulebook, the events deck, and the designer's notes are written with that intention.</div>
+      <div class="qa-answer">The event is ethical to use as a game so long as the approach is comprehensive and educational — to learn from history's mistakes, not to re-enact them as spectacle. The rulebook, the events deck, and these designer's notes are written with that intention.</div>
     </div>
 
-    <div class="page-footer"><span>§ XIV · Designer's Field Notes</span><span>p. 20</span></div>
+    <div class="page-footer"><span>§ XII · Designer's Field Notes</span><span>p. 20</span></div>
   </div>
 
   <!-- ============================ COLOPHON ============================ -->
@@ -2069,11 +2254,11 @@
       <div class="cover-rule"></div>
 
       <div style="margin-top: 40px;">
-        <div class="stamp stamp-olive" style="position: static; display: inline-block; transform: rotate(-2deg);">Filed · WD Archive · Edition III</div>
+        <div class="stamp stamp-olive" style="position: static; display: inline-block; transform: rotate(-2deg);">Filed · WD Archive · Edition IV</div>
       </div>
     </div>
 
-    <div class="page-footer"><span>The Cruelest Years · Edition III</span><span>Colophon · End</span></div>
+    <div class="page-footer"><span>The Cruelest Years · Edition IV</span><span>Colophon · End</span></div>
   </div>
 
 </div>
