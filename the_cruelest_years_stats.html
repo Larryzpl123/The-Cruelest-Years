@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cruelest Years — Official Field Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Special+Elite&family=Oswald:wght@400;500;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #e6d5b8;
+    --paper-deep:   #d4c19c;
+    --paper-edge:   #b8a37a;
+    --ink:          #1f1812;
+    --ink-faded:    #4a3a2a;
+    --olive:        #4a5a3a;
+    --olive-deep:   #3d4a2f;
+    --olive-dark:   #2a3320;
+    --khaki:        #8b7355;
+    --blood:        #8b1a1a;
+    --blood-deep:   #5e0f0f;
+    --rust:         #a64925;
+    --gold:         #b08842;
+    --shadow:       rgba(31, 24, 18, 0.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    color: var(--ink);
+    line-height: 1.7;
+    background:
+      radial-gradient(ellipse at top left,    rgba(74, 90, 58, 0.18), transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(139, 26, 26, 0.10), transparent 55%),
+      linear-gradient(180deg, #d8c498 0%, #c9b585 50%, #b8a275 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.12 0 0 0 0 0.08 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  .manual { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
+
+  .page {
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(160, 130, 90, 0.25), transparent 40%),
+      radial-gradient(ellipse at 80% 80%, rgba(80, 60, 40, 0.18), transparent 50%),
+      radial-gradient(circle at 10% 90%, rgba(139, 26, 26, 0.06), transparent 25%);
+    border: 1px solid var(--paper-edge);
+    box-shadow:
+      0 30px 60px var(--shadow),
+      0 10px 20px rgba(0,0,0,0.2),
+      inset 0 0 80px rgba(120, 90, 55, 0.25),
+      inset 0 0 120px rgba(60, 45, 30, 0.15);
+    padding: 70px 80px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.18 0 0 0 0.25 0'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  .page::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle at center, rgba(110, 75, 35, 0.25), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page > * { position: relative; z-index: 2; }
+
+  /* === COVER PAGE === */
+  .cover {
+    text-align: center;
+    padding: 100px 60px 90px;
+    border: 3px double var(--olive-dark);
+    position: relative;
+  }
+
+  .cover-inner-border {
+    position: absolute;
+    inset: 18px;
+    border: 1px solid var(--olive-deep);
+    pointer-events: none;
+  }
+
+  .cover-classification {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: var(--blood);
+    border-top: 2px solid var(--blood);
+    border-bottom: 2px solid var(--blood);
+    padding: 8px 0;
+    margin-bottom: 60px;
+    font-weight: 700;
+  }
+
+  .cover-eagle {
+    font-size: 70px;
+    line-height: 1;
+    color: var(--olive-dark);
+    margin: 0 0 30px;
+    filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.15));
+  }
+
+  .cover h1 {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 0.95;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+    text-shadow: 3px 3px 0 rgba(139, 26, 26, 0.18);
+    text-transform: uppercase;
+  }
+
+  .cover h1 .the {
+    display: block;
+    font-size: 32px;
+    letter-spacing: 0.6em;
+    margin-bottom: 18px;
+    color: var(--olive-deep);
+    text-shadow: none;
+  }
+
+  .cover-subtitle {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-faded);
+    margin: 30px 0 50px;
+    line-height: 1.4;
+  }
+
+  .cover-rule {
+    width: 200px;
+    height: 1px;
+    background: var(--olive-deep);
+    margin: 30px auto;
+    position: relative;
+  }
+  .cover-rule::before, .cover-rule::after {
+    content: "★";
+    position: absolute;
+    top: -11px;
+    color: var(--olive-deep);
+    font-size: 16px;
+  }
+  .cover-rule::before { left: -25px; }
+  .cover-rule::after  { right: -25px; }
+
+  .cover-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+    margin: 50px 0 20px;
+  }
+  .cover-tagline span { display: inline-block; padding: 0 12px; }
+
+  .cover-meta {
+    margin-top: 60px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--olive-deep);
+    line-height: 2;
+  }
+  .cover-meta strong { color: var(--blood); }
+
+  .stamp {
+    position: absolute;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: 4px double currentColor;
+    padding: 8px 18px;
+    text-transform: uppercase;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.78;
+    box-shadow: inset 0 0 0 1px currentColor;
+  }
+  .stamp-red    { color: var(--blood); transform: rotate(-12deg); }
+  .stamp-olive  { color: var(--olive-dark); transform: rotate(7deg); }
+  .stamp-classified { top: 30px; right: 30px; font-size: 22px; }
+  .stamp-approved   { bottom: 50px; left: 40px; font-size: 18px; }
+  .stamp-archive {
+    bottom: 90px; right: 60px; font-size: 14px;
+    transform: rotate(-3deg); color: var(--ink-faded);
+    border-style: solid; border-width: 2px;
+  }
+  .stamp-revised {
+    top: 40px; left: 30px;
+    font-size: 18px;
+    color: var(--rust);
+    transform: rotate(-5deg);
+    border-style: solid;
+    border-width: 3px;
+  }
+
+  /* === SECTION HEADERS === */
+  .section-header {
+    margin: 70px 0 40px;
+    border-bottom: 4px double var(--olive-dark);
+    padding-bottom: 14px;
+    position: relative;
+  }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-number {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--blood);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+  }
+
+  .section-kicker {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-faded);
+    margin-top: 8px;
+  }
+
+  h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--olive-dark);
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--blood);
+  }
+
+  h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--blood-deep);
+    margin: 22px 0 10px;
+  }
+
+  p { margin-bottom: 16px; font-size: 16px; }
+  p + p { text-indent: 2em; }
+
+  strong { color: var(--blood-deep); font-weight: 700; }
+  em { color: var(--olive-dark); }
+
+  .lead::first-letter {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    float: left;
+    line-height: 0.85;
+    padding: 8px 12px 0 0;
+    color: var(--blood);
+    text-shadow: 2px 2px 0 rgba(74, 90, 58, 0.25);
+  }
+
+  ul, ol { margin: 16px 0 16px 0; padding-left: 0; list-style: none; }
+  ul li, ol li {
+    position: relative;
+    padding: 8px 0 8px 32px;
+    border-bottom: 1px dotted rgba(74, 58, 42, 0.3);
+  }
+  ul li:last-child, ol li:last-child { border-bottom: none; }
+  ul li::before {
+    content: "✦";
+    position: absolute;
+    left: 6px; top: 8px;
+    color: var(--blood);
+    font-size: 14px;
+  }
+  ol { counter-reset: item; }
+  ol li::before {
+    counter-increment: item;
+    content: counter(item, decimal-leading-zero) ".";
+    position: absolute;
+    left: 0; top: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--blood);
+    letter-spacing: 0.05em;
+  }
+
+  .briefing {
+    background: linear-gradient(180deg, rgba(74, 90, 58, 0.12), rgba(74, 90, 58, 0.06));
+    border: 1px solid var(--olive-deep);
+    border-left: 6px solid var(--olive-deep);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(74, 90, 58, 0.18);
+  }
+  .briefing::before {
+    content: "FIELD NOTE";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--olive-deep);
+  }
+
+  .warning {
+    background: linear-gradient(180deg, rgba(139, 26, 26, 0.10), rgba(139, 26, 26, 0.04));
+    border: 1px solid var(--blood);
+    border-left: 6px solid var(--blood);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(139, 26, 26, 0.15);
+  }
+  .warning::before {
+    content: "⚠ WARNING";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+  }
+
+  .clause {
+    background: linear-gradient(180deg, rgba(176, 136, 66, 0.12), rgba(176, 136, 66, 0.04));
+    border: 1px solid var(--gold);
+    border-left: 6px solid var(--gold);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .clause::before {
+    content: "§ RULE CLAUSE";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+  }
+
+  .draft {
+    background: linear-gradient(180deg, rgba(110, 90, 60, 0.1), rgba(110, 90, 60, 0.03));
+    border: 2px dashed var(--khaki);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .draft::before {
+    content: "✎ IN DEVELOPMENT";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--khaki);
+  }
+
+  .objective {
+    border: 2px solid var(--olive-dark);
+    padding: 26px 30px;
+    margin: 30px 0;
+    text-align: center;
+    background: repeating-linear-gradient(45deg, transparent, transparent 12px,
+      rgba(74, 90, 58, 0.06) 12px, rgba(74, 90, 58, 0.06) 13px);
+  }
+  .objective-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--blood);
+    margin-bottom: 12px;
+  }
+  .objective-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* === TABLES === */
+  .table-wrapper {
+    margin: 30px 0;
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.4);
+    box-shadow: 6px 6px 0 rgba(74, 90, 58, 0.2);
+    overflow-x: auto;
+  }
+
+  .table-caption {
+    background: var(--olive-dark);
+    color: var(--paper);
+    padding: 10px 18px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table-caption .form-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    opacity: 0.75;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Special Elite', monospace;
+    font-size: 14px;
+  }
+
+  th {
+    background: rgba(74, 90, 58, 0.15);
+    border: 1px solid var(--olive-deep);
+    padding: 10px 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  th:first-child { text-align: left; padding-left: 14px; }
+
+  td {
+    border: 1px solid rgba(74, 90, 58, 0.5);
+    padding: 8px 6px;
+    text-align: center;
+    color: var(--ink-faded);
+    white-space: nowrap;
+  }
+  td:first-child {
+    text-align: left;
+    padding-left: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--ink);
+    background: rgba(74, 90, 58, 0.05);
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(odd) td { background: rgba(180, 150, 100, 0.06); }
+  tbody tr:nth-child(odd) td:first-child { background: rgba(74, 90, 58, 0.08); }
+  tbody tr:hover td { background: rgba(139, 26, 26, 0.07); }
+
+  .table-footnotes {
+    background: rgba(74, 90, 58, 0.08);
+    border-top: 1px solid var(--olive-deep);
+    padding: 12px 18px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-faded);
+  }
+  .table-footnotes div { margin: 4px 0; }
+  .table-footnotes div::before { content: "*"; color: var(--blood); margin-right: 6px; font-weight: 700; }
+
+  /* Stat tables (rotated layout where rows are stats, columns are countries) */
+  .stat-table th.country-col {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    background: rgba(139, 26, 26, 0.1);
+    border-bottom: 3px solid var(--blood);
+    padding: 12px 6px;
+    min-width: 78px;
+  }
+  .stat-table th.regional-col {
+    background: rgba(74, 90, 58, 0.18);
+    border-bottom: 3px solid var(--olive-deep);
+  }
+  .stat-table tbody td {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  /* === COUNTRY GRID (overview) === */
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 24px 0 36px;
+  }
+
+  .country-card {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.5);
+    padding: 14px 12px;
+    text-align: center;
+    box-shadow: 3px 3px 0 rgba(74, 90, 58, 0.2);
+    position: relative;
+  }
+  .country-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    color: var(--blood);
+    letter-spacing: 0.15em;
+  }
+  .country-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-top: 4px;
+  }
+  .country-pop {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    color: var(--ink-faded);
+    margin-top: 4px;
+  }
+  .core-card {
+    background: linear-gradient(180deg, rgba(139, 26, 26, 0.08), rgba(139, 26, 26, 0.02));
+    border-color: var(--blood-deep);
+    border-width: 3px;
+  }
+  .core-card .country-num { color: var(--blood-deep); }
+
+  .happiness {
+    margin: 28px 0;
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.4);
+  }
+  .happiness-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    border-bottom: 1px solid rgba(74, 90, 58, 0.4);
+  }
+  .happiness-row:last-child { border-bottom: none; }
+  .happiness-level {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding: 18px 10px;
+    color: var(--paper);
+    font-weight: 700;
+  }
+  .happiness-row:nth-child(1) .happiness-level { background: #4a7a3a; }
+  .happiness-row:nth-child(2) .happiness-level { background: #8a8a3a; }
+  .happiness-row:nth-child(3) .happiness-level { background: #b8702a; }
+  .happiness-row:nth-child(4) .happiness-level { background: var(--blood); }
+  .happiness-desc {
+    padding: 18px 22px;
+    font-size: 15px;
+  }
+  .happiness-desc strong {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 32px 0;
+    padding: 26px;
+    background: rgba(74, 90, 58, 0.10);
+    border: 2px solid var(--olive-dark);
+    text-align: center;
+  }
+  .timeline-pt-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+    margin-bottom: 6px;
+  }
+  .timeline-pt-date {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .timeline-pt-event {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-faded);
+    margin-top: 6px;
+  }
+  .timeline-arrow {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 28px;
+    color: var(--olive-dark);
+    letter-spacing: 0.2em;
+  }
+  .timeline-turns {
+    text-align: center;
+    margin-top: 16px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+  }
+  .timeline-turns strong {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 22px;
+    color: var(--blood);
+    margin: 0 6px;
+  }
+
+  /* === FACTORY OPTIONS GRID === */
+  .factory-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 22px 0;
+  }
+  .factory-opt {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.4);
+    padding: 18px 16px;
+    text-align: center;
+    box-shadow: 3px 3px 0 rgba(74, 90, 58, 0.15);
+  }
+  .factory-opt-yield {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 24px;
+    color: var(--blood);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+  .factory-opt-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faded);
+  }
+
+  /* === RESOURCE CARDS === */
+  .resources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 30px 0;
+  }
+  .resource {
+    border: 2px solid var(--olive-dark);
+    padding: 24px 26px;
+    background: rgba(255, 250, 235, 0.5);
+    box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.15);
+  }
+  .resource-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: var(--blood);
+  }
+  .resource-name {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .resource-desc { font-size: 15px; line-height: 1.6; }
+
+  .qa { margin: 24px 0; }
+  .qa-question {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--blood-deep);
+    margin: 22px 0 6px;
+    padding-left: 18px;
+    border-left: 3px solid var(--blood);
+  }
+  .qa-answer {
+    font-size: 16px;
+    padding-left: 18px;
+    color: var(--ink-faded);
+    border-left: 3px solid rgba(74, 90, 58, 0.4);
+  }
+
+  .decisions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .decision {
+    border: 2px dashed var(--olive-deep);
+    padding: 16px 14px;
+    background: rgba(180, 150, 100, 0.08);
+    text-align: center;
+  }
+  .decision-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    color: var(--blood);
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .decision-event {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .contents-list { list-style: none; padding: 0; margin-top: 30px; }
+  .contents-list li {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--olive-deep);
+  }
+  .contents-list li::before { content: none; }
+  .contents-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-weight: 700;
+    color: var(--blood);
+    font-size: 14px;
+    letter-spacing: 0.15em;
+  }
+  .contents-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .contents-page {
+    font-family: 'Special Elite', monospace;
+    color: var(--ink-faded);
+    font-size: 14px;
+  }
+  .contents-list a {
+    color: inherit;
+    text-decoration: none;
+    display: contents;
+  }
+  .contents-list a:hover .contents-name { color: var(--blood); }
+
+  .page-footer {
+    margin-top: 60px;
+    padding-top: 18px;
+    border-top: 1px solid var(--olive-deep);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+  }
+
+  .colophon { text-align: center; padding: 60px 40px; }
+  .colophon h2 {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 36px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .colophon-text {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-faded);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .responsibilities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 30px 0;
+  }
+  .resp {
+    text-align: center;
+    padding: 18px 10px;
+    border: 2px solid var(--olive-dark);
+    background: rgba(74, 90, 58, 0.06);
+  }
+  .resp-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    color: var(--blood);
+    font-size: 32px;
+    line-height: 1;
+  }
+  .resp-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  /* Leader / unique unit / ideology pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+  }
+  .pillar {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.5);
+    padding: 24px 22px;
+    box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.18);
+    position: relative;
+  }
+  .pillar-icon {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 36px;
+    color: var(--blood);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .pillar-title {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .pillar-body { font-size: 14px; line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    body { padding: 20px 8px; }
+    .page { padding: 40px 24px; }
+    .cover h1 { font-size: 52px; }
+    .cover h1 .the { font-size: 22px; letter-spacing: 0.4em; }
+    .section-title { font-size: 28px; }
+    .countries-grid { grid-template-columns: repeat(2, 1fr); }
+    .resources { grid-template-columns: 1fr; }
+    .decisions { grid-template-columns: 1fr; }
+    .responsibilities { grid-template-columns: repeat(2, 1fr); }
+    .timeline { grid-template-columns: 1fr; }
+    .timeline-arrow { transform: rotate(90deg); }
+    .happiness-row { grid-template-columns: 80px 1fr; }
+    .happiness-level { font-size: 20px; }
+    table { font-size: 12px; }
+    th, td { padding: 6px 4px; }
+    .factory-options { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+  }
+  /* === NATION DOSSIER CARDS (for §VIII Leaders) === */
+  .nation-card {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.55);
+    margin: 18px 0;
+    box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.18);
+  }
+  .nation-card-header {
+    background: var(--olive-dark);
+    color: var(--paper);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Stardos Stencil', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .nation-card-name { font-size: 16px; font-weight: 700; }
+  .nation-card-region { font-size: 10px; opacity: 0.7; }
+  .nation-card-body { padding: 16px 20px; }
+
+  .leader-block {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted rgba(74, 58, 42, 0.3);
+  }
+  .leader-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .leader-block.unit-trait { border-top: 2px solid var(--blood); padding-top: 12px; margin-top: 6px; background: rgba(139, 26, 26, 0.04); padding-left: 8px; padding-right: 8px; }
+
+  .leader-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blood-deep);
+  }
+  .leader-name .role {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0;
+    color: var(--ink-faded);
+    text-transform: none;
+    margin-left: 8px;
+  }
+  .ability-name {
+    font-family: 'Special Elite', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--olive-dark);
+    margin-top: 2px;
+  }
+  .ability-tag {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--olive-deep);
+    color: var(--paper);
+    padding: 1px 6px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .ability-tag.passive { background: var(--olive-deep); }
+  .ability-tag.active { background: var(--blood); }
+  .ability-tag.hybrid { background: var(--rust); }
+  .ability-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 4px;
+    color: var(--ink-faded);
+  }
+
+  .unit-trait-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    margin-bottom: 2px;
+  }
+
+  .nations-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .nations-2col { grid-template-columns: 1fr; }
+  }
+
+  /* Win-condition tablet */
+  .win-conditions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .win-card {
+    border: 3px double var(--olive-dark);
+    background: rgba(255, 250, 235, 0.5);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 4px 4px 0 rgba(74, 90, 58, 0.2);
+  }
+  .win-card-scope {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .win-card-total {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-faded);
+    margin-bottom: 14px;
+  }
+  .win-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(74, 90, 58, 0.3);
+  }
+  .win-line .num {
+    font-family: 'Stardos Stencil', sans-serif;
+    color: var(--blood);
+    font-weight: 700;
+  }
+  @media (max-width: 768px) {
+    .win-conditions { grid-template-columns: 1fr; }
+  }
+  /* === CROSS-DOCUMENT NAV BANNER === */
+  .doc-nav {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    display: flex;
+    gap: 0;
+    border: 2px solid var(--olive-dark);
+    box-shadow: 0 8px 20px var(--shadow);
+    position: relative;
+    z-index: 3;
+    font-family: 'Stardos Stencil', sans-serif;
+  }
+  .doc-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--olive-deep);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: background 0.15s;
+  }
+  .doc-nav a:hover { background: var(--blood); }
+  .doc-nav a.current {
+    background: var(--paper);
+    color: var(--ink);
+    border-bottom: 4px solid var(--blood);
+    cursor: default;
+  }
+  .doc-nav a.current:hover { background: var(--paper); }
+  .doc-nav .nav-sub {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  /* Inline cross-link pills */
+  .xlink {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(139, 26, 26, 0.1);
+    border: 1px solid var(--blood);
+    color: var(--blood-deep);
+    padding: 1px 8px;
+    text-decoration: none;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .xlink:hover { background: var(--blood); color: var(--paper); }
+  .xlink::before { content: "→ "; }
+
+  /* === LOCATION TABLES (city/factory placement) === */
+  .loc-table { font-size: 13px; }
+  .loc-table td.loc-type {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    background: rgba(74, 90, 58, 0.1);
+    white-space: nowrap;
+  }
+  .loc-table td.loc-factory { color: var(--blood-deep); }
+  .loc-table td.nation-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 13px;
+    background: rgba(139, 26, 26, 0.08);
+    border-right: 2px solid var(--blood);
+    vertical-align: middle;
+  }
+  .loc-empty { color: #999; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ===== CROSS-DOC NAV ===== -->
+<div class="doc-nav">
+  <a href="the_cruelest_years_rulebook.html">Rulebook<span class="nav-sub">How to play</span></a>
+  <a class="current">Stats &amp; Cards<span class="nav-sub">Nations · Units · Leaders</span></a>
+</div>
+
+<div class="manual">
+
+  <!-- ============================ COVER ============================ -->
+  <div class="page cover">
+    <div class="cover-inner-border"></div>
+
+    <div class="stamp stamp-red stamp-classified">Data</div>
+    <div class="stamp stamp-olive stamp-approved">Reference Only</div>
+    <div class="stamp stamp-archive">Annex to Field Manual</div>
+    <div class="stamp stamp-revised">Edition VI · Stats</div>
+
+    <div class="cover-classification">★ ★ ★  WAR DEPARTMENT DATA ANNEX  ★ ★ ★</div>
+
+    <div class="cover-eagle">✷</div>
+
+    <h1>
+      <span class="the">— The Cruelest Years —</span>
+      Stats<br>&amp; Cards
+    </h1>
+
+    <div class="cover-rule"></div>
+
+    <p class="cover-subtitle">
+      All Numbers · All Cards · All Placements<br>
+      Companion to the Rulebook
+    </p>
+
+    <div class="cover-meta">
+      DATA ANNEX <strong>·</strong> EDITION VI<br>
+      <strong>18</strong> NATIONS &nbsp; · &nbsp; <strong>9</strong> UNITS &nbsp; · &nbsp; <strong>30+</strong> LEADERS
+    </div>
+
+    <p style="margin-top: 40px; font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 0.1em; color: var(--olive-deep);">
+      For how to play, see the
+      <a class="xlink" href="the_cruelest_years_rulebook.html">Rulebook</a>.
+    </p>
+  </div>
+
+  <!-- ============================ INDEX ============================ -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-number">— DATA INDEX —</div>
+      <h2 class="section-title">Contents</h2>
+      <div class="section-kicker">Jump to any data table or card set.</div>
+    </div>
+
+    <ul class="contents-list">
+      <li><a href="#dossiers"><span class="contents-num">A</span><span class="contents-name">National Dossiers — Starting Statistics</span><span class="contents-page">p. 03</span></a></li>
+      <li><a href="#locations"><span class="contents-num">B</span><span class="contents-name">City & Factory Placement Tables</span><span class="contents-page">p. 04</span></a></li>
+      <li><a href="#units"><span class="contents-num">C</span><span class="contents-name">Military Unit Statistics</span><span class="contents-page">p. 06</span></a></li>
+      <li><a href="#leaders"><span class="contents-num">D</span><span class="contents-name">Leaders & Unique Unit Traits</span><span class="contents-page">p. 07</span></a></li>
+      <li><a href="#agendas"><span class="contents-num">E</span><span class="contents-name">Agendas, Policies & Plans (Draft)</span><span class="contents-page">p. 13</span></a></li>
+    </ul>
+
+    <div class="briefing">
+      <strong>How to Use This Document —</strong> This is the data annex. It contains every number and every card text, kept separate from the rules so it can be revised during playtesting without touching the rulebook. For the rules of play — turn order, combat, victory — see the
+      <a class="xlink" href="the_cruelest_years_rulebook.html">Rulebook</a>.
+    </div>
+
+    <div class="page-footer"><span>The Cruelest Years · Stats & Cards</span><span>Index · ii</span></div>
+  </div>
+
+  <!-- ============================ A. DOSSIERS ============================ -->
+  <div class="page" id="dossiers">
+    <div class="section-header">
+      <div class="section-number">— DATA A —</div>
+      <h2 class="section-title">National Dossiers</h2>
+      <div class="section-kicker">Starting statistics for the eighteen playable powers. All figures are starting amounts at Turn 1.</div>
+    </div>
+
+    <p>
+      <em>Cities</em> and <em>Factories</em> can be captured during play but never built (see <a class="xlink" href="the_cruelest_years_rulebook.html#sec-5">Rulebook § V</a>). Population is the starting reserve of mobilizable manpower in millions; new population is generated every turn by cities (+1 per city per turn). The note <em>"3 (2)"</em> in the Cities row means 3 cities total, of which 2 are colonial holdings outside the home territory.
+    </p>
+
+    <h3>European Powers</h3>
+    <div class="table-wrapper">
+      <div class="table-caption">
+        <span>Table I · Dossiers, European Powers</span>
+        <span class="form-num">WD FORM 3-A</span>
+      </div>
+      <table class="stat-table">
+        <thead>
+          <tr>
+            <th>Statistic</th>
+            <th class="country-col">Germany</th>
+            <th class="country-col">UK</th>
+            <th class="country-col">France</th>
+            <th class="country-col">Italy</th>
+            <th class="country-col">Soviet</th>
+            <th class="country-col">Poland</th>
+            <th class="country-col regional-col">SE Europe</th>
+            <th class="country-col regional-col">N. Europe</th>
+            <th class="country-col regional-col">Iberian</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Population</td><td>2</td><td>1</td><td>1</td><td>1</td><td>4</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+          <tr><td>Treasury</td><td>24</td><td>31</td><td>28</td><td>14</td><td>22</td><td>1</td><td>2</td><td>1</td><td>5</td></tr>
+          <tr><td>Cities</td><td>3</td><td>3 (2)</td><td>3 (2)</td><td>2</td><td>4</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
+          <tr><td>Factories</td><td>5</td><td>4</td><td>3</td><td>3</td><td>4</td><td>2</td><td>3</td><td>0</td><td>1</td></tr>
+          <tr><td>Initial Weapons</td><td>5</td><td>5</td><td>5</td><td>2</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Initial Units</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Asian &amp; Wider World Powers</h3>
+    <div class="table-wrapper">
+      <div class="table-caption">
+        <span>Table II · Dossiers, Asia &amp; Wider World</span>
+        <span class="form-num">WD FORM 3-B</span>
+      </div>
+      <table class="stat-table">
+        <thead>
+          <tr>
+            <th>Statistic</th>
+            <th class="country-col">China</th>
+            <th class="country-col">Japan</th>
+            <th class="country-col">USA</th>
+            <th class="country-col regional-col">S. Amer.</th>
+            <th class="country-col regional-col">S. Africa</th>
+            <th class="country-col regional-col">Oceania</th>
+            <th class="country-col regional-col">Mid. East</th>
+            <th class="country-col regional-col">Br. India</th>
+            <th class="country-col regional-col">Korea</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Population</td><td>6</td><td>1</td><td>2</td><td>1</td><td>1</td><td>2</td><td>1</td><td>3</td><td>0</td></tr>
+          <tr><td>Treasury</td><td>3</td><td>9</td><td>66</td><td>1</td><td>1</td><td>2</td><td>3</td><td>3</td><td>0</td></tr>
+          <tr><td>Cities</td><td>5</td><td>2</td><td>3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>3</td><td>1</td></tr>
+          <tr><td>Factories</td><td>1</td><td>3</td><td>6</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+          <tr><td>Initial Weapons</td><td>1</td><td>3</td><td>5</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+          <tr><td>Initial Units</td><td>5</td><td>3</td><td>3</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+        </tbody>
+      </table>
+      <div class="table-footnotes">
+        <div>Korea begins under Japanese occupation with no army or treasury (see <a class="xlink" href="the_cruelest_years_rulebook.html#sec-9">Rulebook § IX</a>). British India and Oceania begin subordinate to the United Kingdom.</div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>Data A · National Dossiers</span><span>p. 03</span></div>
+  </div>
+
+  <!-- ============================ B. LOCATIONS ============================ -->
+  <div class="page" id="locations">
+    <div class="section-header">
+      <div class="section-number">— DATA B —</div>
+      <h2 class="section-title">City &amp; Factory Placement</h2>
+      <div class="section-kicker">Exactly where each nation's starting cities and factories sit on the map. Factories are fixed and cannot be rebuilt — only captured.</div>
+    </div>
+
+    <p>
+      At setup, place each nation's <strong>factory</strong> and <strong>city</strong> markers on the named territories below (see <a class="xlink" href="the_cruelest_years_rulebook.html#sec-4">Rulebook § IV, Setup</a>). A territory may hold both a city and a factory. The first city listed is the nation's <strong>Capital</strong>.
+    </p>
+
+    <h3>European Powers</h3>
+    <div class="table-wrapper">
+      <div class="table-caption">
+        <span>Table III · Placements, Europe</span>
+        <span class="form-num">WD FORM 4-A</span>
+      </div>
+      <table class="loc-table">
+        <thead>
+          <tr>
+            <th>Nation</th>
+            <th>Type</th>
+            <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nation-label" rowspan="2">Germany</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Berlin</td><td>Essen / Ruhr</td><td>Leipzig</td><td>Nuremberg</td><td>Dresden</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Berlin</td><td>Hamburg</td><td>Cologne</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">United Kingdom</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>London</td><td>Birmingham</td><td>Manchester</td><td>Sheffield</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>London</td><td>Glasgow</td><td>Cairo</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">France</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Paris</td><td>Lyon</td><td>Marseille</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Paris</td><td>Lyon</td><td>Dakar</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Italy</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Milan</td><td>Rome</td><td>Turin</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Milan</td><td>Rome</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Soviet Union</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Moscow</td><td>Leningrad</td><td>Kharkov</td><td>Stalingrad</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Moscow</td><td>Leningrad</td><td>Kiev</td><td>Kharkov</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Poland</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Warsaw</td><td>Lwów</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Wilno</td><td>Lodz</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">SE Europe</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Ploiești</td><td>Budapest</td><td>Belgrade</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Budapest</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">N. Europe</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td class="loc-empty">none</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Stockholm</td><td>Copenhagen</td><td>Helsinki</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Iberian</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Barcelona</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Madrid</td><td>Barcelona</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="page-footer"><span>Data B · Placements (Europe)</span><span>p. 04</span></div>
+  </div>
+
+  <!-- ============================ B. LOCATIONS (cont) ============================ -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-number">— DATA B · CONT. —</div>
+      <h2 class="section-title">City &amp; Factory Placement</h2>
+      <div class="section-kicker">Asia, the Americas, and the wider world.</div>
+    </div>
+
+    <div class="table-wrapper">
+      <div class="table-caption">
+        <span>Table IV · Placements, Asia &amp; Wider World</span>
+        <span class="form-num">WD FORM 4-B</span>
+      </div>
+      <table class="loc-table">
+        <thead>
+          <tr>
+            <th>Nation</th>
+            <th>Type</th>
+            <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nation-label" rowspan="2">China</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Shanghai</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Shanghai</td><td>Beijing</td><td>Tianjin</td><td>Guangzhou</td><td>Nanjing</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Japan</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Tokyo</td><td>Osaka</td><td>Nagoya</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Tokyo</td><td>Osaka</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">United States</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>New York</td><td>Chicago</td><td>Detroit</td><td>Pittsburgh</td><td>Philadelphia<br>+ Cleveland</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>New York</td><td>Chicago</td><td>Philadelphia</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">South America</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>São Paulo</td><td>Buenos Aires</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Rio de Janeiro</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">South Africa</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Johannesburg</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Johannesburg</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Oceania</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Sydney</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Sydney</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Middle East</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Baghdad</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Baghdad</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">British India</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Bombay</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Calcutta</td><td>Bombay</td><td>Madras</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="nation-label" rowspan="2">Korea</td>
+            <td class="loc-type loc-factory">Factories</td>
+            <td>Seoul</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+          <tr>
+            <td class="loc-type">Cities</td>
+            <td>Seoul</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td><td class="loc-empty">—</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-footnotes">
+        <div>The first city listed for each nation is its Capital.</div>
+        <div>The United States holds six factories across six cities (New York, Chicago, Detroit, Pittsburgh, Philadelphia, Cleveland) — the largest fixed industrial base in the game.</div>
+        <div>Northern Europe begins with no factory; it must capture one to produce weapons.</div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>Data B · Placements (World)</span><span>p. 05</span></div>
+  </div>
+
+  <!-- ============================ C. UNITS ============================ -->
+  <div class="page" id="units">
+    <div class="section-header">
+      <div class="section-number">— DATA C —</div>
+      <h2 class="section-title">Military Unit Statistics</h2>
+      <div class="section-kicker">The nine units. National Unique Unit Traits (Data D) modify these base values.</div>
+    </div>
+
+    <p>
+      Each unit lists its build cost (Weapon, Population) and battlefield statistics (HP, Range, Attack, Speed, and per-turn Fee). For how training and combat work, see <a class="xlink" href="the_cruelest_years_rulebook.html#sec-6">Rulebook § VI–VII</a>.
+    </p>
+
+    <div class="table-wrapper">
+      <div class="table-caption">
+        <span>Table V · Military Units</span>
+        <span class="form-num">WD FORM 7-A</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Unit</th>
+            <th>🔫 Weapon</th>
+            <th>👥 Pop.</th>
+            <th>❤️ HP</th>
+            <th>🎯 Range</th>
+            <th>⚔️ Attack</th>
+            <th>༄ Speed</th>
+            <th>🟡 Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Infantry</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td></tr>
+          <tr><td>Mechanized Infantry</td><td>2</td><td>1</td><td>1</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
+          <tr><td>Artillery</td><td>2</td><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td>2</td></tr>
+          <tr><td>Tank</td><td>4</td><td>1</td><td>3</td><td>2</td><td>2</td><td>2</td><td>4</td></tr>
+          <tr><td>Boat</td><td>3</td><td>1</td><td>2</td><td>1</td><td>2</td><td>2</td><td>3</td></tr>
+          <tr><td>Aircraft Carrier</td><td>3</td><td>3</td><td>6</td><td>1</td><td>1</td><td>2</td><td>6</td></tr>
+          <tr><td>Plane</td><td>4</td><td>1</td><td>2</td><td>3</td><td>2</td><td>3</td><td>3</td></tr>
+          <tr><td>Bomber</td><td>5</td><td>1</td><td>3</td><td>2</td><td>2</td><td>2</td><td>5</td></tr>
+          <tr><td>Anti-Aircraft Artillery</td><td>2</td><td>1</td><td>1</td><td>2</td><td>2</td><td>1</td><td>4</td></tr>
+        </tbody>
+      </table>
+      <div class="table-footnotes">
+        <div><strong>HP</strong> is tracked by HP coins placed beneath the unit figure. When attacked, remove coins equal to the attacker's Attack value.</div>
+        <div><strong>Fee</strong> is the per-turn maintenance cost in gold. A unit whose Fee cannot be paid is removed from the board.</div>
+        <div><strong>Aircraft Carriers</strong> transport up to 6 land units and launch friendly Planes. <strong>Boats</strong> carry land units equal to their Fee (3).</div>
+        <div>Only Planes and Anti-Aircraft Artillery may target aircraft.</div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>Data C · Military Units</span><span>p. 06</span></div>
+  </div>
+
+  <!-- ============================ D. LEADERS ============================ -->
+  <div class="page" id="leaders">
+    <div class="section-header">
+      <div class="section-number">— DATA D —</div>
+      <h2 class="section-title">Leaders &amp; Unique Unit Traits</h2>
+      <div class="section-kicker">Every nation's leader cards and Unique Unit Trait. For how abilities work, see Rulebook § VIII.</div>
+    </div>
+
+    <div class="clause">
+      <strong>How to read these cards.</strong> Each nation lists its one-to-three named leaders (choose one for the whole game), each tagged <span class="ability-tag passive">PASSIVE</span>, <span class="ability-tag active">ACTIVE</span>, or <span class="ability-tag hybrid">HYBRID</span>, plus a <strong>Unique Unit Trait</strong> that modifies the nation's base units. Rules of play are in the <a class="xlink" href="the_cruelest_years_rulebook.html#sec-8">Rulebook</a>.
+    </div>
+
+    <h3>Europe — Nine Powers</h3>
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Germany</span><span class="nation-card-region">Europe · Axis</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Adolf Hitler <span class="role">— Führer</span></div>
+          <div class="ability-name">Total War <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Every 4 Factories you control produce +1 extra weapon per turn.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Paul von Hindenburg <span class="role">— Reichspräsident</span></div>
+          <div class="ability-name">War Bond <span class="ability-tag hybrid">Hybrid</span></div>
+          <div class="ability-text">Cities produce +1 treasury (passive). When you train any unit, you may pay 4 gold to reduce its weapon cost by 1.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Tiger Tank's Blitzkrieg</div>
+          <div class="ability-text"><strong>Passive:</strong> All German Tanks gain +1 Attack and +1 HP, but cost +1 Weapon (so 5W / 4HP / 3A).<br><strong>Active (CD 6):</strong> Pay 2 gold per chosen Tank to give those Tanks +2 Speed for one turn.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">United Kingdom</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Winston Churchill <span class="role">— Prime Minister</span></div>
+          <div class="ability-name">Never Surrender <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 1 gold. When one of your military units is being attacked, flip a coin. On heads, damage is reduced by 1. May be triggered multiple times against a single attack. No cooldown.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Neville Chamberlain <span class="role">— Prime Minister</span></div>
+          <div class="ability-name">Appeasement <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">If you did not attack any enemy unit this turn, gain +5 gold and +1 weapon at end of turn.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Sea Surface Minelayers</div>
+          <div class="ability-text">All British Boats gain +2 Attack and lose 1 HP (so 3W / 1HP / 4A — devastating but fragile).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">France</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Charles de Gaulle <span class="role">— Free France</span></div>
+          <div class="ability-name">Free France <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Cities you control outside metropolitan French territory produce +3 treasury.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Édouard Daladier <span class="role">— Prime Minister</span></div>
+          <div class="ability-name">Rearmament Program <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Your Factories produce +1 weapon every 2 turns (i.e., +1 weapon on even-numbered turns).</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Albert Lebrun <span class="role">— President</span></div>
+          <div class="ability-name">Republican Guard <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one Tank in your starting territory. It and all adjacent friendly Tanks gain +2 HP. Cooldown: 12 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Char B1 Heavy Tank</div>
+          <div class="ability-text">All French Tanks gain +1 HP (so 4W / 4HP / 2A).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Italy</span><span class="nation-card-region">Europe · Axis</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Benito Mussolini <span class="role">— Duce</span></div>
+          <div class="ability-name">Battle for Grain <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Training cost of a single Mechanized Infantry is reduced by 1 Population. Cooldown: 1 turn.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Victor Emmanuel III <span class="role">— King</span></div>
+          <div class="ability-name">Royal Decree <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 3 weapons, 2 population. Choose one Mechanized Infantry. Create two additional Mechanized Infantry adjacent to it. Cooldown: 8 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Bersaglieri Motorized Infantry</div>
+          <div class="ability-text">All Italian Mechanized Infantry gain +1 Speed and pay 1 less Fee per turn (so 2W / 1HP / 1A / Speed 4 / Fee 1).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>Data D · Leaders (Europe I)</span><span>p. 07</span></div>
+  </div>
+
+  <div class="page">
+    <div class="section-header">
+      <div class="section-number">— DATA D · CONT. —</div>
+      <h2 class="section-title">Leaders &amp; Traits</h2>
+      <div class="section-kicker">The Soviet Union and the eastern and northern flanks of Europe.</div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Soviet Union</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Joseph Stalin <span class="role">— General Secretary</span></div>
+          <div class="ability-name">Collectivization <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">On even-numbered turns, your cities produce +2 extra gold.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Vyacheslav Molotov <span class="role">— Foreign Minister</span></div>
+          <div class="ability-name">Non-Aggression Pact <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 5 gold. Choose one enemy unit. It cannot attack your units this turn. Cooldown: 5 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — T-34 Tank</div>
+          <div class="ability-text">All Soviet Tanks cost 1 fewer Weapon to train (so 3W / 3HP / 2A — the most cost-efficient tank in the game).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Poland</span><span class="nation-card-region">Europe · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Władysław Sikorski <span class="role">— PM in Exile</span></div>
+          <div class="ability-name">Government-in-Exile <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Whenever an enemy unit enters your territory, gain +1 treasury.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Ignacy Mościcki <span class="role">— President</span></div>
+          <div class="ability-name">Emergency Conscription <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one city in your starting territory. Each adjacent enemy unit takes 1 damage. Cooldown: 5 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Armia Krajowa</div>
+          <div class="ability-text">All Polish Infantry stationed in Polish territory gain +1 HP and pay 1 less Fee per turn (so 1W / 2HP / 1A / Fee 0 — free home-front infantry).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Southeastern Europe</span><span class="nation-card-region">Europe · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Josip Broz Tito <span class="role">— Partisan Leader</span></div>
+          <div class="ability-name">Brotherhood &amp; Unity <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">When an enemy unit is destroyed in your territory (by any cause), flip a coin. On tails, gain +1 weapon.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">King Michael I <span class="role">— King of Romania</span></div>
+          <div class="ability-name">Royal Coup <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one enemy unit adjacent to your Infantry. It takes 1 damage and cannot move during its owner's next turn. Cooldown: 7 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Partisan Fighter</div>
+          <div class="ability-text">All Southeastern Infantry gain +1 Speed and pay 1 less Fee per turn (so 1W / 1HP / 1A / Speed 3 / Fee 0).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Northern Europe</span><span class="nation-card-region">Europe · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">King Haakon VII <span class="role">— King of Norway</span></div>
+          <div class="ability-name">Government in Exile <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">For every city captured from you by another power, you gain +1 population and +3 gold per turn. You may move your capital city with one of your military units.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Risto Ryti <span class="role">— President of Finland</span></div>
+          <div class="ability-name">Winter War Diplomacy <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">If you control fewer cities than any adjacent player, your cities produce +1 treasury per turn.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Ski Trooper</div>
+          <div class="ability-text">All Northern Mechanized Infantry pay +2 Population but -2 Weapon to train (so 0W / 3P / 1HP / 1A — useful when weapons are scarce).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Iberian Peninsula</span><span class="nation-card-region">Europe · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Francisco Franco <span class="role">— Caudillo of Spain</span></div>
+          <div class="ability-name">Nationalist Consolidation <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">+2 population per turn.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">António de Oliveira Salazar <span class="role">— PM of Portugal</span></div>
+          <div class="ability-name">Neutrality Act <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">If you did not attack any unit this turn, gain +2 weapons.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Tercio Legionnaire</div>
+          <div class="ability-text">All Iberian Mechanized Infantry cost +1 Weapon and gain +1 HP and +1 Attack (so 3W / 2HP / 2A — heavy and expensive).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>Data D · Leaders (Europe II)</span><span>p. 08–09</span></div>
+  </div>
+
+  <div class="page">
+    <div class="section-header">
+      <div class="section-number">— DATA D · CONT. —</div>
+      <h2 class="section-title">Leaders &amp; Traits</h2>
+      <div class="section-kicker">Asia, the Americas, the Pacific, the Middle East, and the occupied nations.</div>
+    </div>
+
+    <h3>Asia &amp; The Wider World</h3>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">China</span><span class="nation-card-region">Asia · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Mao Zedong <span class="role">— CCP Chairman</span></div>
+          <div class="ability-name">Battle of Chishui River <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">All Chinese Infantry and Mechanized Infantry gain +1 Speed for 1 turn. Cooldown: 2 turns.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Chiang Kai-shek <span class="role">— KMT Generalissimo</span></div>
+          <div class="ability-name">Nationalist Conscription <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">When you train Infantry, flip a coin. On heads, gain 2 gold.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Guerrilla Infantry</div>
+          <div class="ability-text">All Chinese Infantry cost 1 less Weapon and gain +1 Speed (so 0W / 1HP / 1A / Speed 3 — the cheapest, fastest infantry in the game).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Japan</span><span class="nation-card-region">Asia · Axis</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Emperor Hirohito <span class="role">— Emperor</span></div>
+          <div class="ability-name">Imperial Rescript <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Once per turn, when one of your units is destroyed, flip a coin. On heads, the enemy unit that destroyed it takes 1 damage.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — MXY-7 Sakura</div>
+          <div class="ability-text">Once per turn, you may choose any number of Japanese Planes to gain +1 Attack for the attack — but each Plane so chosen crashes (is destroyed) immediately after its attack resolves.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>North America &amp; The Wider World</h3>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">United States</span><span class="nation-card-region">N. America · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Franklin D. Roosevelt <span class="role">— President</span></div>
+          <div class="ability-name">Arsenal of Democracy <span class="ability-tag hybrid">Hybrid</span></div>
+          <div class="ability-text"><strong>Passive:</strong> +1 weapon and +3 gold per turn.<br><strong>Active:</strong> When training a unit, pay +1 gold to skip its 1-turn training time (the unit may act immediately).</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Harry S. Truman <span class="role">— Vice/President</span></div>
+          <div class="ability-name">Truman Doctrine <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 5 gold. Choose up to 2 allied players. Each gains +2 gold and +1 weapon. Cooldown: 5 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Trench-Gun Infantry</div>
+          <div class="ability-text">All American Infantry gain +1 Attack (so 1W / 1HP / 2A — the deadliest standard infantry in the game).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">South America</span><span class="nation-card-region">Americas · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Getúlio Vargas <span class="role">— President of Brazil</span></div>
+          <div class="ability-name">Import Substitution <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">Once per turn, your Mechanized Infantry and Tanks cost 1 less Weapon to train, but their maintenance Fee is +3 gold for as long as they remain on the board.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Juan Perón <span class="role">— President of Argentina</span></div>
+          <div class="ability-name">Justicialist Rally <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 3 gold. Choose one city. It produces +2 population next turn. If an enemy unit is adjacent to that city, it produces +2 weapons instead. Cooldown: 4 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Gauchos</div>
+          <div class="ability-text">South American Mechanized Infantry in South America gain +1 Attack, +1 Speed, and cost +1 Weapon (so 3W / 1HP / 2A / Speed 4).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">South Africa</span><span class="nation-card-region">Africa · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">J.B.M. Hertzog <span class="role">— PM of South Africa</span></div>
+          <div class="ability-name">Union Defence <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">All Infantry in your territory gain +1 Attack on odd-numbered turns.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Haile Selassie <span class="role">— Emperor of Ethiopia</span></div>
+          <div class="ability-name">League of Nations Appeal <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 2 gold. Choose one enemy unit adjacent to your Infantry. It takes 1 damage and its Attack is reduced by 1 until your next turn. Cooldown: 4 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Askari Corps</div>
+          <div class="ability-text">All South African Infantry gain +1 HP and pay 1 less Fee per turn (so 1W / 2HP / 1A / Fee 0).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Oceania</span><span class="nation-card-region">Pacific · Allies</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">John Curtin <span class="role">— PM of Australia</span></div>
+          <div class="ability-name">Pacific Pact <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">All friendly Boats (your own and your allies') gain +1 Speed on odd-numbered turns.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Peter Fraser <span class="role">— PM of New Zealand</span></div>
+          <div class="ability-name">Island Hopping Coordination <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: 3 gold. Choose one Infantry. It gains +1 Attack and +1 HP for every friendly military unit adjacent to it. Cooldown: 99 turns (effectively once per game).</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Diggers</div>
+          <div class="ability-text">Oceanian Infantry in Oceania gain +1 Attack, +1 HP, and pay +1 Fee per turn (so 1W / 2HP / 2A / Fee 2 — pricey but very tough on home soil).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Middle East</span><span class="nation-card-region">Middle East · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Mustafa Kemal Atatürk <span class="role">— President of Turkey</span></div>
+          <div class="ability-name">Kemalist Reforms <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text">+1 population per turn. Infantry that complete training gain +1 Attack on the turn they finish training.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Reza Shah Pahlavi <span class="role">— Shah of Iran</span></div>
+          <div class="ability-name">Persian Oil Concessions <span class="ability-tag active">Active</span></div>
+          <div class="ability-text">Cost: discard 1 weapon. Gain +10 gold. Cooldown: 1 turn.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Desert Cavalry</div>
+          <div class="ability-text">All Middle Eastern Mechanized Infantry in the Middle East cost 1 less Weapon and gain +1 Speed (so 1W / 1HP / 1A / Speed 4).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">British India</span><span class="nation-card-region">South Asia · Regional</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Lord Linlithgow <span class="role">— Viceroy of India</span></div>
+          <div class="ability-name">Imperial Mobilization <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text"><em>In development.</em> Provisional: Your cities produce +1 weapon per turn in addition to their normal output.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Subhas Chandra Bose <span class="role">— Indian National Army Leader</span></div>
+          <div class="ability-name">Azad Hind <span class="ability-tag active">Active</span></div>
+          <div class="ability-text"><em>In development.</em> Provisional: Cost 3 gold. Convert one enemy Infantry adjacent to your territory into a friendly Infantry. Cooldown: 8 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Gurkha Rifles</div>
+          <div class="ability-text"><em>In development.</em> Provisional: All British Indian Infantry gain +1 Attack in mountainous and jungle terrain.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-header"><span class="nation-card-name">Korea</span><span class="nation-card-region">Asia · Occupied</span></div>
+      <div class="nation-card-body">
+        <div class="leader-block">
+          <div class="leader-name">Kim Gu <span class="role">— President, Korean Provisional Government</span></div>
+          <div class="ability-name">Resistance Network <span class="ability-tag passive">Passive</span></div>
+          <div class="ability-text"><em>In development.</em> Provisional: While Korean territory is occupied by another power, the occupying power loses 1 gold per Korean territory it controls each turn.</div>
+        </div>
+        <div class="leader-block">
+          <div class="leader-name">Syngman Rhee <span class="role">— Independence Activist</span></div>
+          <div class="ability-name">Diplomatic Appeal <span class="ability-tag active">Active</span></div>
+          <div class="ability-text"><em>In development.</em> Provisional: Cost 2 gold. Choose one allied Great Power. It gains +1 weapon per turn for 3 turns. Cooldown: 6 turns.</div>
+        </div>
+        <div class="leader-block unit-trait">
+          <div class="unit-trait-label">★ Unique Unit Trait — Korean Liberation Army</div>
+          <div class="ability-text"><em>In development.</em> Provisional: Korean Infantry cost 0 Weapon to train (only 1 Population) but have only 1 HP and 1 Attack.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <strong>Balance Note —</strong> Some abilities are visibly stronger than others (notably <em>Persian Oil Concessions</em>, <em>Arsenal of Democracy</em>, and the long-cooldown <em>Island Hopping Coordination</em>). British India and Korea cards are explicitly <em>in development</em>. These values are open to playtest revision and should be considered <strong>provisional</strong>.
+    </div>
+
+    <div class="page-footer"><span>Data D · Leaders (World)</span><span>p. 10–12</span></div>
+  </div>
+
+  <!-- ============================ E. AGENDAS ============================ -->
+  <div class="page" id="agendas">
+    <div class="section-header">
+      <div class="section-number">— DATA E —</div>
+      <h2 class="section-title">Agendas, Policies &amp; Plans</h2>
+      <div class="section-kicker">An optional draft deck of strategic doctrines. For how cards are played, see Rulebook § X.</div>
+    </div>
+
+    <p>
+      Each nation will hold <strong>three Agenda cards</strong> representing its wartime strategic doctrines. The deck is optional and still in design. Each card lists a cost, an effect, a cooldown, and any precondition. Rules for playing them are in the <a class="xlink" href="the_cruelest_years_rulebook.html#sec-10">Rulebook § X</a>.
+    </p>
+
+    <h3>Worked Example · Germany's Blitzkrieg</h3>
+    <div class="resources">
+      <div class="resource" style="grid-column: 1 / -1;">
+        <div class="resource-icon">⚡</div>
+        <div class="resource-name">Blitzkrieg — Germany</div>
+        <div class="resource-desc" style="margin-top: 8px;">
+          <strong>Cost:</strong> 1 gold per German Tank in play.<br>
+          <strong>Effect:</strong> All German Tanks gain +2 Speed for one turn.<br>
+          <strong>Cooldown:</strong> 6 turns.<br>
+          <strong>Flavor:</strong> The lightning-war doctrine of armored breakthrough that defined the German campaigns of 1939–1941.
+        </div>
+      </div>
+    </div>
+
+    <div class="draft">
+      <strong>Card Library — In Development.</strong> The full deck of <strong>54 cards</strong> (three per nation × eighteen nations) is still being designed and balanced. Provisional examples under consideration:
+      <ul style="margin-top: 8px;">
+        <li><strong>Soviet · Scorched Earth.</strong> Cost: 5 gold. Destroy improvements in one of your territories to deny them to an invader. Cooldown: 8 turns.</li>
+        <li><strong>USA · Lend-Lease.</strong> Cost: 15 gold. Gift 10 weapons or 10 treasury to an ally. Cooldown: 4 turns.</li>
+        <li><strong>Japan · Bushidō Charge.</strong> Cost: free. All Infantry +2 Attack for one turn; –1 HP next turn. Cooldown: 6 turns.</li>
+        <li><strong>UK · Convoy Defense.</strong> Cost: 5 gold. Reveal one enemy naval region per turn for 3 turns. Cooldown: 5 turns.</li>
+        <li><strong>China · Long March.</strong> Cost: free. Move any number of friendly units 2 tiles toward the interior without combat penalty. Cooldown: 10 turns.</li>
+      </ul>
+    </div>
+
+    <div class="page-footer"><span>Data E · Agendas & Plans</span><span>p. 13</span></div>
+  </div>
+
+  <!-- ============================ COLOPHON ============================ -->
+  <div class="page">
+    <div class="colophon">
+      <div class="cover-rule"></div>
+      <h2>End of Data Annex</h2>
+      <p class="colophon-text">
+        These statistics are provisional and subject to playtest revision. For the rules of play, return to the
+        <a class="xlink" href="the_cruelest_years_rulebook.html">Rulebook</a>.
+      </p>
+      <div class="cover-rule"></div>
+
+      <div style="margin-top: 50px;">
+        <div class="stamp stamp-olive" style="position: static; display: inline-block; transform: rotate(-2deg);">Filed · WD Archive · Edition VI</div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>The Cruelest Years · Stats & Cards · Edition VI</span><span>Annex · End</span></div>
+  </div>
+
+</div>
+
+</body>
+</html>
