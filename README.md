@@ -34,9 +34,9 @@ This project contains the complete rulebook and supporting materials for the gam
 
 | File | Description |
 |------|-------------|
-| `rulebook.html` | **Full Rulebook** - the "Official Field Manual". A richly styled, immersive HTML document that serves as the primary rulebook. Includes all rules, tables of contents, faction overviews, combat mechanics, and historical designer notes. |
-| `the_cruelest_years_stats.html` | **Stats & Cards Companion** - contains every numerical value: starting resources, unit statistics, leader ability texts, unique unit traits, factory placements, agenda cards, and more. Open this alongside the rulebook. |
-| `rulebook_plaintext.md` | **Plain-text reference version** - a clean, printer-friendly version of the rules (originally produced for the Shady Side Academy "Your Move" course). Includes the glossary, FAQ, strategy notes, and full bibliography. |
+| `index.html` | **Full Rulebook** - the "Official Field Manual". A richly styled, immersive HTML document that serves as the primary rulebook. Includes all rules, tables of contents, faction overviews, combat mechanics, and historical designer notes. |
+| `stats.html` | **Stats & Cards Companion** - contains every numerical value: starting resources, unit statistics, leader ability texts, unique unit traits, factory placements, agenda cards, and more. Open this alongside the rulebook. |
+| `dlc.html` | **DLCs** - More mechanism like over-range attack, inflation, more units, bigger maps, more battles, and more. |
 | `README.md` | This file - project overview and navigation guide. |
 
 ---
