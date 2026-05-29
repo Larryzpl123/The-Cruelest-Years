@@ -13,6 +13,11 @@ Every nation starts with different strengths, weaknesses, and historical leaders
 
 ---
 
+## Rules
+https://larryzpl123.github.io/The-Cruelest-Years/
+
+---
+
 ## Game at a Glance
 
 - **Players:** 3 - 18 (supports solo/team play)
