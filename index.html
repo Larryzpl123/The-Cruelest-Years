@@ -1226,47 +1226,66 @@
       </div>
     </div>
 
-    <h3>One Turn at a Time</h3>
-    <p>On your turn, do these <strong>four steps in order</strong>. That's the whole game.</p>
+<style>
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;        /* adjust to your taste */
+  }
+  .pillar {
+    /* Keep your existing pillar styling here */
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    /* … */
+  }
+  /* Optional: make icons, titles, etc. responsive */
+  .pillar-icon {
+    font-weight: bold;
+  }
+</style>
 
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-icon">1</div>
-        <div class="pillar-title">Collect</div>
-        <div class="pillar-body">
-          From each <strong>City</strong>: take 3 gold and 1 population.<br>
-          From each <strong>Factory</strong>: take 1 weapon.<br>
-          Pay unit upkeep (Fee). Can't pay? Remove the unit.
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">2</div>
-        <div class="pillar-title">Produce</div>
-        <div class="pillar-body">
-          Spend weapons + population to build new units. Place each on any territory you control.<br>
-          <em>Newly built units are invincible this turn — no HP marker yet. They can't move or attack until next turn.</em>
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">3</div>
-        <div class="pillar-title">Abilities</div>
-        <div class="pillar-body">
-          Trigger your leader's active ability if you want. Pay the cost. Mark the cooldown (CD).<br>
-          Passive abilities are always on.
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">4</div>
-        <div class="pillar-title">Move &amp; Attack</div>
-        <div class="pillar-body">
-          Move each unit up to its Speed. After moving, it may attack any enemy in Range.<br>
-          A unit can attack without moving, but cannot move after attacking.
-        </div>
-      </div>
+<h3>One Turn at a Time</h3>
+<p>On your turn, do these <strong>four steps in order</strong>. That's the whole game.</p>
+
+<div class="pillars">
+  <div class="pillar">
+    <div class="pillar-icon">1</div>
+    <div class="pillar-title">Collect</div>
+    <div class="pillar-body">
+      From each <strong>City</strong>: take 3 gold and 1 population.<br>
+      From each <strong>Factory</strong>: take 1 weapon.<br>
+      Pay unit upkeep (Fee). Can't pay? Remove the unit.
     </div>
-<div class="page-footer"><span>§ I · The Game in 60 Seconds</span><span>p. 01</span></div>
   </div>
+  <div class="pillar">
+    <div class="pillar-icon">2</div>
+    <div class="pillar-title">Produce</div>
+    <div class="pillar-body">
+      Spend weapons + population to build new units. Place each on any territory you control.<br>
+      <em>Newly built units are invincible this turn — no HP marker yet. They can't move or attack until next turn.</em>
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">3</div>
+    <div class="pillar-title">Abilities</div>
+    <div class="pillar-body">
+      Trigger your leader's active ability if you want. Pay the cost. Mark the cooldown (CD).<br>
+      Passive abilities are always on.
+    </div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">4</div>
+    <div class="pillar-title">Move &amp; Attack</div>
+    <div class="pillar-body">
+      Move each unit up to its Speed. After moving, it may attack any enemy in Range.<br>
+      A unit can attack without moving, but cannot move after attacking.
+    </div>
+  </div>
+</div>
 
+<div class="page-footer"><span>§ I · The Game in 60 Seconds</span><span>p. 01</span></div>
+    
   <!-- ============================ §2 — SETUP ============================ -->
   <div class="page" id="sec-2">
     <div class="section-header">
