@@ -888,7 +888,7 @@
   }
   .pillar {
     border: 2px solid var(--olive-dark);
-    background: rgba(255, 250, 235, 0.5);
+    background: var(--paper);
     padding: 24px 22px;
     box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.18);
     position: relative;
@@ -1227,19 +1227,19 @@
     </div>
 
     <style>
-      /* Only override the grid so we get a 2×2 layout */
-      .pillars {
+      /* 2×2 grid only for the turn‑steps pillars */
+      .pillars.turn-steps {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;            /* matches your existing .pillars gap */
+        gap: 20px;
       }
-      /* Do NOT override .pillar or .pillar-icon — your main stylesheet handles them perfectly */
+      /* No overrides for .pillar — the main stylesheet handles all appearance */
     </style>
 
     <h3>One Turn at a Time</h3>
     <p>On your turn, do these <strong>four steps in order</strong>. That's the whole game.</p>
 
-    <div class="pillars">
+    <div class="pillars turn-steps">
       <div class="pillar">
         <div class="pillar-icon">1</div>
         <div class="pillar-title">Collect</div>
@@ -1274,6 +1274,7 @@
         </div>
       </div>
     </div>
+    
 <div class="page-footer"><span>§ I · The Game in 60 Seconds</span><span>p. 01</span></div>
   </div>
 
