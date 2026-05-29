@@ -1226,6 +1226,16 @@
       </div>
     </div>
 
+    <style>
+      /* Only override the grid so we get a 2×2 layout */
+      .pillars {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;            /* matches your existing .pillars gap */
+      }
+      /* Do NOT override .pillar or .pillar-icon — your main stylesheet handles them perfectly */
+    </style>
+
     <h3>One Turn at a Time</h3>
     <p>On your turn, do these <strong>four steps in order</strong>. That's the whole game.</p>
 
