@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cruelest Years — Official Field Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Special+Elite&family=Oswald:wght@400;500;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #e6d5b8;
+    --paper-deep:   #d4c19c;
+    --paper-edge:   #b8a37a;
+    --ink:          #1f1812;
+    --ink-faded:    #4a3a2a;
+    --olive:        #4a5a3a;
+    --olive-deep:   #3d4a2f;
+    --olive-dark:   #2a3320;
+    --khaki:        #8b7355;
+    --blood:        #8b1a1a;
+    --blood-deep:   #5e0f0f;
+    --rust:         #a64925;
+    --gold:         #b08842;
+    --shadow:       rgba(31, 24, 18, 0.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    color: var(--ink);
+    line-height: 1.7;
+    background:
+      radial-gradient(ellipse at top left,    rgba(74, 90, 58, 0.18), transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(139, 26, 26, 0.10), transparent 55%),
+      linear-gradient(180deg, #d8c498 0%, #c9b585 50%, #b8a275 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 40px 20px;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.12 0 0 0 0 0.08 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  .manual { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
+
+  .page {
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(160, 130, 90, 0.25), transparent 40%),
+      radial-gradient(ellipse at 80% 80%, rgba(80, 60, 40, 0.18), transparent 50%),
+      radial-gradient(circle at 10% 90%, rgba(139, 26, 26, 0.06), transparent 25%);
+    border: 1px solid var(--paper-edge);
+    box-shadow:
+      0 30px 60px var(--shadow),
+      0 10px 20px rgba(0,0,0,0.2),
+      inset 0 0 80px rgba(120, 90, 55, 0.25),
+      inset 0 0 120px rgba(60, 45, 30, 0.15);
+    padding: 70px 80px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.18 0 0 0 0.25 0'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  .page::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle at center, rgba(110, 75, 35, 0.25), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page > * { position: relative; z-index: 2; }
+
+  /* === COVER PAGE === */
+  .cover {
+    text-align: center;
+    padding: 100px 60px 90px;
+    border: 3px double var(--olive-dark);
+    position: relative;
+  }
+
+  .cover-inner-border {
+    position: absolute;
+    inset: 18px;
+    border: 1px solid var(--olive-deep);
+    pointer-events: none;
+  }
+
+  .cover-classification {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: var(--blood);
+    border-top: 2px solid var(--blood);
+    border-bottom: 2px solid var(--blood);
+    padding: 8px 0;
+    margin-bottom: 60px;
+    font-weight: 700;
+  }
+
+  .cover-eagle {
+    font-size: 70px;
+    line-height: 1;
+    color: var(--olive-dark);
+    margin: 0 0 30px;
+    filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.15));
+  }
+
+  .cover h1 {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 0.95;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+    text-shadow: 3px 3px 0 rgba(139, 26, 26, 0.18);
+    text-transform: uppercase;
+  }
+
+  .cover h1 .the {
+    display: block;
+    font-size: 32px;
+    letter-spacing: 0.6em;
+    margin-bottom: 18px;
+    color: var(--olive-deep);
+    text-shadow: none;
+  }
+
+  .cover-subtitle {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-faded);
+    margin: 30px 0 50px;
+    line-height: 1.4;
+  }
+
+  .cover-rule {
+    width: 200px;
+    height: 1px;
+    background: var(--olive-deep);
+    margin: 30px auto;
+    position: relative;
+  }
+  .cover-rule::before, .cover-rule::after {
+    content: "★";
+    position: absolute;
+    top: -11px;
+    color: var(--olive-deep);
+    font-size: 16px;
+  }
+  .cover-rule::before { left: -25px; }
+  .cover-rule::after  { right: -25px; }
+
+  .cover-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+    margin: 50px 0 20px;
+  }
+  .cover-tagline span { display: inline-block; padding: 0 12px; }
+
+  .cover-meta {
+    margin-top: 60px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--olive-deep);
+    line-height: 2;
+  }
+  .cover-meta strong { color: var(--blood); }
+
+  .stamp {
+    position: absolute;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: 4px double currentColor;
+    padding: 8px 18px;
+    text-transform: uppercase;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.78;
+    box-shadow: inset 0 0 0 1px currentColor;
+  }
+  .stamp-red    { color: var(--blood); transform: rotate(-12deg); }
+  .stamp-olive  { color: var(--olive-dark); transform: rotate(7deg); }
+  .stamp-classified { top: 30px; right: 30px; font-size: 22px; }
+  .stamp-approved   { bottom: 50px; left: 40px; font-size: 18px; }
+  .stamp-archive {
+    bottom: 90px; right: 60px; font-size: 14px;
+    transform: rotate(-3deg); color: var(--ink-faded);
+    border-style: solid; border-width: 2px;
+  }
+  .stamp-revised {
+    top: 40px; left: 30px;
+    font-size: 18px;
+    color: var(--rust);
+    transform: rotate(-5deg);
+    border-style: solid;
+    border-width: 3px;
+  }
+
+  /* === SECTION HEADERS === */
+  .section-header {
+    margin: 70px 0 40px;
+    border-bottom: 4px double var(--olive-dark);
+    padding-bottom: 14px;
+    position: relative;
+  }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-number {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--blood);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.05;
+  }
+
+  .section-kicker {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-faded);
+    margin-top: 8px;
+  }
+
+  h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--olive-dark);
+    margin: 36px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid var(--blood);
+  }
+
+  h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--blood-deep);
+    margin: 22px 0 10px;
+  }
+
+  p { margin-bottom: 16px; font-size: 16px; }
+  p + p { text-indent: 2em; }
+
+  strong { color: var(--blood-deep); font-weight: 700; }
+  em { color: var(--olive-dark); }
+
+  .lead::first-letter {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    float: left;
+    line-height: 0.85;
+    padding: 8px 12px 0 0;
+    color: var(--blood);
+    text-shadow: 2px 2px 0 rgba(74, 90, 58, 0.25);
+  }
+
+  ul, ol { margin: 16px 0 16px 0; padding-left: 0; list-style: none; }
+  ul li, ol li {
+    position: relative;
+    padding: 8px 0 8px 32px;
+    border-bottom: 1px dotted rgba(74, 58, 42, 0.3);
+  }
+  ul li:last-child, ol li:last-child { border-bottom: none; }
+  ul li::before {
+    content: "✦";
+    position: absolute;
+    left: 6px; top: 8px;
+    color: var(--blood);
+    font-size: 14px;
+  }
+  ol { counter-reset: item; }
+  ol li::before {
+    counter-increment: item;
+    content: counter(item, decimal-leading-zero) ".";
+    position: absolute;
+    left: 0; top: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--blood);
+    letter-spacing: 0.05em;
+  }
+
+  .briefing {
+    background: linear-gradient(180deg, rgba(74, 90, 58, 0.12), rgba(74, 90, 58, 0.06));
+    border: 1px solid var(--olive-deep);
+    border-left: 6px solid var(--olive-deep);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(74, 90, 58, 0.18);
+  }
+  .briefing::before {
+    content: "FIELD NOTE";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--olive-deep);
+  }
+
+  .warning {
+    background: linear-gradient(180deg, rgba(139, 26, 26, 0.10), rgba(139, 26, 26, 0.04));
+    border: 1px solid var(--blood);
+    border-left: 6px solid var(--blood);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(139, 26, 26, 0.15);
+  }
+  .warning::before {
+    content: "⚠ WARNING";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+  }
+
+  .clause {
+    background: linear-gradient(180deg, rgba(176, 136, 66, 0.12), rgba(176, 136, 66, 0.04));
+    border: 1px solid var(--gold);
+    border-left: 6px solid var(--gold);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .clause::before {
+    content: "§ RULE CLAUSE";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+  }
+
+  .draft {
+    background: linear-gradient(180deg, rgba(110, 90, 60, 0.1), rgba(110, 90, 60, 0.03));
+    border: 2px dashed var(--khaki);
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+  }
+  .draft::before {
+    content: "✎ IN DEVELOPMENT";
+    position: absolute;
+    top: -10px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--khaki);
+  }
+
+  .objective {
+    border: 2px solid var(--olive-dark);
+    padding: 26px 30px;
+    margin: 30px 0;
+    text-align: center;
+    background: repeating-linear-gradient(45deg, transparent, transparent 12px,
+      rgba(74, 90, 58, 0.06) 12px, rgba(74, 90, 58, 0.06) 13px);
+  }
+  .objective-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: var(--blood);
+    margin-bottom: 12px;
+  }
+  .objective-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* === TABLES === */
+  .table-wrapper {
+    margin: 30px 0;
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.4);
+    box-shadow: 6px 6px 0 rgba(74, 90, 58, 0.2);
+    overflow-x: auto;
+  }
+
+  .table-caption {
+    background: var(--olive-dark);
+    color: var(--paper);
+    padding: 10px 18px;
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table-caption .form-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    opacity: 0.75;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Special Elite', monospace;
+    font-size: 14px;
+  }
+
+  th {
+    background: rgba(74, 90, 58, 0.15);
+    border: 1px solid var(--olive-deep);
+    padding: 10px 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  th:first-child { text-align: left; padding-left: 14px; }
+
+  td {
+    border: 1px solid rgba(74, 90, 58, 0.5);
+    padding: 8px 6px;
+    text-align: center;
+    color: var(--ink-faded);
+    white-space: nowrap;
+  }
+  td:first-child {
+    text-align: left;
+    padding-left: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--ink);
+    background: rgba(74, 90, 58, 0.05);
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(odd) td { background: rgba(180, 150, 100, 0.06); }
+  tbody tr:nth-child(odd) td:first-child { background: rgba(74, 90, 58, 0.08); }
+  tbody tr:hover td { background: rgba(139, 26, 26, 0.07); }
+
+  .table-footnotes {
+    background: rgba(74, 90, 58, 0.08);
+    border-top: 1px solid var(--olive-deep);
+    padding: 12px 18px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-faded);
+  }
+  .table-footnotes div { margin: 4px 0; }
+  .table-footnotes div::before { content: "*"; color: var(--blood); margin-right: 6px; font-weight: 700; }
+
+  /* Stat tables (rotated layout where rows are stats, columns are countries) */
+  .stat-table th.country-col {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    background: rgba(139, 26, 26, 0.1);
+    border-bottom: 3px solid var(--blood);
+    padding: 12px 6px;
+    min-width: 78px;
+  }
+  .stat-table th.regional-col {
+    background: rgba(74, 90, 58, 0.18);
+    border-bottom: 3px solid var(--olive-deep);
+  }
+  .stat-table tbody td {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  /* === COUNTRY GRID (overview) === */
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 24px 0 36px;
+  }
+
+  .country-card {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.5);
+    padding: 14px 12px;
+    text-align: center;
+    box-shadow: 3px 3px 0 rgba(74, 90, 58, 0.2);
+    position: relative;
+  }
+  .country-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 11px;
+    color: var(--blood);
+    letter-spacing: 0.15em;
+  }
+  .country-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-top: 4px;
+  }
+  .country-pop {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    color: var(--ink-faded);
+    margin-top: 4px;
+  }
+  .core-card {
+    background: linear-gradient(180deg, rgba(139, 26, 26, 0.08), rgba(139, 26, 26, 0.02));
+    border-color: var(--blood-deep);
+    border-width: 3px;
+  }
+  .core-card .country-num { color: var(--blood-deep); }
+
+  .happiness {
+    margin: 28px 0;
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.4);
+  }
+  .happiness-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    border-bottom: 1px solid rgba(74, 90, 58, 0.4);
+  }
+  .happiness-row:last-child { border-bottom: none; }
+  .happiness-level {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding: 18px 10px;
+    color: var(--paper);
+    font-weight: 700;
+  }
+  .happiness-row:nth-child(1) .happiness-level { background: #4a7a3a; }
+  .happiness-row:nth-child(2) .happiness-level { background: #8a8a3a; }
+  .happiness-row:nth-child(3) .happiness-level { background: #b8702a; }
+  .happiness-row:nth-child(4) .happiness-level { background: var(--blood); }
+  .happiness-desc {
+    padding: 18px 22px;
+    font-size: 15px;
+  }
+  .happiness-desc strong {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 32px 0;
+    padding: 26px;
+    background: rgba(74, 90, 58, 0.10);
+    border: 2px solid var(--olive-dark);
+    text-align: center;
+  }
+  .timeline-pt-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+    margin-bottom: 6px;
+  }
+  .timeline-pt-date {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .timeline-pt-event {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-faded);
+    margin-top: 6px;
+  }
+  .timeline-arrow {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 28px;
+    color: var(--olive-dark);
+    letter-spacing: 0.2em;
+  }
+  .timeline-turns {
+    text-align: center;
+    margin-top: 16px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+  }
+  .timeline-turns strong {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 22px;
+    color: var(--blood);
+    margin: 0 6px;
+  }
+
+  /* === FACTORY OPTIONS GRID === */
+  .factory-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 22px 0;
+  }
+  .factory-opt {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.4);
+    padding: 18px 16px;
+    text-align: center;
+    box-shadow: 3px 3px 0 rgba(74, 90, 58, 0.15);
+  }
+  .factory-opt-yield {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 24px;
+    color: var(--blood);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+  .factory-opt-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faded);
+  }
+
+  /* === RESOURCE CARDS === */
+  .resources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 30px 0;
+  }
+  .resource {
+    border: 2px solid var(--olive-dark);
+    padding: 24px 26px;
+    background: rgba(255, 250, 235, 0.5);
+    box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.15);
+  }
+  .resource-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: var(--blood);
+  }
+  .resource-name {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .resource-desc { font-size: 15px; line-height: 1.6; }
+
+  .qa { margin: 24px 0; }
+  .qa-question {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--blood-deep);
+    margin: 22px 0 6px;
+    padding-left: 18px;
+    border-left: 3px solid var(--blood);
+  }
+  .qa-answer {
+    font-size: 16px;
+    padding-left: 18px;
+    color: var(--ink-faded);
+    border-left: 3px solid rgba(74, 90, 58, 0.4);
+  }
+
+  .decisions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .decision {
+    border: 2px dashed var(--olive-deep);
+    padding: 16px 14px;
+    background: rgba(180, 150, 100, 0.08);
+    text-align: center;
+  }
+  .decision-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    color: var(--blood);
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .decision-event {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .contents-list { list-style: none; padding: 0; margin-top: 30px; }
+  .contents-list li {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--olive-deep);
+  }
+  .contents-list li::before { content: none; }
+  .contents-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-weight: 700;
+    color: var(--blood);
+    font-size: 14px;
+    letter-spacing: 0.15em;
+  }
+  .contents-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .contents-page {
+    font-family: 'Special Elite', monospace;
+    color: var(--ink-faded);
+    font-size: 14px;
+  }
+  .contents-list a {
+    color: inherit;
+    text-decoration: none;
+    display: contents;
+  }
+  .contents-list a:hover .contents-name { color: var(--blood); }
+
+  .page-footer {
+    margin-top: 60px;
+    padding-top: 18px;
+    border-top: 1px solid var(--olive-deep);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+  }
+
+  .colophon { text-align: center; padding: 60px 40px; }
+  .colophon h2 {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 36px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .colophon-text {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-faded);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .responsibilities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 30px 0;
+  }
+  .resp {
+    text-align: center;
+    padding: 18px 10px;
+    border: 2px solid var(--olive-dark);
+    background: rgba(74, 90, 58, 0.06);
+  }
+  .resp-num {
+    font-family: 'Stardos Stencil', sans-serif;
+    color: var(--blood);
+    font-size: 32px;
+    line-height: 1;
+  }
+  .resp-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  /* Leader / unique unit / ideology pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+  }
+  .pillar {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.5);
+    padding: 24px 22px;
+    box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.18);
+    position: relative;
+  }
+  .pillar-icon {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 36px;
+    color: var(--blood);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .pillar-title {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .pillar-body { font-size: 14px; line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    body { padding: 20px 8px; }
+    .page { padding: 40px 24px; }
+    .cover h1 { font-size: 52px; }
+    .cover h1 .the { font-size: 22px; letter-spacing: 0.4em; }
+    .section-title { font-size: 28px; }
+    .countries-grid { grid-template-columns: repeat(2, 1fr); }
+    .resources { grid-template-columns: 1fr; }
+    .decisions { grid-template-columns: 1fr; }
+    .responsibilities { grid-template-columns: repeat(2, 1fr); }
+    .timeline { grid-template-columns: 1fr; }
+    .timeline-arrow { transform: rotate(90deg); }
+    .happiness-row { grid-template-columns: 80px 1fr; }
+    .happiness-level { font-size: 20px; }
+    table { font-size: 12px; }
+    th, td { padding: 6px 4px; }
+    .factory-options { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+  }
+  /* === NATION DOSSIER CARDS (for §VIII Leaders) === */
+  .nation-card {
+    border: 2px solid var(--olive-dark);
+    background: rgba(255, 250, 235, 0.55);
+    margin: 18px 0;
+    box-shadow: 5px 5px 0 rgba(74, 90, 58, 0.18);
+  }
+  .nation-card-header {
+    background: var(--olive-dark);
+    color: var(--paper);
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Stardos Stencil', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .nation-card-name { font-size: 16px; font-weight: 700; }
+  .nation-card-region { font-size: 10px; opacity: 0.7; }
+  .nation-card-body { padding: 16px 20px; }
+
+  .leader-block {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted rgba(74, 58, 42, 0.3);
+  }
+  .leader-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .leader-block.unit-trait { border-top: 2px solid var(--blood); padding-top: 12px; margin-top: 6px; background: rgba(139, 26, 26, 0.04); padding-left: 8px; padding-right: 8px; }
+
+  .leader-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--blood-deep);
+  }
+  .leader-name .role {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0;
+    color: var(--ink-faded);
+    text-transform: none;
+    margin-left: 8px;
+  }
+  .ability-name {
+    font-family: 'Special Elite', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--olive-dark);
+    margin-top: 2px;
+  }
+  .ability-tag {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--olive-deep);
+    color: var(--paper);
+    padding: 1px 6px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .ability-tag.passive { background: var(--olive-deep); }
+  .ability-tag.active { background: var(--blood); }
+  .ability-tag.hybrid { background: var(--rust); }
+  .ability-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 4px;
+    color: var(--ink-faded);
+  }
+
+  .unit-trait-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--blood);
+    margin-bottom: 2px;
+  }
+
+  .nations-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .nations-2col { grid-template-columns: 1fr; }
+  }
+
+  /* Win-condition tablet */
+  .win-conditions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .win-card {
+    border: 3px double var(--olive-dark);
+    background: rgba(255, 250, 235, 0.5);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 4px 4px 0 rgba(74, 90, 58, 0.2);
+  }
+  .win-card-scope {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .win-card-total {
+    font-family: 'Old Standard TT', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-faded);
+    margin-bottom: 14px;
+  }
+  .win-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(74, 90, 58, 0.3);
+  }
+  .win-line .num {
+    font-family: 'Stardos Stencil', sans-serif;
+    color: var(--blood);
+    font-weight: 700;
+  }
+  @media (max-width: 768px) {
+    .win-conditions { grid-template-columns: 1fr; }
+  }
+  /* === CROSS-DOCUMENT NAV BANNER === */
+  .doc-nav {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    display: flex;
+    gap: 0;
+    border: 2px solid var(--olive-dark);
+    box-shadow: 0 8px 20px var(--shadow);
+    position: relative;
+    z-index: 3;
+    font-family: 'Stardos Stencil', sans-serif;
+  }
+  .doc-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--olive-deep);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: background 0.15s;
+  }
+  .doc-nav a:hover { background: var(--blood); }
+  .doc-nav a.current {
+    background: var(--paper);
+    color: var(--ink);
+    border-bottom: 4px solid var(--blood);
+    cursor: default;
+  }
+  .doc-nav a.current:hover { background: var(--paper); }
+  .doc-nav .nav-sub {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  /* Inline cross-link pills */
+  .xlink {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(139, 26, 26, 0.1);
+    border: 1px solid var(--blood);
+    color: var(--blood-deep);
+    padding: 1px 8px;
+    text-decoration: none;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .xlink:hover { background: var(--blood); color: var(--paper); }
+  .xlink::before { content: "→ "; }
+
+  /* === LOCATION TABLES (city/factory placement) === */
+  .loc-table { font-size: 13px; }
+  .loc-table td.loc-type {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    background: rgba(74, 90, 58, 0.1);
+    white-space: nowrap;
+  }
+  .loc-table td.loc-factory { color: var(--blood-deep); }
+  .loc-table td.nation-label {
+    font-family: 'Stardos Stencil', sans-serif;
+    font-size: 13px;
+    background: rgba(139, 26, 26, 0.08);
+    border-right: 2px solid var(--blood);
+    vertical-align: middle;
+  }
+  .loc-empty { color: #999; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ===== CROSS-DOC NAV ===== -->
+<div class="doc-nav">
+  <a href="index.html">Rulebook<span class="nav-sub">Base game</span></a>
+  <a href="stats.html">Stats &amp; Cards<span class="nav-sub">Nations · Units · Leaders</span></a>
+  <a class="current">DLC<span class="nav-sub">Optional content</span></a>
+</div>
+
+<div class="manual">
+
+  <!-- ============================ COVER ============================ -->
+  <div class="page cover">
+    <div class="cover-inner-border"></div>
+
+    <div class="stamp stamp-red stamp-classified">Expansion</div>
+    <div class="stamp stamp-olive stamp-approved">Optional</div>
+    <div class="stamp stamp-archive">Annex II</div>
+    <div class="stamp stamp-revised">Edition VIII · DLC</div>
+
+    <div class="cover-classification">★ ★ ★  WAR DEPARTMENT EXPANSION FILE  ★ ★ ★</div>
+
+    <div class="cover-eagle">✷</div>
+
+    <h1>
+      <span class="the">— The Cruelest Years —</span>
+      Expansion<br>Rules
+    </h1>
+
+    <div class="cover-rule"></div>
+
+    <p class="cover-subtitle">
+      Optional Content Beyond the Base Game<br>
+      Asian Theatre · Occupied Nations · Advanced Combat
+    </p>
+
+    <div class="cover-tagline">
+      <span>Two Chinas</span>·<span>Liberation Wars</span>·<span>Risk &amp; Inflation</span>
+    </div>
+
+    <div class="cover-meta">
+      EXPANSION ANNEX <strong>·</strong> EDITION VIII<br>
+      Add These Rules to the Base Game When the Table Agrees
+    </div>
+
+    <p style="margin-top: 40px; font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 0.1em; color: var(--olive-deep);">
+      Base rules live in the
+      <a class="xlink" href="index.html">Rulebook</a>. Numbers live in
+      <a class="xlink" href="stats.html">Stats &amp; Cards</a>.
+    </p>
+  </div>
+
+  <!-- ============================ INTRO ============================ -->
+  <div class="page" id="intro">
+    <div class="section-header">
+      <div class="section-number">— EXPANSION ANNEX —</div>
+      <h2 class="section-title">What's in This Document</h2>
+      <div class="section-kicker">The base game emphasizes Europe. Everything else lives here.</div>
+    </div>
+
+    <p class="lead">
+      The base game of <em>The Cruelest Years</em> is European. It plays in about an hour, with rules a new player can absorb in 10 minutes. The Second World War, however, was not only European. The Asian theatre, the occupied nations, and several advanced combat options each add real complexity. We have moved them here so the base game stays approachable, and so the table can choose how deep it wants to go.
+    </p>
+
+    <p>
+      Each section below is a self-contained expansion. Use any combination at the start of a game by agreement of all players. Once chosen, the rules below override the base game.
+    </p>
+
+    <ul class="contents-list">
+      <li><a href="#dlc-1"><span class="contents-num">DLC 1</span><span class="contents-name">Over-Range Strike — Advanced Combat</span><span class="contents-page">p. 02</span></a></li>
+      <li><a href="#dlc-2"><span class="contents-num">DLC 2</span><span class="contents-name">Inflation — Risk &amp; Reward Economics</span><span class="contents-page">p. 03</span></a></li>
+      <li><a href="#dlc-3"><span class="contents-num">DLC 3</span><span class="contents-name">The Two Chinas — Asian Theatre Variant</span><span class="contents-page">p. 04</span></a></li>
+      <li><a href="#dlc-4"><span class="contents-num">DLC 4</span><span class="contents-name">Occupied Nations — Korea, India, Oceania</span><span class="contents-page">p. 06</span></a></li>
+    </ul>
+<div class="page-footer"><span>Expansion Annex · Introduction</span><span>p. 01</span></div>
+  </div>
+
+  <!-- ============================ DLC 1 — OVER-RANGE ============================ -->
+  <div class="page" id="dlc-1">
+    <div class="section-header">
+      <div class="section-number">— DLC 1 —</div>
+      <h2 class="section-title">Over-Range Strike</h2>
+      <div class="section-kicker">Push your guns just a little farther than they were built for.</div>
+    </div>
+
+    <p class="lead">
+      In the base game, your unit's Range is final. You attack within Range, or you do not attack at all. The Over-Range Strike rule lets you push beyond — at the cost of a coin flip.
+    </p>
+
+    <h3>The Rule</h3>
+    <p>
+      During the Move &amp; Attack phase, a unit may attempt to attack a target <strong>one unit of distance beyond its printed Range</strong>. Declare the over-range attack, then flip a coin.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">★</div>
+        <div class="pillar-title">Heads</div>
+        <div class="pillar-body">
+          The over-range strike hits normally. Apply your Attack value as damage. The attack costs you the unit's action for the turn (it cannot move after attacking).
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">✗</div>
+        <div class="pillar-title">Tails</div>
+        <div class="pillar-body">
+          The strike misses. No damage is dealt. The unit's action is still spent for the turn — over-range attempts cost the attempt, not just the hit.
+        </div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <strong>Limit —</strong> Over-range strikes may extend a unit's Range by <strong>one tile only</strong>. They cannot chain or combine with any other range-extending ability.
+    </div>
+
+    <h3>Why This Lives in the DLC</h3>
+    <p>
+      The over-range strike adds a layer of risk-management to every attack. It rewards experienced players who understand probability and over-extension. It also slows down combat, because every borderline attack needs a coin flip. The base game omits it so first-time players can resolve combat without arithmetic on top of randomness.
+    </p>
+<div class="page-footer"><span>DLC 1 · Over-Range Strike</span><span>p. 02</span></div>
+  </div>
+
+  <!-- ============================ DLC 2 — INFLATION ============================ -->
+  <div class="page" id="dlc-2">
+    <div class="section-header">
+      <div class="section-number">— DLC 2 —</div>
+      <h2 class="section-title">Inflation — Print the Money Now, Pay Later</h2>
+      <div class="section-kicker">Trade tomorrow's economy for today's army.</div>
+    </div>
+
+    <p class="lead">
+      Every government in the Second World War borrowed from its future to fight its present. Germany printed Reichsmarks. Britain liquidated its empire. The United States ran the largest deficit in its history. The Inflation rule gives every nation that same option — and the same long-term cost.
+    </p>
+
+    <h3>The Ability</h3>
+    <div class="clause">
+      <strong>Print the Money.</strong> During your <em>Use Abilities</em> phase, you may activate Inflation by adding <strong>+10 gold</strong> to your treasury immediately. You may activate Inflation once per turn (no cooldown).
+    </div>
+
+    <h3>The Cost</h3>
+    <p>
+      Each activation of Inflation places one <strong>Inflation Marker</strong> on your nation card. Inflation Markers do not go away. From the turn after you activate Inflation, and forever after, you take the following penalty during your <strong>Collect</strong> phase:
+    </p>
+
+    <div class="resources">
+      <div class="resource">
+        <div class="resource-icon">📉</div>
+        <div class="resource-name">Per Marker · Per Turn</div>
+        <div class="resource-desc">
+          Lose <strong>1 gold</strong> from your treasury for every Inflation Marker you hold. If you have no gold to lose, lose 1 weapon instead. If you have no weapons, lose 1 population.
+        </div>
+      </div>
+      <div class="resource">
+        <div class="resource-icon">∞</div>
+        <div class="resource-name">No Cure</div>
+        <div class="resource-desc">
+          Inflation Markers <strong>cannot be removed</strong> for the rest of the game. The only way out is winning before the markers eat you.
+        </div>
+      </div>
+    </div>
+
+    <h3>The Math</h3>
+    <p>
+      One Inflation Marker pays for itself after <strong>10 turns</strong> of loss. Two markers (you've printed +20 gold total) pay for themselves after 10 turns each, costing 2 gold per turn forever. The strategy is short-term — it works if you can win the game in fewer than 10 turns of the activation. Past that horizon, you are paying a permanent tax.
+    </p>
+
+    <h3>When to Use It</h3>
+    <ul>
+      <li><strong>Surprise offensive.</strong> You're 5 turns from a likely victory and need one more wave of units. Print and strike.</li>
+      <li><strong>Last-ditch defense.</strong> The Wehrmacht is at your border. You need a Tank now, not next turn. Print and conscript.</li>
+      <li><strong>Emergency rescue.</strong> An ally is collapsing. You can fund a relief army at the cost of your post-war economy.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Why this isn't free.</strong> Inflation rewards aggression and short campaigns. In a long, drawn-out game, the player who printed three or four Inflation Markers will starve out their own army by turn 20. The temptation to print "just one more" has destroyed real economies. Don't let it destroy yours.
+    </div>
+<div class="page-footer"><span>DLC 2 · Inflation</span><span>p. 03</span></div>
+  </div>
+
+  <!-- ============================ DLC 3 — TWO CHINAS ============================ -->
+  <div class="page" id="dlc-3">
+    <div class="section-header">
+      <div class="section-number">— DLC 3 —</div>
+      <h2 class="section-title">The Two Chinas</h2>
+      <div class="section-kicker">A Nationalist government and a Communist resistance, fighting Japan — and each other.</div>
+    </div>
+
+    <p class="lead">
+      In the 1930s, the Republic of China was not a single state. The Nationalist government under Chiang Kai-shek and the Communist resistance under Mao Zedong shared a fragile truce against the Japanese invasion. They cooperated when they had to. They turned their guns on each other when they could. The base game collapses both into one Chinese player. This expansion restores the original split.
+    </p>
+
+    <h3>Three Modes of Play</h3>
+    <p>If you are using DLC 3, China must be played in one of three modes, agreed by the table at setup:</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">壹</div>
+        <div class="pillar-title">Unified China</div>
+        <div class="pillar-body">
+          One player commands all of China. Both leader cards (Mao and Chiang) are available — the player chooses one. <em>This is the base-game default.</em>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">貳</div>
+        <div class="pillar-title">United Front</div>
+        <div class="pillar-body">
+          Two players share China cooperatively. Treasury and unit pool are shared. Each plays one of the two Chinese leaders. Disagreements on major actions are resolved by die roll.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">參</div>
+        <div class="pillar-title">Civil Truce</div>
+        <div class="pillar-body">
+          The dossier splits between Nationalist (KMT) and Communist (CCP). The two Chinese players act as independent powers. They may cooperate, betray, or stay in armed truce while jointly facing Japan.
+        </div>
+      </div>
+    </div>
+
+    <h3>Civil Truce — The 60 / 40 Split</h3>
+    <p>
+      When the Civil Truce mode is chosen, China's base dossier is divided between KMT and CCP as follows:
+    </p>
+
+    <div class="table-wrapper">
+      <div class="table-caption">
+        <span>Table · Two Chinas (Civil Truce)</span>
+        <span class="form-num">WD FORM 3-C</span>
+      </div>
+      <table class="stat-table">
+        <thead>
+          <tr>
+            <th>Statistic</th>
+            <th class="country-col">KMT (Nationalist)</th>
+            <th class="country-col">CCP (Communist)</th>
+            <th class="country-col regional-col">China (combined)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cities</td><td>4</td><td>1</td><td>5</td></tr>
+          <tr><td>Factories</td><td>1</td><td>0</td><td>1</td></tr>
+          <tr><td>Population</td><td>4</td><td>2</td><td>6</td></tr>
+          <tr><td>Treasury</td><td>2</td><td>1</td><td>3</td></tr>
+          <tr><td>Initial Weapons</td><td>1</td><td>0</td><td>1</td></tr>
+          <tr><td>Initial Units</td><td>3</td><td>2</td><td>5</td></tr>
+        </tbody>
+      </table>
+      <div class="table-footnotes">
+        <div>The KMT player chooses Chiang Kai-shek as leader. The CCP player chooses Mao Zedong.</div>
+        <div>Both players use the Chinese Unique Unit Trait (Guerrilla Infantry).</div>
+        <div>The combined column matches the base-game China dossier. The split sums correctly.</div>
+      </div>
+    </div>
+
+    <h3>Civil Truce Rules</h3>
+    <ul>
+      <li><strong>Both players are Chinese.</strong> They may declare team victory together at the China total (subject to the chosen game mode), but they may also turn on each other.</li>
+      <li><strong>Capturing the other China.</strong> If a Chinese player captures a city or factory from the other Chinese player, the captured territory now produces for the captor. The KMT-vs-CCP civil war is real.</li>
+      <li><strong>Versus Japan.</strong> Both Chinese players are independently at war with Japan from turn 1 unless they negotiate a separate peace.</li>
+      <li><strong>Diplomacy.</strong> Either Chinese player may form an alliance with another power at any time. The other Chinese player is not bound by that alliance.</li>
+    </ul>
+<div class="page-footer"><span>DLC 3 · The Two Chinas</span><span>p. 04–05</span></div>
+  </div>
+
+  <!-- ============================ DLC 4 — OCCUPIED NATIONS ============================ -->
+  <div class="page" id="dlc-4">
+    <div class="section-header">
+      <div class="section-number">— DLC 4 —</div>
+      <h2 class="section-title">Occupied Nations</h2>
+      <div class="section-kicker">Korea, British India, and the Pacific dominions begin under another power. Here is how they break free.</div>
+    </div>
+
+    <p class="lead">
+      The base game treats every nation as if it had political agency at the start of play. The historical reality was different. Korea was a Japanese colony. India and the Pacific dominions answered to the British Crown. This expansion adds the rules that let these nations act for themselves — and tells you what they must do to win their independence.
+    </p>
+
+    <h3>Korea — Under Japanese Occupation</h3>
+    <div class="clause">
+      <strong>Korea begins fully occupied by Japan.</strong> A player who chooses Korea does not act as a free nation at the start. Until Korea is liberated:
+    </div>
+    <ul>
+      <li>Korean territory, cities, and the Korean factory produce for <strong>Japan</strong>, not for the Korean player.</li>
+      <li>The Korean player may not train or move units freely; they may only build resistance using Kim Gu's <em>Resistance Network</em> ability (see <a class="xlink" href="stats.html#leaders">Stats § D</a>).</li>
+      <li>To play Korea independently, the Korean player (or an ally) must drive Japanese units out of Korean home territory and <strong>hold it for one full round</strong>.</li>
+      <li>Once liberated, Korea becomes a free nation and plays normally for the rest of the game.</li>
+    </ul>
+
+    <h3>British India &amp; the Dominions — Under the Crown</h3>
+    <div class="clause">
+      <strong>British India and the Pacific dominions (Australia and New Zealand within Oceania) begin subordinate to the United Kingdom.</strong> Until they declare and survive independence:
+    </div>
+    <ul>
+      <li>The subordinate nation must <strong>follow the orders of the UK player</strong> on major actions — which wars to join, which territories to defend.</li>
+      <li>The subordinate nation keeps its own income and units, but cannot declare war on, or refuse to defend against, a target chosen by the UK player.</li>
+      <li>To play independently, the player must <strong>declare independence and survive one full round</strong> without losing their capital to British forces.</li>
+      <li>Once independence is declared and held, the nation acts entirely for itself — and may turn against its former master.</li>
+    </ul>
+<div class="warning">
+      <strong>Best for advanced or cooperative play.</strong> Because they begin subordinate or occupied, Korea, British India, and an independent Oceania are best suited to experienced players, or to cooperative games where a Great Power ally helps engineer their liberation. A new player is usually better served by one of the eight Great Powers.
+    </div>
+
+    <div class="page-footer"><span>DLC 4 · Occupied Nations</span><span>p. 06</span></div>
+  </div>
+
+  <!-- ============================ COLOPHON ============================ -->
+  <div class="page">
+    <div class="colophon">
+      <div class="cover-rule"></div>
+      <h2>End of Expansion Annex</h2>
+      <p class="colophon-text">
+        Combine these expansions as the table prefers. Return to the
+        <a class="xlink" href="index.html">Rulebook</a>
+        for the base rules, or to
+        <a class="xlink" href="stats.html">Stats &amp; Cards</a>
+        for all numbers and leader cards.
+      </p>
+      <div class="cover-rule"></div>
+
+      <div style="margin-top: 50px;">
+        <div class="stamp stamp-olive" style="position: static; display: inline-block; transform: rotate(-2deg);">Filed · DLC Annex · Edition VIII</div>
+      </div>
+    </div>
+
+    <div class="page-footer"><span>The Cruelest Years · DLC · Edition VIII</span><span>Annex · End</span></div>
+  </div>
+
+</div>
+
+</body>
+</html>
