@@ -80,11 +80,11 @@ This game was created with a few unwavering principles:
 
 ## Credits
 
-**Designed by:** Leon, Jeff, Oliver, Larry  
-**Special thanks to:** Mr. Solomon, Ms. Wang, Monsieur Roland, Mr. Tyler Crumrine  
+**Designed by:** Leon, Jeff, Larry, Oliver
+**Special thanks to:** Mr. Solomon, Ms. Wang, Monsieur Roland, Mr. Tyler Crumrine
 **Course:** *Your Move: How Game Design Brings History to Life* - Shady Side Academy  
 
-The historical research that shaped this game owes a debt to the work of Antony Beevor, Rana Mitter, Timothy Snyder, David M. Glantz, Yasmin Khan, and many others. A full bibliography appears in `rulebook_plaintext.md`.
+The historical research that shaped this game owes a debt to the work of Antony Beevor, Rana Mitter, Timothy Snyder, David M. Glantz, Yasmin Khan, and many others. A full bibliography appears in `credits.md`.
 
 ---
 
