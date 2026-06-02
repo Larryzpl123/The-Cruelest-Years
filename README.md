@@ -49,8 +49,8 @@ This project contains the complete rulebook and supporting materials for the gam
 2. **Keep the Stats Document Open**  
    Every number you need for initial set up and game: gold, weapons, population, unit costs, attack values, leader abilities, etc - lives in `stats.html`. The rulebook tells you *how* to play; the stats document tells you *what the pieces do*.
 
-3. **Print or Reference the Plain Text Version**  
-   For quick rules look-ups or a physical reference, use `rulebook_plaintext.md`. It contains the same core rules in a linear, markdown-friendly format, plus a glossary, FAQ, and strategy advice.
+3. **Print or Reference the Rulebook**  
+   For quick rules look-ups or a physical reference, use `rulebook.pdf`.
 
 ---
 
@@ -61,7 +61,7 @@ This game was created with a few unwavering principles:
 - **Teach history through play.** The asymmetry of the nations mirrors the real industrial, economic, and military disparities of the 1930s. The game does not sanitise the war's brutality but handles it through mechanics (occupation, fixed factories, irreversible losses) rather than gratuitous spectacle.
 - **Agency for the forgotten powers.** Poland, the Nordic countries, and the Iberian neutrals are playable, not just sideshows. Occupied nations can revolt and fight for their freedom.
 - **Simplicity on the surface, depth in the cards.** The core rules are short - income, train, move, attack. All the variety lives in the leader abilities, unique unit traits, and optional agenda/event decks.
-- **Respect for the subject matter.** The designer's notes (§ XIII) are an honest conversation about what it means to make a game about the Second World War. We encourage players to read them before setting up the board.
+- **Respect for the subject matter.** The designer's notes are an honest conversation about what it means to make a game about the Second World War. We encourage players to read them before setting up the board.
 
 ---
 
