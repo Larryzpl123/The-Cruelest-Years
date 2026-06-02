@@ -44,23 +44,10 @@ This project contains the complete rulebook and supporting materials for the gam
 ## How to Play
 
 1. **Start with the Rulebook**  
-   Open `rulebook.html` in your browser. The document is structured like a military field manual, with a table of contents that links directly to every section.  
-   - § I - Overview & victory conditions  
-   - § II - Turn structure & calendar  
-   - § III - The eighteen nations  
-   - § IV - Setup  
-   - § V - Cities, factories & resources  
-   - § VI - Training & units  
-   - § VII - Movement & combat  
-   - § VIII - Leaders & abilities  
-   - § IX - Occupied nations  
-   - § X - Agendas (optional)  
-   - § XI - Historical events (optional)  
-   - § XII - Campaign scenarios  
-   - § XIII - Designer's notes  
+   Open the `homepage` or `index.html` in your browser.<br/> [Homepage](https://larryzpl123.github.io/The-Cruelest-Years/) [index.html](https://larryzpl123.github.io/The-Cruelest-Years/index.html)<br/> The document is structured like a simple military field manual, it explains how to play the game with <10 minutes of reading time.
 
 2. **Keep the Stats Document Open**  
-   Every number you need - gold, weapons, population, unit costs, attack values, leader abilities - lives in `the_cruelest_years_stats.html`. The rulebook tells you *how* to play; the stats document tells you *what the pieces do*.
+   Every number you need for initial set up and game: gold, weapons, population, unit costs, attack values, leader abilities, etc - lives in `stats.html`. The rulebook tells you *how* to play; the stats document tells you *what the pieces do*.
 
 3. **Print or Reference the Plain Text Version**  
    For quick rules look-ups or a physical reference, use `rulebook_plaintext.md`. It contains the same core rules in a linear, markdown-friendly format, plus a glossary, FAQ, and strategy advice.
