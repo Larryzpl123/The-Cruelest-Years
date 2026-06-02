@@ -86,6 +86,8 @@ This game was created with a few unwavering principles:
 
 The historical research that shaped this game owes a debt to the work of Antony Beevor, Rana Mitter, Timothy Snyder, David M. Glantz, Yasmin Khan, and many others. A full bibliography appears in `CREDITS.md`.
 
+[Credits.md](CREDITS.md)
+
 ---
 
 ## License & Usage
