@@ -1,7 +1,7 @@
 # The Cruelest Years
 
 **A Strategic Wargame of the Second World War**  
-*October 1935 - September 1945 · 6-9 Players · 48/38 Territories · 18 Playable Nations*
+Base Game: *October 1935 - September 1945 · 6-9 Players · 48/38 Territories · 18 Playable Nations*
 
 ---
 
