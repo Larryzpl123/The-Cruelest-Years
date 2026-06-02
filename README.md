@@ -94,7 +94,7 @@ The historical research that shaped this game owes a debt to the work of Antony 
 
 This project is the result of an educational game-design course and is shared for learning, playtesting, and historical discussion. All original game mechanics, text, and visual design are the work of the credited designers. If you use or adapt this material, please credit appropriately and keep the spirit of the designer's notes intact.
 
-[License.txt](LICENSE.txt)
+[License.txt](LICENSE)
 
 ---
 
