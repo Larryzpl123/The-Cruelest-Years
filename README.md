@@ -84,7 +84,7 @@ This game was created with a few unwavering principles:
 **Special thanks to:** Mr. Solomon, Ms. Wang, Monsieur Roland, Mr. Tyler Crumrine
 **Course:** *Your Move: How Game Design Brings History to Life* - Shady Side Academy  
 
-The historical research that shaped this game owes a debt to the work of Antony Beevor, Rana Mitter, Timothy Snyder, David M. Glantz, Yasmin Khan, and many others. A full bibliography appears in `credits.md`.
+The historical research that shaped this game owes a debt to the work of Antony Beevor, Rana Mitter, Timothy Snyder, David M. Glantz, Yasmin Khan, and many others. A full bibliography appears in `CREDITS.md`.
 
 ---
 
