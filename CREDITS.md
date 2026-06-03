@@ -203,4 +203,5 @@ Robinson, Michael E. *Korea's Twentieth-Century Odyssey: A Short History*. Honol
 
 ## C. The Reddit Map
 
-[Xotaed]. "Europe 1939 on the Eve of WWII." Reddit post, r/Map. https://www.reddit.com/r/MapPorn/comments/cdbrz7/europe_1939_on_the_eve_of_wwii/.
+[Xotaed]. "Europe 1939 on the Eve of WWII." Reddit post, r/Map.
+https://www.reddit.com/r/comments/cdbrz7/europe_1939_on_the_eve_of_wwii/.
