@@ -1,4 +1,4 @@
-## Authors: <br/>
+# Authors: <br/>
 
 Larry - Game Designer, Website & Rule Book Writing, Game Mechanism Design, planner and crafter<br/>
 
@@ -8,7 +8,7 @@ Jeff - 3D Modeler, Map Maker, Rule Book Designer, Aesthetic & Implementation Dir
 
 Oliver - Rule editor, Mechanism Feedback & Idea provider, Art Refiner<br/>
 
-## Specials Thanks to:
+# Specials Thanks to:
 
 Mr. Solomon<br/>
 
@@ -22,8 +22,8 @@ Mr. Shawn Patton<br/>
 
 Games Unlimited<br/>
 
-## References
-# A. Game References
+# References
+## A. Game References
 
 Firaxis Games. *Sid Meier's Civilization IV*. 2K Games, 2005.
 
@@ -201,32 +201,6 @@ Cumings, Bruce. *Korea's Place in the Sun: A Modern History*. Updated ed. New Yo
 
 Robinson, Michael E. *Korea's Twentieth-Century Odyssey: A Short History*. Honolulu: University of Hawai'i Press, 2007.
 
----
-
 ## C. The Reddit Map
 
-Chicago format for a Reddit post (CMOS 17, §14.209). I couldn't fetch the page to pull the exact username and date (Reddit blocks scraping), so the template below has two `[brackets]` you'll need to fill in by visiting the post:
-
-[Reddit username]. "Europe 1939 on the Eve of WWII." Reddit post, r/MapPorn, [Month Day, Year of post]. https://www.reddit.com/r/MapPorn/comments/cdbrz7/europe_1939_on_the_eve_of_wwii/.
-
-If you want a more conservative formulation that avoids the missing fields:
-
-"Europe 1939 on the Eve of WWII." Reddit post, r/MapPorn, accessed November 2025. https://www.reddit.com/r/MapPorn/comments/cdbrz7/europe_1939_on_the_eve_of_wwii/.
-
-A note on citing Reddit for an academic project: Reddit images and Wikipedia maps are usually secondary aggregations of older primary sources. If you used the Reddit map only as a visual reference for territorial boundaries, the citation above is honest and sufficient. If the map shaped specific design decisions (where you placed borders, which territories you included), it's worth saying so in a sentence — and if you can identify the map's original creator from the comments or image watermark, cite the original instead of the Reddit repost. Chicago prefers citing the source closest to the original creator.
-
----
-
-A few notes:
-
-The list above is a complete bibliography assuming you used all of these. **Cite only what you actually consulted** — padding a bibliography with sources you didn't read is considered academic dishonesty in any history-focused course. Start by listing what you genuinely opened, then expand from the relevant sections above only as needed.
-
-For your Game Design Immersive specifically, the strongest combinations are:
-- **Tooze + Harrison + Overy** for industrial / factory / weapons data (these three together cover the comparative economic case)
-- **Gilbert's atlas** for city placement
-- **Mitter, Snyder, Spence, Khan, Cumings** for the non-European powers your work emphasized
-- **The game citations** to acknowledge the design tradition you're working in
-
-I deliberately did not pad the unit-trait list (Tiger Tank, Char B1, etc.) with separate Osprey citations for every unit — that would be excessive. The few I included are the most reliable for the special units you used.
-
-Tell me if you need any individual citation in note-form (for footnotes) rather than bibliography-form, or if you want me to trim to just what's essential.
+[Xotaed]. "Europe 1939 on the Eve of WWII." Reddit post, r/Map. https://www.reddit.com/r/MapPorn/comments/cdbrz7/europe_1939_on_the_eve_of_wwii/.
