@@ -2,7 +2,7 @@ Authors: <br/>
 Larry - Game Designer, Website & Rule Book Writing, Game Mechanism Design, planner and crafter<br/>
 Leon - Crafter, 3D Printing Executer and Adjustment, Game Board Maker, and component organier<br/>
 Jeff - 3D Modeler, Map Maker, Rule Book Designer, Aesthetic & Implementation Director, and Packaging Designer<br/>
-Oliver - Rule editor, Mechanism Feedback & Idea provider<br/>
+Oliver - Rule editor, Mechanism Feedback & Idea provider, Art Refiner<br/>
 <br/>
 Specials Thanks to:<br/>
 Mr. Solomon<br/>
