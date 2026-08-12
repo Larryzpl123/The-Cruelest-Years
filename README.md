@@ -5,7 +5,7 @@ Base Game: *October 1935 - September 1945 · 6-9 Players · 48/38 Territories ·
 
 ---
 
-![Example Image](images/play test/5.jpg)
+![Example Image]("images/play test/5.jpg")
 
 ---
 
