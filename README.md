@@ -5,6 +5,10 @@ Base Game: *October 1935 - September 1945 · 6-9 Players · 48/38 Territories ·
 
 ---
 
+![Example Image](/images/play\ test/5.jpg)
+
+---
+
 ## Overview
 
 **The Cruelest Years** is an asymmetric, turn-based board game that puts you in command of one of eighteen nations during the global catastrophe of the Second World War. Lead your country's armies, build its industry, choose its historical leader, and fight to hold the ground when the guns fall silent. The game spans the full decade of conflict, from Italy's invasion of Ethiopia to the Japanese surrender, and can be played as a massive global campaign or as a focused theatre module.
